@@ -1,0 +1,88 @@
+{
+  // For more information, visit: https://go.microsoft.com/fwlink/?LinkId=733558
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run nvm use 16.13.1 on startup",
+      "type": "shell",
+      "command": "nvm use 16.13.1",
+      "windows": {
+        "command": "nvm use 16.13.1"
+      },
+      "presentation": {
+        "reveal": "always",
+      },
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
+    },
+    {
+      "label": "Run npm start on startup",
+      "type": "shell",
+      "command": "npm run start",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "Run nvm use 16.13.1 on startup"
+      ],
+      "windows": {
+        "command": "npm run start"
+      },
+      "presentation": {
+        "reveal": "always",
+      },
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
+    },
+    {
+      "label": "Run json-server on startup",
+      "type": "shell",
+      "command": "json-server --watch db.json",
+      "windows": {
+        "command": "json-server --watch db.json"
+      },
+      "presentation": {
+        "reveal": "always",
+      },
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
+    },
+    {
+      "type": "npm",
+      "script": "start",
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "typescript",
+        "pattern": "$tsc",
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": {
+            "regexp": "(.*?)"
+          },
+          "endsPattern": {
+            "regexp": "bundle generation complete"
+          }
+        }
+      }
+    },
+    {
+      "type": "npm",
+      "script": "test",
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "typescript",
+        "pattern": "$tsc",
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": {
+            "regexp": "(.*?)"
+          },
+          "endsPattern": {
+            "regexp": "bundle generation complete"
+          }
+        }
+      }
+    }
+  ]
+}

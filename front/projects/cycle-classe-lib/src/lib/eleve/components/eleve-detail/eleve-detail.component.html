@@ -1,0 +1,16 @@
+<mat-card>
+    <mat-card-header>
+        <div mat-card-avatar
+             class="example-header-image"></div>
+        <mat-card-title>{{eleve?.prenom}}</mat-card-title>
+        <mat-card-subtitle>{{eleve?.nom}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        3 objectifs validés / 8
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-flat-button
+                color="primary"
+                (click)="onSelectionnerClick()">Sélectionner</button>
+    </mat-card-actions>
+</mat-card>

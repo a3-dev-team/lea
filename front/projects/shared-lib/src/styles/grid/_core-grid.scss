@@ -1,0 +1,48 @@
+@use "../responsive/core-responsive" as responsive;
+
+@mixin core-grid($nb-columns) {
+  display: grid;
+  row-gap: 0.5rem;
+  column-gap: 0.5rem;
+  grid-template-columns: repeat($nb-columns, 1fr);
+}
+
+@for $i from 1 through 25 {
+  .core-grid-#{$i} {
+    @include core-grid(#{$i});
+  }
+  .core-grid-#{$i}-sup {
+    @include responsive.core-ecran-sup() {
+      @include core-grid(#{$i});
+    }
+  }
+  .core-grid-#{$i}-mup {
+    @include responsive.core-ecran-mup() {
+      @include core-grid(#{$i});
+    }
+  }
+  .core-grid-#{$i}-l {
+    @include responsive.core-ecran-l() {
+      @include core-grid(#{$i});
+    }
+  }
+
+  .core-grid-row-#{$i} {
+    // #{$i} nécessaire sinon il fait une division lors de la transpilation
+    grid-row: #{$i} / #{$i};
+  }
+  .core-grid-column-#{$i} {
+    // #{$i} nécessaire sinon il fait une division lors de la transpilation
+    grid-column: #{$i} / #{$i};
+  }
+
+  @for $j from 1 through 25 {
+    .core-grid-row-#{$i}-span-#{$j} {
+      grid-row: #{$i} / span #{$j};
+    }
+
+    .core-grid-column-#{$i}-span-#{$j} {
+      grid-column: #{$i} / span #{$j};
+    }
+  }
+}

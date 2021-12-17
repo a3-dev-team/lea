@@ -1,0 +1,11 @@
+@use "./styles/layout/core-layout";
+@use "./styles/grid/core-grid";
+@use "./styles/display/core-flex";
+@use "./styles/responsive/core-responsive";
+@use "./styles/size/core-width";
+
+@forward "./styles/layout/core-layout";
+@forward "./styles/grid/core-grid";
+@forward "./styles/display/core-flex";
+@forward "./styles/responsive/core-responsive";
+@forward "./styles/size/core-width";

@@ -1,0 +1,5 @@
+<section>
+    <div *ngFor="let eleve of (eleves$ | async)">
+        <span>{{eleve.nom}} {{eleve.prenom}}</span>
+    </div>
+</section>

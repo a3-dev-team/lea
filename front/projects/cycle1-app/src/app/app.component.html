@@ -1,0 +1,14 @@
+<header>
+    <mat-toolbar color="primary"
+                 class="core-flex-row-space-between-center">
+        <span>Cycle 1</span>
+        <span>{{(applicationStore.eleveSelectionneState$ | async)?.prenom}} {{(applicationStore.eleveSelectionneState$ |
+            async)?.nom}}</span>
+        <button mat-flat-button
+                *ngIf="!(applicationStore.estModeValidationActifState$ | async)">
+            <mat-icon>settings</mat-icon>
+            <span>Accéder à la gestion des ressources</span>
+        </button>
+    </mat-toolbar>
+</header>
+<router-outlet></router-outlet>

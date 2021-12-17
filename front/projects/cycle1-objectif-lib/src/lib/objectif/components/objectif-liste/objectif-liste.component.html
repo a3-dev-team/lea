@@ -1,0 +1,5 @@
+<section>
+  <div *ngFor="let objectif of (objectifs$ | async)">
+    <lib-objectif-detail [objectif]="objectif"></lib-objectif-detail>
+  </div>
+</section>
