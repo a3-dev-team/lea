@@ -20,3 +20,4 @@ jobs:
             npm ci
             npm run build:push --if-present
             npm run test:push --if-present
+          working-directory: front
