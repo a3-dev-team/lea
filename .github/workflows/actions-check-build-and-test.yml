@@ -18,8 +18,9 @@ jobs:
         with:
           node-version: 16.x
 
-      - name: npm ci, build & test
-          run: |
-            npm ci
-            npm run build:push --if-present
-            npm run test:push --if-present
+      - name: npm ci
+          run: npm ci
+      - name: npm build
+          run: npm run build:push --if-present
+      - name: npm test
+          run: npm run test:push --if-present
