@@ -13,6 +13,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
+          # Checkout dev branch
+          ref: dev
           # Disabling shallow clone is recommended for improving relevancy of reporting
           fetch-depth: 0
 
