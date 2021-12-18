@@ -7,6 +7,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: front
     steps:
       - uses: actions/checkout@v2
         with:
@@ -18,11 +21,10 @@ jobs:
           node-version: 16.x
 
       - name: npm ci, build & test
-          working-directory: front
           run: |
-            npm ci
-            npm run build:ci --if-present
-            npm run test:ci --if-present
+          npm ci
+          npm run build:ci --if-present
+          npm run test:ci --if-present
 
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@master
