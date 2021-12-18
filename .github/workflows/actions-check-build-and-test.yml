@@ -16,8 +16,8 @@ jobs:
           node-version: 16.x
 
       - name: npm ci, build & test
+          working-directory: front
           run: |
             npm ci
             npm run build:push --if-present
             npm run test:push --if-present
-          working-directory: front
