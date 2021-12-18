@@ -1,13 +1,14 @@
 name: Build & Test
+
 on:
   workflow_dispatch:
   push:
+
 jobs:
+
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: front
+
     steps:
       - uses: actions/checkout@v2
 
@@ -16,9 +17,9 @@ jobs:
         with:
           node-version: 16.x
 
-      - name: npm ci
-        run: npm ci
-      - name: npm build
-        run: npm run build:push --if-present
-      - name: npm test
-        run: npm run test:push --if-present
+      - name: npm ci, build & test
+        working-directory: front
+        run: |
+          npm ci
+          npm run build:cd --if-present
+          npm run test:cd --if-present
