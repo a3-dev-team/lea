@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, '../../coverage/daily-child-app'),
+      dir: require('path').join(__dirname, '../../coverage/cycle1-objectif-lib'),
       subdir: '.',
       reporters: [
         { type: 'lcov' },
