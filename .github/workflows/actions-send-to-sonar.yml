@@ -25,8 +25,8 @@ jobs:
         working-directory: front
         run: |
           npm ci
-          npm run build:cd --if-present
-          npm run test:cd --if-present
+          npm run build:ci --if-present
+          npm run test:ci --if-present
 
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@master
