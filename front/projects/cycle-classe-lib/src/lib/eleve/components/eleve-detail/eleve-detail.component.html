@@ -1,4 +1,5 @@
-<mat-card>
+<mat-card class="core-cursor-pointer"
+          (click)="onSelectionnerClick()">
     <mat-card-header>
         <div mat-card-avatar
              class="example-header-image"></div>
@@ -8,9 +9,4 @@
     <mat-card-content>
         3 objectifs validés / 8
     </mat-card-content>
-    <mat-card-actions>
-        <button mat-flat-button
-                color="primary"
-                (click)="onSelectionnerClick()">Sélectionner</button>
-    </mat-card-actions>
 </mat-card>
