@@ -3,6 +3,11 @@ name: Build & Test
 on:
   workflow_dispatch:
   push:
+    branches:
+      - dev
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
@@ -20,5 +25,5 @@ jobs:
         working-directory: front
         run: |
           npm ci
-          npm run build:push --if-present
-          npm run test:push --if-present
+          npm run build:ci --if-present
+          npm run test:ci --if-present
