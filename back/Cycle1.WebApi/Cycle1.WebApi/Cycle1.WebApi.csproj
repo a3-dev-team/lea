@@ -15,7 +15,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Cycle1.WebApi.Controllers\Cycle1.WebApi.Controllers.csproj" />
     <ProjectReference Include="..\Cycle1.WebApi.Core\Cycle1.WebApi.Core.csproj" />
-    <ProjectReference Include="..\Cycle1.WebApi.Dal\Cycle1.WebApi.Dal.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,5 +1,5 @@
 ﻿using A3.Lea.Cycle1.WebApi.Core.Eleves;
-using A3.Lea.Cycle1.WebApi.Dal.Eleves;
+using A3.Lea.Cycle1.WebApi.MySql.Eleves;
 
 namespace A3.Lea.Cycle1.WebApi
 {
