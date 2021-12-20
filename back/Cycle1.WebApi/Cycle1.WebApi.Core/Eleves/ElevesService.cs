@@ -1,4 +1,6 @@
-﻿namespace A3.Lea.Cycle1.WebApi.Core.Eleves
+﻿using A3.Lea.Cycle1.WebApi.Core.Eleves.Entites;
+
+namespace A3.Lea.Cycle1.WebApi.Core.Eleves
 {
     public class ElevesService : IElevesService
     {
@@ -7,6 +9,11 @@
         public ElevesService(IElevesDal elevesDal)
         {
             this._elevesDal = elevesDal;
+        }
+
+        public List<CarteIdentiteEleve> GetListeCarteIdentiteEleve(int idClasse)
+        {
+            return this._elevesDal.GetListeCarteIdentiteEleve(idClasse);
         }
     }
 }
