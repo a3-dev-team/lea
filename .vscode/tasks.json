@@ -9,6 +9,9 @@
       "windows": {
         "command": "nvm use 16.13.1"
       },
+      "options": {
+        "cwd": "${workspaceFolder}/front"
+      },
       "presentation": {
         "reveal": "always",
       },
@@ -20,13 +23,16 @@
       "label": "Run npm start on startup",
       "type": "shell",
       "command": "npm run start",
+      "windows": {
+        "command": "npm run start"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}/front"
+      },
       "dependsOrder": "sequence",
       "dependsOn": [
         "Run nvm use 16.13.1 on startup"
       ],
-      "windows": {
-        "command": "npm run start"
-      },
       "presentation": {
         "reveal": "always",
       },
@@ -41,47 +47,14 @@
       "windows": {
         "command": "json-server --watch db.json"
       },
+      "options": {
+        "cwd": "${workspaceFolder}/front"
+      },
       "presentation": {
         "reveal": "always",
       },
       "runOptions": {
         "runOn": "folderOpen"
-      }
-    },
-    {
-      "type": "npm",
-      "script": "start",
-      "isBackground": true,
-      "problemMatcher": {
-        "owner": "typescript",
-        "pattern": "$tsc",
-        "background": {
-          "activeOnStart": true,
-          "beginsPattern": {
-            "regexp": "(.*?)"
-          },
-          "endsPattern": {
-            "regexp": "bundle generation complete"
-          }
-        }
-      }
-    },
-    {
-      "type": "npm",
-      "script": "test",
-      "isBackground": true,
-      "problemMatcher": {
-        "owner": "typescript",
-        "pattern": "$tsc",
-        "background": {
-          "activeOnStart": true,
-          "beginsPattern": {
-            "regexp": "(.*?)"
-          },
-          "endsPattern": {
-            "regexp": "bundle generation complete"
-          }
-        }
       }
     }
   ]

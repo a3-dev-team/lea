@@ -7,7 +7,6 @@ on:
       - dev
 
 jobs:
-
   build:
     runs-on: ubuntu-latest
 
@@ -23,5 +22,5 @@ jobs:
         working-directory: front
         run: |
           npm ci
-          npm run build:cd --if-present
-          npm run test:cd --if-present
+          npm run build:push --if-present
+          npm run test:push --if-present

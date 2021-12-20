@@ -29,6 +29,7 @@ article {
     flex-direction: column;
     justify-content: start;
     align-items: start;
+    overflow-y: auto;
   }
   footer {
     padding: 0.25rem 0.5rem;

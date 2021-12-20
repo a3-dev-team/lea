@@ -9,7 +9,7 @@ import { UrlHelper } from './../../../../../cycle1-app/src/app/core/helpers/url-
 })
 export class EleveService {
 
-  private elevesUrl = UrlHelper.backApiUrl + "eleves";
+  private elevesUrl = UrlHelper.backApiUrl + "/eleves";
 
   public eleves$ = this.http.get<Eleve[]>(this.elevesUrl)
     .pipe(
