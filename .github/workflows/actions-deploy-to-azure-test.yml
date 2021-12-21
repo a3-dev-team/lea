@@ -1,10 +1,10 @@
-name: Deploy to Azure
+name: Deploy to Azure Test
 
 on:
   workflow_dispatch:
   push:
     branches:
-      - main
+      - dev
 
 jobs:
   build:
