@@ -7,9 +7,13 @@
     "declarationMap": true,
     "inlineSources": true,
     "types": []
+<<<<<<< HEAD
   },
   "exclude": [
     "src/test.ts",
     "**/*.spec.ts"
   ]
+=======
+  }
+>>>>>>> 906dbcb... fix: test
 }
