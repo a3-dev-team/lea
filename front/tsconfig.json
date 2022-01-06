@@ -12,7 +12,7 @@
         "projects/shared-lib/src/public-api.ts",
         "projects/cycle-classe-lib/src/"
       ],
-      "cycle1-objectif-lib": [
+      "@cycle1-objectif-lib": [
         "dist/cycle1-objectif-lib/cycle1-objectif-lib",
         "dist/cycle1-objectif-lib"
       ]
@@ -42,5 +42,9 @@
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  }
+  },
+  "exclude": [
+    "src/test.ts",
+    "**/*.spec.ts"
+  ]
 }

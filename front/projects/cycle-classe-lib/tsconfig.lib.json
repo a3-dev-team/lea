@@ -7,9 +7,5 @@
     "declarationMap": true,
     "inlineSources": true,
     "types": []
-  },
-  "exclude": [
-    "src/test.ts",
-    "**/*.spec.ts"
-  ]
+  }
 }
