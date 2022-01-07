@@ -19,4 +19,4 @@ jobs:
 
       - name: dotnet build & test
         working-directory: back/Cycle1.WebApi
-        run: dotnet Cycle1.WebApi.sln
+        run: dotnet build Cycle1.WebApi.sln
