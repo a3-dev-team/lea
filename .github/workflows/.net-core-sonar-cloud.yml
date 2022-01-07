@@ -7,6 +7,41 @@ on:
       - dev
 
 jobs:
+  validate-changes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.2.0
+        with:
+          # Disabling shallow clone is recommended for improving relevancy of sonarqube reporting
+          fetch-depth: 0
+
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '6.0.x'
+
+      - name: Install dependencies
+        run: dotnet restore back/Cycle1.WebApi/Cycle1.WebApi.sln
+
+      - name: Sonarqube Begin
+        run: | 
+          dotnet tool install --global dotnet-sonarscanner
+          dotnet sonarscanner begin /o:a3-dev-team /k:a3-dev-team_lea /d:sonar.login=${{ secrets.SONAR_TOKEN }} /s:$GITHUB_WORKSPACE/back/Cycle1.WebApi/SonarQube.Analysis.xml
+
+      - name: Build
+        run: dotnet build back/Cycle1.WebApi/Cycle1.WebApi.sln
+
+      - name: Test
+        run: dotnet test back/Cycle1.WebApi/Cycle1.WebApi.sln --logger trx --collect:"XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
+        env:
+          ASPNETCORE_ENVIRONMENT: Development
+
+      - name: Sonarqube end
+        run: dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
   build:
     runs-on: ubuntu-latest
 
