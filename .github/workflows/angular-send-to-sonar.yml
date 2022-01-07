@@ -1,4 +1,4 @@
-name: Angular - Build & Test Coverage & Sonar
+name: Angular - SonarCloud
 
 on:
   workflow_dispatch:
