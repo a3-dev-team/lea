@@ -18,13 +18,13 @@ jobs:
       - name: Setup dotnet
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: '6.0.x'
+          dotnet-version: "6.0.x"
 
       - name: Install dependencies
         run: dotnet restore back/Cycle1.WebApi/Cycle1.WebApi.sln
 
       - name: Sonarqube Begin
-        run: | 
+        run: |
           dotnet tool install --global dotnet-sonarscanner
           dotnet sonarscanner begin /o:a3-dev-team /k:a3-dev-team_lea /d:sonar.login=${{ secrets.SONAR_TOKEN }} /s:$GITHUB_WORKSPACE/back/Cycle1.WebApi/SonarQube.Analysis.xml
 
@@ -39,30 +39,4 @@ jobs:
       - name: Sonarqube end
         run: dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          # Disabling shallow clone is recommended for improving relevancy of reporting
-          fetch-depth: 0
-
-      - name: Sonarscanner for dotnet
-        uses: Secbyte/dotnet-sonarscanner@v2.3
-        with:
-          buildCommand: dotnet build back/Cycle1.WebApi/Cycle1.WebApi.sln
-          testCommand: dotnet test back/Cycle1.WebApi/Cycle1.WebApi.sln --collect:"XPlat Code Coverage" -r ./TestsResult
-          projectKey: a3-dev-team_lea
-          projectName: lea
-          sonarOrganisation: a3-dev-team
-          beginArguments: >
-            /d:sonar.verbose="true"
-            /d:sonar.cs.cobertura.reportsPaths='".TestResuts/**/coverage.cobertura.xml"'
-            /d:sonar.coverage.exclusions='"**/*Tests.cs","**/*.md"'
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
