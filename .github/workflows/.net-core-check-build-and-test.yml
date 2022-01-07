@@ -18,6 +18,7 @@ jobs:
           dotnet-version: "6.0.x"
 
       - name: dotnet build & test
-        working-directory: cd
+        working-directory: back/Cycle1.WebApi
         run: |
           dotnet build Cycle1.WebApi.sln
+          dotnet test Cycle1.WebApi.sln
