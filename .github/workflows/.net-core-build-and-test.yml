@@ -18,11 +18,11 @@ jobs:
           dotnet-version: "6.0.x"
 
       - name: Install dependencies
-        working-directory: back\Cycle1.WebApi
+        working-directory: back/Cycle1.WebApi
         run: dotnet restore Cycle1.WebApi.sln
 
       - name: Build
-        working-directory: back\Cycle1.WebApi
+        working-directory: back/Cycle1.WebApi
         run: dotnet build Cycle1.WebApi.sln --configuration Release --no-restore
 
       - name: Test
