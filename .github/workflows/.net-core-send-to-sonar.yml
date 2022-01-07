@@ -1,4 +1,4 @@
-name: .Net Core - Build & Test Coverage & Sonar
+name: .Net Core - SonarCloud
 
 on:
   workflow_dispatch:

@@ -1,8 +1,4 @@
-<<<<<<< HEAD:.github/workflows/angular-sonar-cloud.yml
-name: Angular - SonarCloud
-=======
 name: Angular - Build & Test Coverage & Sonar
->>>>>>> 504cce2... fix: actions names:.github/workflows/angular-send-to-sonar.yml
 
 on:
   workflow_dispatch:
