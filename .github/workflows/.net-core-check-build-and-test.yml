@@ -17,6 +17,14 @@ jobs:
         with:
           dotnet-version: "6.0.x"
 
-      - name: dotnet build & test
+      - name: Install dependencies
         working-directory: back/Cycle1.WebApi
-        run: dotnet build Cycle1.WebApi.sln
+        run: dotnet restore Cycle1.WebApi.sln
+
+      - name: Build
+        working-directory: back/Cycle1.WebApi
+        run: dotnet build Cycle1.WebApi.sln --configuration Release --no-restore
+
+      - name: Test
+        working-directory: back/Cycle1.WebApi
+        run: dotnet test Cycle1.WebApi.sln --no-restore --verbosity normal
