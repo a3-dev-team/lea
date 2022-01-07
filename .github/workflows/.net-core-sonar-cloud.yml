@@ -18,7 +18,7 @@ jobs:
 
       - name: Sonarscanner for dotnet
         uses: Secbyte/dotnet-sonarscanner@v2.3
-        working-directory: back\Cycle1.WebApi
+        working-directory: back/Cycle1.WebApi
         with:
           buildCommand: dotnet build Cycle1.WebApi.sln
           testCommand: dotnet test Cycle1.WebApi.sln --collect:"XPlat Code Coverage" -r ./TestsResult
