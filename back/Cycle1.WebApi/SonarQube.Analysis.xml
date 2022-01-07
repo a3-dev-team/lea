@@ -3,6 +3,6 @@
 
   <Property Name="sonar.host.url">https://sonarcloud.io</Property>
   <Property Name="sonar.exclusions">./BuildScripts/**,./DatabaseMigrations/**</Property>
-  <Property Name="sonar.cs.vstest.reportsPaths">back/Cycle1.WebApi/**/*.trx</Property>
-  <Property Name="sonar.cs.opencover.reportsPaths">back/Cycle1.WebApi/**/coverage.opencover.xml</Property> 
+  <Property Name="sonar.cs.vstest.reportsPaths">**/*.trx</Property>
+  <Property Name="sonar.cs.opencover.reportsPaths">**/coverage.opencover.xml</Property> 
 </SonarQubeAnalysisProperties>
