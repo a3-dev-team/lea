@@ -10,6 +10,7 @@ module.exports = function (config) {
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage'),
+      require('karma-sonarqube-unit-reporter'),
       require('@angular-devkit/build-angular/plugins/karma')
     ],
     client: {
@@ -24,6 +25,11 @@ module.exports = function (config) {
     jasmineHtmlReporter: {
       suppressAll: true // removes the duplicated traces
     },
+    sonarQubeUnitReporter: {
+      sonarQubeVersion: 'LATEST',
+      outputFile: '../../reports/cycle1-app/ut_report.xml',
+      useBrowserName: false
+    },
     coverageReporter: {
       dir: require('path').join(__dirname, '../../coverage/cycle1-app'),
       subdir: '.',
@@ -32,7 +38,7 @@ module.exports = function (config) {
         { type: 'text-summary' }
       ]
     },
-    reporters: ['progress', 'kjhtml'],
+    reporters: ['progress', 'sonarqubeUnit', 'kjhtml'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
