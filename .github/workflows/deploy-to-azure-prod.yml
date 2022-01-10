@@ -25,27 +25,6 @@ jobs:
           npm run build:ci -- --output-path ../release/ 
           npm run test:ci
 
-      - name: Use .Net Core 6.0.x
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: "6.0.x"
-
-      - name: Install dependencies
-        working-directory: back/Cycle1.WebApi
-        run: dotnet restore Cycle1.WebApi.sln
-
-      - name: dotnet build
-        working-directory: back/Cycle1.WebApi
-        run: dotnet build Cycle1.WebApi.sln --configuration Release --no-restore
-
-      - name: dotnet test
-        working-directory: back/Cycle1.WebApi
-        run: dotnet test Cycle1.WebApi.sln --no-restore --verbosity normal
-
-      - name: dotnet publish
-        working-directory: back/Cycle1.WebApi
-        run: dotnet publish Cycle1.WebApi.sln --configuration Release --no-restore --output ../../release/
-
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
