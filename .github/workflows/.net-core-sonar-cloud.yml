@@ -28,17 +28,20 @@ jobs:
         working-directory: back/Cycle1.WebApi
         run: |
           dotnet tool install --global dotnet-sonarscanner
-          dotnet sonarscanner begin /o:a3-dev-team /k:a3-dev-team_lea-back /d:sonar.login=${{ secrets.SONAR_TOKEN }} /s:SonarQube.Analysis.xml
+          dotnet sonarscanner begin /o:a3-dev-team /k:a3-dev-team_lea-back /d:sonar.login=${{ secrets.SONAR_TOKEN }} /s:./SonarQube.Analysis.xml
 
       - name: Build
-        run: dotnet build back/Cycle1.WebApi/Cycle1.WebApi.sln
+        working-directory: back/Cycle1.WebApi
+        run: dotnet build Cycle1.WebApi.sln
 
       - name: Test
-        run: dotnet test back/Cycle1.WebApi/Cycle1.WebApi.sln --logger trx --collect:"XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
+        working-directory: back/Cycle1.WebApi
+        run: dotnet test Cycle1.WebApi.sln --logger trx --collect:"XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
         env:
           ASPNETCORE_ENVIRONMENT: Development
 
       - name: Sonarqube end
+        working-directory: back/Cycle1.WebApi
         run: dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
