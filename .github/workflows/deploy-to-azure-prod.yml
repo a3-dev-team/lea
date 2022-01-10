@@ -48,19 +48,19 @@ jobs:
         working-directory: back/Cycle1.WebApi
         run: dotnet test Cycle1.WebApi.sln --no-restore --verbosity normal
 
-    - name: Publish
+      - name: Publish
         working-directory: back/Cycle1.WebApi
-        run: dotnet publish Cycle1.WebApi.sln --configuration Release --no-restore --output ./release/
+        run: dotnet publish Cycle1.WebApi.sln --configuration Release --no-restore --output ../../release/
 
-  publish :
+  upload:
     runs-on: ubuntu-latest
 
     steps:
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
-          name: node-app
-          path: ./release
+          name: lea-app
+          path: ./release/
 
   deploy:
     runs-on: ubuntu-latest
@@ -73,7 +73,7 @@ jobs:
       - name: Download artifact from build job
         uses: actions/download-artifact@v2
         with:
-          name: node-app
+          name: lea-app
 
       - name: "Deploy to Azure Web App"
         id: deploy-to-webapp
