@@ -22,10 +22,10 @@ jobs:
         working-directory: front
         run: |
           npm ci
-          npm run build:ci --output-path ./release/ --if-present
+          npm run build:ci -- --output-path ../release/wwwroot --if-present
           npm run test:ci --if-present
 
- build & test back:
+ build & test & publish back:
     runs-on: ubuntu-latest
 
     steps:
@@ -42,11 +42,15 @@ jobs:
 
       - name: Build
         working-directory: back/Cycle1.WebApi
-        run: dotnet build Cycle1.WebApi.sln --configuration Release --no-restore --output ./release/
+        run: dotnet build Cycle1.WebApi.sln --configuration Release --no-restore
 
       - name: Test
         working-directory: back/Cycle1.WebApi
         run: dotnet test Cycle1.WebApi.sln --no-restore --verbosity normal
+
+      - name: Publish
+        working-directory: back/Cycle1.WebApi
+        run: dotnet publish Cycle1.WebApi.sln --configuration Release --no-restore --output ../../release/
 
  upload :
     runs-on: ubuntu-latest
@@ -55,8 +59,8 @@ jobs:
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
-          name: node-app
-          path: ./front/dist/cycle1-app
+          name: lea-app
+          path: ./release/
 
   deploy:
     runs-on: ubuntu-latest
@@ -69,7 +73,7 @@ jobs:
       - name: Download artifact from build job
         uses: actions/download-artifact@v2
         with:
-          name: node-app
+          name: lea-app
 
       - name: "Deploy to Azure Web App"
         id: deploy-to-webapp

@@ -22,10 +22,10 @@ jobs:
         working-directory: front
         run: |
           npm ci
-          npm run build:ci --output-path ./release/ --if-present
+          npm run build:ci --  --output-path ../release/wwwroot --if-present
           npm run test:ci --if-present
 
- build & test back:
+ build & test & publish back:
     runs-on: ubuntu-latest
 
     steps:
@@ -42,13 +42,17 @@ jobs:
 
       - name: Build
         working-directory: back/Cycle1.WebApi
-        run: dotnet build Cycle1.WebApi.sln --configuration Release --no-restore --output ./release/
+        run: dotnet build Cycle1.WebApi.sln --configuration Release --no-restore
 
       - name: Test
         working-directory: back/Cycle1.WebApi
         run: dotnet test Cycle1.WebApi.sln --no-restore --verbosity normal
 
- upload :
+    - name: Publish
+        working-directory: back/Cycle1.WebApi
+        run: dotnet publish Cycle1.WebApi.sln --configuration Release --no-restore --output ./release/
+
+ publish :
     runs-on: ubuntu-latest
 
     steps:
@@ -56,7 +60,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: node-app
-          path: ./front/dist/cycle1-app
+          path: ./release
 
   deploy:
     runs-on: ubuntu-latest
