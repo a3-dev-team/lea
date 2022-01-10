@@ -22,8 +22,8 @@ jobs:
         working-directory: front
         run: |
           npm ci
-          npm run build:ci -- --output-path ../release/wwwroot --if-present
-          npm run test:ci --if-present
+          npm run build:ci -- --output-path ../release/wwwroot 
+          npm run test:ci
 
   build_test_publish-back:
     runs-on: ubuntu-latest
