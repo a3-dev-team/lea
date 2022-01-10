@@ -28,7 +28,7 @@ jobs:
         working-directory: back/Cycle1.WebApi
         run: |
           dotnet tool install --global dotnet-sonarscanner
-          dotnet sonarscanner begin /o:a3-dev-team /k:a3-dev-team_lea-back /d:sonar.login=${{ secrets.SONAR_TOKEN }} /s:./SonarQube.Analysis.xml
+          dotnet sonarscanner begin /o:a3-dev-team /k:a3-dev-team_lea-back /d:sonar.login=${{ secrets.SONAR_TOKEN }} /s:$GITHUB_WORKSPACE/back/Cycle1.WebApi/SonarQube.Analysis.xml
 
       - name: Build
         working-directory: back/Cycle1.WebApi
