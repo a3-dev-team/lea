@@ -22,7 +22,7 @@ jobs:
         working-directory: front
         run: |
           npm ci
-          npm run build:ci --  --output-path ../release/wwwroot --if-present
+          npm run build:ci -- --output-path ../release/wwwroot --if-present
           npm run test:ci --if-present
 
   build & test & publish back:
