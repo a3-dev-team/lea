@@ -19,9 +19,9 @@ namespace A3.Lea.Cycle1.WebApi.Extensions
             where TDal : class, TIDal
             where TProblem : class, IProblemDetailsResolver
         {
-            services.AddTransient<TIService, TService>();
-            services.AddTransient<TIDal, TDal>();
-            services.TryAddEnumerable(ServiceDescriptor.Transient<IProblemDetailsResolver, TProblem>(problemDetailsResolverFactory));
+            services.AddSingleton<TIService, TService>();
+            services.AddSingleton<TIDal, TDal>();
+            services.TryAddEnumerable(ServiceDescriptor.Singleton<IProblemDetailsResolver, TProblem>(problemDetailsResolverFactory));
         }
 
         private static void AddElevesServices(IServiceCollection services)

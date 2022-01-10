@@ -31,7 +31,7 @@ namespace A3.Library.Mvc
                 return this.StatusCode(problemDetails.Status ?? (int)HttpStatusCode.BadRequest, problemDetails);
             }
 
-            throw new ProblemDetailsException((int)HttpStatusCode.BadRequest, "Erreur inconnue");
+            throw new ProblemDetailsException((int)HttpStatusCode.InternalServerError, "Erreur inconnue");
         }
 
         private IActionResult Ok<T>(Result<T> result)
