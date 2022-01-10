@@ -7,7 +7,7 @@ on:
       - dev
 
 jobs:
-  build & test front:
+  build_test-front:
     runs-on: ubuntu-latest
 
     steps:
@@ -25,7 +25,7 @@ jobs:
           npm run build:ci -- --output-path ../release/wwwroot --if-present
           npm run test:ci --if-present
 
-  build & test & publish back:
+  build_test_publish-back:
     runs-on: ubuntu-latest
 
     steps:
