@@ -1,4 +1,4 @@
-name: Deploy to Azure Prod
+name: Deploy to Azure Test
 
 on:
   workflow_dispatch:
