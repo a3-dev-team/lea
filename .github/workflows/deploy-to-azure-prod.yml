@@ -7,7 +7,7 @@ on:
       - main
 
 jobs:
-  build:
+  build & test front:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,9 +22,36 @@ jobs:
         working-directory: front
         run: |
           npm ci
-          npm run build:ci --if-present
+          npm run build:ci --output-path ./release/ --if-present
           npm run test:ci --if-present
 
+ build & test back:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use .Net Core 6.0.x
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: "6.0.x"
+
+      - name: Install dependencies
+        working-directory: back/Cycle1.WebApi
+        run: dotnet restore Cycle1.WebApi.sln
+
+      - name: Build
+        working-directory: back/Cycle1.WebApi
+        run: dotnet build Cycle1.WebApi.sln --configuration Release --no-restore --output ./release/
+
+      - name: Test
+        working-directory: back/Cycle1.WebApi
+        run: dotnet test Cycle1.WebApi.sln --no-restore --verbosity normal
+
+ upload :
+    runs-on: ubuntu-latest
+
+    steps:
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
@@ -35,7 +62,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     environment:
-      name: "Production"
+      name: "Test"
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
