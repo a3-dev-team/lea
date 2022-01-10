@@ -29,6 +29,22 @@ if (app.Environment.IsDevelopment())
     app.UseCors(AllowAllOriginsInDev);
 }
 
+// Pour la prise en charge de l'index.html Angular dans le sous-répertoire wwwroot
+app.UseDefaultFiles();
+
+// Pour la prise en charge des fichiers static Angular
+app.UseStaticFiles(new StaticFileOptions()
+{
+    OnPrepareResponse = context =>
+    {
+        if (context.File.Name.Equals("index.html", StringComparison.Ordinal))
+        {
+            context.Context.Response.Headers.Add("Cache-Control", "no-cache, no-store");
+            context.Context.Response.Headers.Add("Expires", "-1");
+        }
+    }
+});
+
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
