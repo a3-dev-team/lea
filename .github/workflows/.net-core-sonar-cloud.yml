@@ -21,12 +21,14 @@ jobs:
           dotnet-version: "6.0.x"
 
       - name: Install dependencies
-        run: dotnet restore back/Cycle1.WebApi/Cycle1.WebApi.sln
+        working-directory: back/Cycle1.WebApi
+        run: dotnet restore Cycle1.WebApi.sln
 
       - name: Sonarqube Begin
+        working-directory: back/Cycle1.WebApi
         run: |
           dotnet tool install --global dotnet-sonarscanner
-          dotnet sonarscanner begin /o:a3-dev-team /k:a3-dev-team_lea_back /d:sonar.login=${{ secrets.SONAR_TOKEN }} /s:$GITHUB_WORKSPACE/back/Cycle1.WebApi/SonarQube.Analysis.xml
+          dotnet sonarscanner begin /o:a3-dev-team /k:a3-dev-team_lea_back /d:sonar.login=${{ secrets.SONAR_TOKEN }} /s:SonarQube.Analysis.xml
 
       - name: Build
         run: dotnet build back/Cycle1.WebApi/Cycle1.WebApi.sln
