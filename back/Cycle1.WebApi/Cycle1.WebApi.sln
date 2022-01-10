@@ -11,6 +11,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cycle1.WebApi.Core", "Cycle
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cycle1.WebApi.MySql", "Cycle1.WebApi.MySql\Cycle1.WebApi.MySql.csproj", "{855ABA14-F95E-4C34-AA91-AE83F9343C88}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Mvc", "Library.Mvc\Library.Mvc.csproj", "{FE6E888C-F657-4AA2-8F78-F5A55BD68BF1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library", "Library\Library.csproj", "{F0318778-46F5-41C1-B81C-533D2CB12611}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{855ABA14-F95E-4C34-AA91-AE83F9343C88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{855ABA14-F95E-4C34-AA91-AE83F9343C88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{855ABA14-F95E-4C34-AA91-AE83F9343C88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE6E888C-F657-4AA2-8F78-F5A55BD68BF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE6E888C-F657-4AA2-8F78-F5A55BD68BF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE6E888C-F657-4AA2-8F78-F5A55BD68BF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE6E888C-F657-4AA2-8F78-F5A55BD68BF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0318778-46F5-41C1-B81C-533D2CB12611}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0318778-46F5-41C1-B81C-533D2CB12611}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0318778-46F5-41C1-B81C-533D2CB12611}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0318778-46F5-41C1-B81C-533D2CB12611}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
