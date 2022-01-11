@@ -7,10 +7,18 @@ namespace A3.Lea.Cycle1.WebApi.MySql.Eleves
     {
         public List<CarteIdentiteEleve> GetListeCarteIdentiteEleve(int idClasse)
         {
-            return new List<CarteIdentiteEleve>() 
-            { 
-                new CarteIdentiteEleve(1, "DOLET", "Bertrand", Core.Commun.Sexe.Masculin, Core.Commun.Niveau.GrandeSection, null)
-            };
+            using (var databaseContext = new DatabaseContext())
+            {
+                return databaseContext.Set<CarteIdentiteEleve>().Select((e) => e).ToList();
+            }
+        }
+
+        public List<Eleve> GetListeEleve(int idClasse)
+        {
+            using (var databaseContext = new DatabaseContext())
+            {
+                return databaseContext.Set<Eleve>().Select((e) => e).ToList();
+            }
         }
     }
 }

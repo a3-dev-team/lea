@@ -12,4 +12,8 @@
     <ProjectReference Include="..\Cycle1.WebApi.Core\Cycle1.WebApi.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MySql.EntityFrameworkCore" Version="6.0.0-preview3.1+m8.0.23" />
+  </ItemGroup>
+
 </Project>
