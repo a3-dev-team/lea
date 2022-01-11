@@ -56,4 +56,14 @@ app.UseDefaultFiles()                      // Pour la prise en charge de l'index
    .UseAuthorization();
 
 app.MapControllers();
+
+using (var databaseContext = new DatabaseContext())
+{
+    // Creates the database if not exists
+    databaseContext.Database.EnsureDeleted();
+    databaseContext.Database.EnsureCreated();
+    databaseContext.AjouterDonnees();
+}
+
+
 app.Run();

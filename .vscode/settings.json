@@ -6,4 +6,5 @@
         "source.fixAll": true
     },
     "html.format.wrapAttributes": "force-aligned",
+    "omnisharp.useModernNet": true
 }

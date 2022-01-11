@@ -4,18 +4,20 @@ namespace A3.Lea.Cycle1.WebApi.Core.Eleves.Modeles
 {
     public class IdentiteEleve
     {
-        public int Id { get; }
+        public int Id { get; set; }
 
-        public string Nom { get; }
+        public string? Nom { get; set; }
 
-        public string Prenom { get; }
+        public string? Prenom { get; set; }
 
-        public object? Photo { get; }
+        public Sexe Sexe { get; set; }
 
-        public Sexe Sexe { get; }
+        public Niveau Niveau { get; set; }
 
-        public Niveau Niveau { get; }
+        public int? ClasseId { get; set; }
+        public Classe? Classe { get; set; }
 
+<<<<<<< HEAD:back/Cycle1.WebApi/Cycle1.WebApi.Core/Eleves/Modeles/IdentiteEleve.cs
         public IdentiteEleve(int id, string nom, string prenom, Sexe sexe, Niveau niveau, object? photo)
         {
             this.Id = id;
@@ -30,5 +32,7 @@ namespace A3.Lea.Cycle1.WebApi.Core.Eleves.Modeles
         {
             return this.Sexe.Equals(Sexe.Masculin);
         }
+=======
+>>>>>>> 86bdda6 (feat : exemple EF):back/Cycle1.WebApi/Cycle1.WebApi.Core/Eleves/Entites/CarteIdentiteEleve.cs
     }
 }
