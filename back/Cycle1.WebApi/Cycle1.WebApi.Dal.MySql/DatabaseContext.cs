@@ -11,12 +11,6 @@ namespace A3.Lea.Cycle1.WebApi.MySql
         // public DbSet<Eleve>? Eleve { get; set; }
 
         // public DbSet<CarteIdentiteEleve>? CarteIdentiteEleve { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseMySQL(@"server=localhost;database=lea-cycle1;user=root;password=#aTr01s!");
-        }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -29,7 +23,7 @@ namespace A3.Lea.Cycle1.WebApi.MySql
 
             modelBuilder.Entity<CarteIdentiteEleve>(entity =>
             {
-                // entity.HasKey(c => c.Id);
+                // La suppression d'un classe n'entraine pas la suppression des élèves associés.
                 entity.HasOne(c => c.Classe)
                 .WithMany(c => c.CarteIdentiteEleves)
                 .OnDelete(DeleteBehavior.SetNull);

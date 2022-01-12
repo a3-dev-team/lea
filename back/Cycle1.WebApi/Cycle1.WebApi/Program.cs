@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 using A3.Lea.Cycle1.WebApi.Extensions;
 using Hellang.Middleware.ProblemDetails.Mvc;
 using Microsoft.AspNetCore.Mvc.Authorization;
+=======
+using A3.Lea.Cycle1.WebApi;
+using A3.Lea.Cycle1.WebApi.MySql;
+using Microsoft.EntityFrameworkCore;
+>>>>>>> 0b2de52 (feat : Bdd ConnectionString)
 
 var allowAllOriginsInDev = "_allowAllOriginsInDev";
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +15,7 @@ builder.Host.UseLogging();
 // Par défaut, tous les controllers nécessite une authentification
 builder.Services.AddControllers(options => options.Filters.Add(new AuthorizeFilter()));
 
+<<<<<<< HEAD
 builder.Services.AddCycle1Authentication(builder.Configuration)
                 .AddSharedServices()
                 .AddCycle1Services()
@@ -17,6 +24,26 @@ builder.Services.AddCycle1Authentication(builder.Configuration)
                 .AddEndpointsApiExplorer() // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
                 .AddSwagger()
                 .AddCors(options => options.AddPolicy(name: allowAllOriginsInDev, builder => builder.WithOrigins("*")));
+=======
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+// Configuration du cors pour le contexte dev
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: AllowAllOriginsInDev,
+                      builder =>
+                      {
+                          builder.WithOrigins("*");
+                      });
+});
+>>>>>>> 0b2de52 (feat : Bdd ConnectionString)
+
+// Configuration de EF sur MySQL
+builder.Services.AddDbContext<DatabaseContext>(options =>
+   options.UseMySQL(builder.Configuration.GetConnectionString("MySQLConnectionString")));
+
 
 var app = builder.Build();
 
@@ -56,14 +83,4 @@ app.UseDefaultFiles()                      // Pour la prise en charge de l'index
    .UseAuthorization();
 
 app.MapControllers();
-
-using (var databaseContext = new DatabaseContext())
-{
-    // Creates the database if not exists
-    databaseContext.Database.EnsureDeleted();
-    databaseContext.Database.EnsureCreated();
-    databaseContext.AjouterDonnees();
-}
-
-
 app.Run();
