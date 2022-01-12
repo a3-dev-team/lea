@@ -1,5 +1,6 @@
 using A3.Lea.Cycle1.WebApi;
 using A3.Lea.Cycle1.WebApi.MySql;
+using Microsoft.EntityFrameworkCore;
 
 var AllowAllOriginsInDev = "_allowAllOriginsInDev";
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +12,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
 // Configuration du cors pour le contexte dev
 builder.Services.AddCors(options =>
 {
@@ -20,6 +22,11 @@ builder.Services.AddCors(options =>
                           builder.WithOrigins("*");
                       });
 });
+
+// Configuration de EF sur MySQL
+builder.Services.AddDbContext<DatabaseContext>(options =>
+   options.UseMySQL(builder.Configuration.GetConnectionString("MySQLConnectionString")));
+
 
 var app = builder.Build();
 
@@ -49,14 +56,4 @@ app.UseStaticFiles(new StaticFileOptions()
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
-
-using (var databaseContext = new DatabaseContext())
-{
-    // Creates the database if not exists
-    databaseContext.Database.EnsureDeleted();
-    databaseContext.Database.EnsureCreated();
-    databaseContext.AjouterDonnees();
-}
-
-
 app.Run();
