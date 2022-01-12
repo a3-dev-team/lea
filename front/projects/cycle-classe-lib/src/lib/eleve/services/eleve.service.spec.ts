@@ -34,7 +34,7 @@ describe('EleveService', () => {
       expect(data).toBe(testData)
     );
 
-    const testRequest = httpTestingController.expectOne('http://localhost:3000/eleves');
+    const testRequest = httpTestingController.expectOne('https://localhost:7057/api/lea/cycle1/v1/eleves');
     expect(testRequest.request.method).toEqual('GET');
     testRequest.flush(testData);
 
