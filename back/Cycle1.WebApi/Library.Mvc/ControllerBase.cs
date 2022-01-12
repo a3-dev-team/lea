@@ -34,7 +34,7 @@ namespace A3.Library.Mvc
             throw new ProblemDetailsException((int)HttpStatusCode.InternalServerError, "Erreur inconnue");
         }
 
-        private IActionResult Ok<T>(Result<T> result)
+        private IActionResult GetActionResult<T>(Result<T> result)
         {
             if (result.IsValid)
             {
@@ -45,7 +45,7 @@ namespace A3.Library.Mvc
 
         public IActionResult GetActionResult<T>(Result<T> result)
         {
-            return this.Ok(result);
+            return this.GetActionResult(result);
         }
 
         public IActionResult PostActionResult<T>(Result<T> result, string? routeName = null)
@@ -59,12 +59,12 @@ namespace A3.Library.Mvc
 
         public IActionResult PutActionResult<T>(Result<T> result)
         {
-            return this.Ok(result);
+            return this.GetActionResult(result);
         }
 
         public IActionResult DeleteActionResult<T>(Result<T> result)
         {
-            return this.Ok(result);
+            return this.GetActionResult(result);
         }
     }
 
