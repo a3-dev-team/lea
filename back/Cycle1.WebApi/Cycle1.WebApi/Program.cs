@@ -1,4 +1,5 @@
 using A3.Lea.Cycle1.WebApi;
+
 var AllowAllOriginsInDev = "_allowAllOriginsInDev";
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
 // Configuration du cors pour le contexte dev
 builder.Services.AddCors(options =>
 {

@@ -21,5 +21,10 @@ jobs:
         working-directory: front
         run: |
           npm ci
+<<<<<<< HEAD:.github/workflows/angular-build-and-test.yml
           npm run build:ci 
           npm run test:ci
+=======
+          npm run build:ci --if-present
+          npm run test:ci --if-present
+>>>>>>> 904ea47f976ce12353bc405375ef47354dc03843:.github/workflows/actions-check-build-and-test.yml
