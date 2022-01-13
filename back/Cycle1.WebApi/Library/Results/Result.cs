@@ -1,5 +1,8 @@
 ﻿namespace A3.Library.Results
 {
+    /// <summary>
+    /// Classe représentant le résultat de l'execution d'un traitement
+    /// </summary>
     public class Result
     {
         private List<ErrorResult>? _errors;
@@ -18,7 +21,7 @@
             {
                 if (this._errors == null)
                 {
-                    this._errors = new List<ErrorResult>(resultat._errors.Count);
+                    this._errors = new List<ErrorResult>();
                 }
                 this._errors.AddRange(resultat._errors);
             }
@@ -53,6 +56,10 @@
         }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public sealed class Result<T> : Result
     {
         public T? Value { get; set; }

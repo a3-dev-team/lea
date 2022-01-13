@@ -18,6 +18,8 @@ namespace A3.Lea.Cycle1.WebApi.Controllers
         public IActionResult Erreur()
         {
             this.Logger.LogError(this.GetException(), "Une erreur non gérée est survenue");
+            // L'appel à Problem va faire appel au middleware de gestion des ProblemDetails
+            // qui va s'occuper de transformer l'erreur en ProblemDetails avec un StatutCode à 500 (Internal Server Error)
             return this.Problem();
         }
 

@@ -28,7 +28,11 @@ if (app.Environment.IsDevelopment())
 }
 else
 {
+    // Activiation du middleware de gestion des ProblemDetails
     app.UseProblemDetails();
+    // Activation du middleware de gestion des exceptions :
+    // Quand une exception non gérée par le code est trappée par le framework AspNetCore, il appel le controller derriere la route passé en paramètre.
+    // Cela permet d'ajouter du comportement.
     app.UseExceptionHandler("/erreur");
     app.UseHsts();
 }
