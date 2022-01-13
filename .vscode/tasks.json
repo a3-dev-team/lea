@@ -57,5 +57,22 @@
         "runOn": "folderOpen"
       }
     }
+    {
+      "label": "Run dotnet run",
+      "type": "shell",
+      "command": "dotnet run",
+      "windows": {
+        "command": "dotnet run"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}/back/Cycle1.WebApi/Cycle1.WebApi"
+      },
+      "presentation": {
+        "reveal": "always",
+      },
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
+    },
   ]
 }
