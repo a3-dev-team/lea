@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 
 namespace A3.Lea.Cycle1.WebApi.Controllers
 {
-    [ApiController]
+
     [Route("api/lea/cycle1/v1/eleves")]
     public class ElevesController : ControllerBase<ElevesController, IElevesService>
     {

@@ -10,6 +10,8 @@ namespace A3.Lea.Cycle1.WebApi.Core.Eleves
     /// </summary>
     public class ElevesProblemDetailsResolver : ProblemDetailsResolver
     {
+        protected override string ContextName => ElevesResources.NomContexte;
+
         protected override ProblemDetails ResolveProblemDetails(ErrorResult error)
         {
             return new ProblemDetails()

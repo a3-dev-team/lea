@@ -5,7 +5,6 @@ using Microsoft.Extensions.Logging;
 
 namespace A3.Lea.Cycle1.WebApi.Controllers
 {
-    [ApiController]
     [ApiExplorerSettings(IgnoreApi = true)]
     public class ErreurController : ControllerBase<ErreurController>
     {

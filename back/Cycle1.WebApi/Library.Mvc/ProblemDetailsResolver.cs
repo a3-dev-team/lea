@@ -1,4 +1,5 @@
-﻿using A3.Library.Results;
+﻿using System.Net;
+using A3.Library.Results;
 using Ardalis.GuardClauses;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,14 +11,19 @@ namespace A3.Library.Mvc
     public abstract class ProblemDetailsResolver : IProblemDetailsResolver
     {
         /// <summary>
+        /// Nom du contexte du <see cref="ProblemDetailsResolver"/>
+        /// </summary>
+        protected virtual string ContextName => string.Empty;
+
+        /// <summary>
         /// Identifiant de l'erreur de début
         /// </summary>
-        public int StartErrorId { get; }
+        protected int StartErrorId { get; }
 
         /// <summary>
         /// Identifiant de l'erreur de fin
         /// </summary>
-        public int EndErrorId { get; }
+        protected int EndErrorId { get; }
 
         /// <summary>
         /// Est ce que l'instance de resolver courante peut prendre en charge la résolution de l'identifiant d'erreur passé en paramètre en  <see cref="ProblemDetails" ?/>
@@ -29,7 +35,14 @@ namespace A3.Library.Mvc
             return errorId >= this.StartErrorId && errorId <= this.EndErrorId;
         }
 
-        protected abstract ProblemDetails ResolveProblemDetails(ErrorResult error);
+        protected virtual ProblemDetails ResolveProblemDetails(ErrorResult error)
+        {
+            return new ProblemDetails()
+            {
+                Detail = error.Message,
+                Status = (int)HttpStatusCode.BadRequest
+            };
+        }
 
         /// <summary>
         /// Tente la résolution du contenu du <see cref="Result"/> passé en paramètre en <see cref="ProblemDetails"/>

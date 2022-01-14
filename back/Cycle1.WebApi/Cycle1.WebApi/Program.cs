@@ -8,14 +8,14 @@ builder.Host.UseLogging();
 // Add services to the container.
 builder.Services.AddCycle1Services();
 builder.Services.AddProblemDetails();
-builder.Services.AddControllers();
+//builder.Services.AddControllers(options => options.Filters.Add(new AuthorizeFilter()));
 builder.Services.AddProblemDetailsConventions();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddCors(options => options.AddPolicy(name: allowAllOriginsInDev, builder => builder.WithOrigins("*")));
-
+//builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -36,8 +36,9 @@ else
     app.UseExceptionHandler("/erreur");
     app.UseHsts();
 }
-app.UseRouting();
 app.UseHttpsRedirection();
+app.UseRouting();
+//app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 app.Run();
