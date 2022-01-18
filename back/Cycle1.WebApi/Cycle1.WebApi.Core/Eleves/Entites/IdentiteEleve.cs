@@ -25,5 +25,10 @@ namespace A3.Lea.Cycle1.WebApi.Core.Eleves.Entites
             this.Niveau = niveau;
             this.Photo = photo;
         }
+
+        public bool EstUnGarcon()
+        {
+            return this.Sexe.Equals(Sexe.Masculin);
+        }
     }
 }

@@ -1,0 +1,47 @@
+name: .Net Core - SonarCloud
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - dev
+
+jobs:
+  build_test_sonar-scanner:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.2.0
+        with:
+          # Disabling shallow clone is recommended for improving relevancy of sonarqube reporting
+          fetch-depth: 0
+
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: "6.0.x"
+
+      - name: Install dependencies
+        working-directory: back/Cycle1.WebApi
+        run: dotnet restore Cycle1.WebApi.sln
+
+      - name: Sonarqube Begin
+        working-directory: back/Cycle1.WebApi
+        run: |
+          dotnet tool install --global dotnet-sonarscanner
+          dotnet sonarscanner begin /o:a3-dev-team /k:a3-dev-team_lea-back /d:sonar.login=${{ secrets.SONAR_TOKEN }} /s:$GITHUB_WORKSPACE/sonar-project.xml
+
+      - name: Build
+        working-directory: back/Cycle1.WebApi
+        run: dotnet build Cycle1.WebApi.sln
+
+      - name: Test
+        working-directory: back/Cycle1.WebApi
+        run: dotnet test Cycle1.WebApi.sln --collect:"XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
+        env:
+          ASPNETCORE_ENVIRONMENT: Development
+
+      - name: Sonarqube end
+        working-directory: back/Cycle1.WebApi
+        run: dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

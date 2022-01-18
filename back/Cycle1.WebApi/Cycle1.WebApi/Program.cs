@@ -31,11 +31,28 @@ else
     // Activiation du middleware de gestion des ProblemDetails
     app.UseProblemDetails();
     // Activation du middleware de gestion des exceptions :
-    // Quand une exception non gérée par le code est trappée par le framework AspNetCore, il appel le controller derriere la route passé en paramètre.
+    // Quand une exception non gï¿½rï¿½e par le code est trappï¿½e par le framework AspNetCore, il appel le controller derriere la route passï¿½ en paramï¿½tre.
     // Cela permet d'ajouter du comportement.
     app.UseExceptionHandler("/erreur");
     app.UseHsts();
 }
+
+// Pour la prise en charge de l'index.html Angular dans le sous-rÃ©pertoire wwwroot
+app.UseDefaultFiles();
+
+// Pour la prise en charge des fichiers static Angular
+app.UseStaticFiles(new StaticFileOptions()
+{
+    OnPrepareResponse = context =>
+    {
+        if (context.File.Name.Equals("index.html", StringComparison.Ordinal))
+        {
+            context.Context.Response.Headers.Add("Cache-Control", "no-cache, no-store");
+            context.Context.Response.Headers.Add("Expires", "-1");
+        }
+    }
+});
+
 app.UseHttpsRedirection();
 app.UseRouting();
 //app.UseAuthentication();

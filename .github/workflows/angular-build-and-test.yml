@@ -1,16 +1,11 @@
-name: Build & Test
+name: Angular - Build & Test
 
 on:
   workflow_dispatch:
   push:
-    branches:
-      - dev
-  pull_request:
-    branches:
-      - main
 
 jobs:
-  build:
+  build_test:
     runs-on: ubuntu-latest
 
     steps:
@@ -25,5 +20,5 @@ jobs:
         working-directory: front
         run: |
           npm ci
-          npm run build:ci --if-present
-          npm run test:ci --if-present
+          npm run build:ci 
+          npm run test:ci
