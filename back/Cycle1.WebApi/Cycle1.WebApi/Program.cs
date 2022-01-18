@@ -1,34 +1,40 @@
-using A3.Lea.Cycle1.WebApi;
+using A3.Lea.Cycle1.WebApi.Extensions;
+using Hellang.Middleware.ProblemDetails.Mvc;
 
-var AllowAllOriginsInDev = "_allowAllOriginsInDev";
+var allowAllOriginsInDev = "_allowAllOriginsInDev";
 var builder = WebApplication.CreateBuilder(args);
+builder.Host.UseLogging();
 
 // Add services to the container.
-builder.Services.AddCycle1Service();
-builder.Services.AddControllers();
+builder.Services.AddCycle1Services();
+builder.Services.AddProblemDetails();
+//builder.Services.AddControllers(options => options.Filters.Add(new AuthorizeFilter()));
+builder.Services.AddProblemDetailsConventions();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
-// Configuration du cors pour le contexte dev
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy(name: AllowAllOriginsInDev,
-                      builder =>
-                      {
-                          builder.WithOrigins("*");
-                      });
-});
-
+builder.Services.AddCors(options => options.AddPolicy(name: allowAllOriginsInDev, builder => builder.WithOrigins("*")));
+//builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    app.UseDeveloperExceptionPage();
     app.UseSwagger();
     app.UseSwaggerUI();
-    app.UseCors(AllowAllOriginsInDev);
+    app.UseCors(allowAllOriginsInDev);
+}
+else
+{
+    // Activiation du middleware de gestion des ProblemDetails
+    app.UseProblemDetails();
+    // Activation du middleware de gestion des exceptions :
+    // Quand une exception non g�r�e par le code est trapp�e par le framework AspNetCore, il appel le controller derriere la route pass� en param�tre.
+    // Cela permet d'ajouter du comportement.
+    app.UseExceptionHandler("/erreur");
+    app.UseHsts();
 }
 
 // Pour la prise en charge de l'index.html Angular dans le sous-répertoire wwwroot
@@ -48,6 +54,8 @@ app.UseStaticFiles(new StaticFileOptions()
 });
 
 app.UseHttpsRedirection();
+app.UseRouting();
+//app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 app.Run();

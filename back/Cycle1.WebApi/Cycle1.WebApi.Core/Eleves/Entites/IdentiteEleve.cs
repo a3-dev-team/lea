@@ -2,7 +2,7 @@
 
 namespace A3.Lea.Cycle1.WebApi.Core.Eleves.Entites
 {
-    public class CarteIdentiteEleve
+    public class IdentiteEleve
     {
         public int Id { get; }
 
@@ -16,7 +16,7 @@ namespace A3.Lea.Cycle1.WebApi.Core.Eleves.Entites
 
         public Niveau Niveau { get; }
 
-        public CarteIdentiteEleve(int id, string nom, string prenom, Sexe sexe, Niveau niveau, object? photo)
+        public IdentiteEleve(int id, string nom, string prenom, Sexe sexe, Niveau niveau, object? photo)
         {
             this.Id = id;
             this.Nom = nom;
