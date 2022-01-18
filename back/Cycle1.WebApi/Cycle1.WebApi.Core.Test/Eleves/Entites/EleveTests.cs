@@ -9,8 +9,6 @@ public class CarteIdentiteEleveTests
     public void EstGarcon_SexeMasculin_ReturnTrue()
     {
         IdentiteEleve identiteEleve = new IdentiteEleve(1, "Nom", "Prenom", Sexe.Masculin, Niveau.PetiteSection, null);
-
         Assert.True(identiteEleve.EstUnGarcon(), $"{identiteEleve.Sexe} devrait être un garçon");
-
     }
 }
