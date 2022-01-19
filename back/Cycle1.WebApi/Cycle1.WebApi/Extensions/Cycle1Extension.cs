@@ -1,7 +1,7 @@
 ﻿using A3.Lea.Cycle1.WebApi.Core.Classes;
 using A3.Lea.Cycle1.WebApi.Core.Eleves;
-using A3.Lea.Cycle1.WebApi.MySql.Classes;
-using A3.Lea.Cycle1.WebApi.MySql.Eleves;
+using A3.Lea.Cycle1.WebApi.Dal.MySql.Classes;
+using A3.Lea.Cycle1.WebApi.Dal.MySql.Eleves;
 
 namespace A3.Lea.Cycle1.WebApi.Extensions
 {

@@ -2,7 +2,7 @@
 
 namespace A3.Shared.WebApi.Dal.MySql.Users
 {
-    public class UsersDal : IUsersDal
+    public class UsersDalMySql : IUsersDal
     {
     }
 }
