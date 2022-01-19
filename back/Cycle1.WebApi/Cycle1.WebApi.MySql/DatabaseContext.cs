@@ -6,20 +6,18 @@ namespace A3.Lea.Cycle1.WebApi.MySql
 
     public class DatabaseContext : DbContext
     {
-        // public DbSet<Classe>? Classe { get; set; }
 
-        // public DbSet<Eleve>? Eleve { get; set; }
+        public DatabaseContext()
+        { }
 
-        // public DbSet<CarteIdentiteEleve>? CarteIdentiteEleve { get; set; }
+        public DatabaseContext(DbContextOptions<DatabaseContext> options)
+        : base(options)
+        { }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Classe>(entity =>
-            {
-                // entity.HasKey(c => c.Id);
-                // entity.Property(e => e.Nom).IsRequired();
-            });
 
             modelBuilder.Entity<CarteIdentiteEleve>(entity =>
             {
@@ -29,46 +27,42 @@ namespace A3.Lea.Cycle1.WebApi.MySql
                 .OnDelete(DeleteBehavior.SetNull);
             });
 
-            // modelBuilder.Entity<Eleve>(entity =>
-            // {
-            //     entity.HasKey(e => e.Id);
-            //     entity.HasOne(e => e.Classe)
-            //     .WithMany(c => c.Eleves);
-            // });
         }
 
         public void AjouterDonnees()
         {
-
-            this.Set<Classe>().Add(new Classe()
+            var classe1 = new Classe()
             {
                 Id = 1,
                 Nom = "Classe1"
-            });
-            this.Set<Classe>().Add(new Classe()
+            };
+            this.Set<Classe>().Add(classe1);
+
+            var classe2 = new Classe()
             {
                 Id = 2,
                 Nom = "Classe2"
-            });
+            };
+            this.Set<Classe>().Add(classe2);
 
 
             this.Set<CarteIdentiteEleve>().Add(new CarteIdentiteEleve()
             {
                 Nom = "GALLAIS",
                 Prenom = "Jonathan",
-                ClasseId = 1
+                ClasseId = classe1.Id
             });
             this.Set<CarteIdentiteEleve>().Add(new CarteIdentiteEleve()
             {
                 Nom = "DOLET",
                 Prenom = "Bertrand",
-                ClasseId = 1
+                ClasseId = classe1.Id
             });
             this.Set<CarteIdentiteEleve>().Add(new CarteIdentiteEleve()
             {
                 Nom = "DERUCHE",
                 Prenom = "Thomas",
-                ClasseId = 2
+                ClasseId = classe2.Id
             });
 
 

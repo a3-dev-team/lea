@@ -24,8 +24,13 @@ builder.Services.AddCors(options =>
 });
 
 // Configuration de EF sur MySQL
+string connectionString = builder.Configuration.GetConnectionString("MySQLConnectionString");
+//      MigrationAssembly : https://docs.microsoft.com/fr-fr/ef/core/managing-schemas/migrations/projects?tabs=dotnet-core-cli
+//      => Permet de simplifier la commande de génération des migrations lorsque le DbContext n'est pas dans l'assembly de démarrage
 builder.Services.AddDbContext<DatabaseContext>(options =>
-   options.UseMySQL(builder.Configuration.GetConnectionString("MySQLConnectionString")));
+   options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString), b => b.MigrationsAssembly("A3.Lea.Cycle1.WebApi"))
+   );
+
 
 
 var app = builder.Build();
@@ -33,6 +38,13 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    using (var serviceScope = app.Services.CreateScope())
+    {
+        DatabaseContext databaseContext = serviceScope.ServiceProvider.GetRequiredService<DatabaseContext>();
+        databaseContext.Database.EnsureDeleted();
+        databaseContext.Database.EnsureCreated();
+        databaseContext.AjouterDonnees();
+    }
     app.UseSwagger();
     app.UseSwaggerUI();
     app.UseCors(AllowAllOriginsInDev);
