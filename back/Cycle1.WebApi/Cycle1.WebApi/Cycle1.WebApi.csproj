@@ -21,6 +21,9 @@
     <ProjectReference Include="..\Cycle1.WebApi.Controllers\Cycle1.WebApi.Controllers.csproj" />
     <ProjectReference Include="..\Cycle1.WebApi.Core\Cycle1.WebApi.Core.csproj" />
     <ProjectReference Include="..\Cycle1.WebApi.MySql\Cycle1.WebApi.MySql.csproj" />
+    <ProjectReference Include="..\Shared.WebApi.Controllers\Shared.WebApi.Controllers.csproj" />
+    <ProjectReference Include="..\Shared.WebApi.Core\Shared.WebApi.Core.csproj" />
+    <ProjectReference Include="..\Shared.WebApi.Dal.MySql\Shared.WebApi.Dal.MySql.csproj" />
   </ItemGroup>
 
 </Project>

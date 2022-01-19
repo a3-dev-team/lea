@@ -3,18 +3,18 @@ using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace A3.Lea.Cycle1.WebApi.Controllers
+namespace A3.Shared.WebApi.Controllers
 {
     [ApiExplorerSettings(IgnoreApi = true)]
-    public class ErreurController : ControllerBase<ErreurController>
+    public class ErrorsController : ControllerBase<ErrorsController>
     {
         private Exception? GetException()
         {
             return this.HttpContext.Features.Get<IExceptionHandlerFeature>()?.Error;
         }
 
-        [Route("/erreur")]
-        public IActionResult Erreur()
+        [Route("/error")]
+        public IActionResult Error()
         {
             this.Logger.LogError(this.GetException(), "Une erreur non gérée est survenue");
             // L'appel à Problem va faire appel au middleware de gestion des ProblemDetails
@@ -22,6 +22,6 @@ namespace A3.Lea.Cycle1.WebApi.Controllers
             return this.Problem();
         }
 
-        public ErreurController(ILogger<ErreurController> logger) : base(logger) { }
+        public ErrorsController(ILogger<ErrorsController> logger) : base(logger) { }
     }
 }
