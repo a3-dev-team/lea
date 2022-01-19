@@ -31,7 +31,7 @@ else
     // Activiation du middleware de gestion des ProblemDetails
     app.UseProblemDetails();
     // Activation du middleware de gestion des exceptions :
-    // Quand une exception non g�r�e par le code est trapp�e par le framework AspNetCore, il appel le controller derriere la route pass� en param�tre.
+    // Quand une exception non gérée par le code est trapp�e par le framework AspNetCore, il appel le controller derriere la route passé en paramétre.
     // Cela permet d'ajouter du comportement.
     app.UseExceptionHandler("/erreur");
     app.UseHsts();
@@ -55,7 +55,7 @@ app.UseStaticFiles(new StaticFileOptions()
 
 app.UseHttpsRedirection();
 app.UseRouting();
-//app.UseAuthentication();
+//app.UseAuthentication()
 app.UseAuthorization();
 app.MapControllers();
 app.Run();

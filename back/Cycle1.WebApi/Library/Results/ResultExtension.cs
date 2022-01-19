@@ -26,5 +26,15 @@
         {
             return resultat.Value != null;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="result"></param>
+        /// <returns></returns>
+        public static string GetErrorsAsString(this Result result)
+        {
+            return string.Join(Environment.NewLine, result.GetErrors().Select(error => error.Message));
+        }
     }
 }

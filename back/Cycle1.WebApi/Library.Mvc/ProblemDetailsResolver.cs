@@ -35,11 +35,11 @@ namespace A3.Library.Mvc
             return errorId >= this.StartErrorId && errorId <= this.EndErrorId;
         }
 
-        protected virtual ProblemDetails ResolveProblemDetails(ErrorResult error)
+        protected virtual ProblemDetails ResolveProblemDetails(Result result)
         {
             return new ProblemDetails()
             {
-                Detail = error.Message,
+                Detail = result.GetErrorsAsString(),
                 Status = (int)HttpStatusCode.BadRequest
             };
         }
@@ -57,7 +57,7 @@ namespace A3.Library.Mvc
                 ErrorResult? error = result.GetErrors().FirstOrDefault();
                 if (error != null && this.IsResolvable(error.ErrorId))
                 {
-                    problemDetails = this.ResolveProblemDetails(error);
+                    problemDetails = this.ResolveProblemDetails(result);
                     return true;
                 }
             }
