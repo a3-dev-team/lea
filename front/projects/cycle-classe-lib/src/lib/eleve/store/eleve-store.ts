@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { shareReplay, Subject } from 'rxjs';
+import { merge, scan, shareReplay, Subject } from 'rxjs';
 import { Eleve } from '../entities/eleve';
 import { EleveService } from './../services/eleve.service';
 
@@ -15,6 +15,14 @@ export class EleveStore {
     .pipe(
       shareReplay(1)
     )
+
+  public elevesAvecAjouts = merge(
+    this.eleves$,
+    this.eleveAjouteAction$
+  ).pipe(
+    scan((acc: Eleve | Eleve[], value: Eleve | Eleve[]) => [...(acc as Eleve[]), (value as Eleve)]
+    )
+  )
 
   constructor(private readonly eleveService: EleveService) { }
 

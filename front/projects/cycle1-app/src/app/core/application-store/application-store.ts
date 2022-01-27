@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Eleve } from 'projects/cycle-classe-lib/src/lib/eleve/entities/eleve';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -16,14 +16,21 @@ export class ApplicationStore {
   private eleveSelectionneSubject = new BehaviorSubject<Eleve | null>(null);
   public eleveSelectionneState$ = this.eleveSelectionneSubject.asObservable();
 
+  private erreurLeveeSubject = new Subject<string>();
+  public erreurLeveeAction$ = this.erreurLeveeSubject.asObservable();
+
   constructor() { }
 
-  public MettreAJourEstModeValidationActif(estModeValidationActif: boolean) {
+  public mettreAJourEstModeValidationActif(estModeValidationActif: boolean) {
     this.estModeValidationActifSubject.next(estModeValidationActif);
   }
 
-  public MettreAJourEleveSelectionne(eleve: Eleve | null) {
+  public mettreAJourEleveSelectionne(eleve: Eleve | null) {
     this.eleveSelectionneSubject.next(eleve);
+  }
+
+  public leverErreur(erreur: string) {
+    this.erreurLeveeSubject.next(erreur);
   }
 
 }

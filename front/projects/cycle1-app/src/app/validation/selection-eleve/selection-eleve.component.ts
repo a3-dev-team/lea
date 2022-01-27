@@ -15,11 +15,11 @@ export class SelectionEleveComponent {
     private readonly router: Router,
     private readonly applicationStore: ApplicationStore,
     public readonly eleveStore: EleveStore) {
-    this.applicationStore.MettreAJourEleveSelectionne(null);
+    this.applicationStore.mettreAJourEleveSelectionne(null);
   }
 
   public onEleveSelection(eleve: Eleve) {
-    this.applicationStore.MettreAJourEleveSelectionne(eleve);
+    this.applicationStore.mettreAJourEleveSelectionne(eleve);
     this.router.navigateByUrl(`/validation/eleves/${eleve.id}/objectifs`)
   }
 
