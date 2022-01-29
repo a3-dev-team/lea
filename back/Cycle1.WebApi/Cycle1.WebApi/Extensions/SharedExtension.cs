@@ -8,12 +8,13 @@ namespace A3.Lea.Cycle1.WebApi.Extensions
         private static void AddUsersServices(IServiceCollection services)
         {
             ServicesExtensionHelper.AddServices<IUsersService, UsersService, IUsersDal, UsersDalMySql, UsersProblemDetailsResolver>
-                (services, (serviceProvider) => new UsersProblemDetailsResolver(0, 999));
+                (services, (serviceProvider) => new UsersProblemDetailsResolver());
         }
 
-        public static void AddSharedServices(IServiceCollection services)
+        public static IServiceCollection AddSharedServices(this IServiceCollection services)
         {
             AddUsersServices(services);
+            return services;
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using A3.Lea.Cycle1.WebApi.Core.Eleves.Entites;
+﻿using A3.Lea.Cycle1.WebApi.Core.Eleves.Modeles;
 using A3.Library.Mvc;
 using A3.Library.Results;
 using Microsoft.Extensions.Logging;
@@ -22,12 +22,12 @@ namespace A3.Lea.Cycle1.WebApi.Core.Eleves
             if (idClasse == 0)
             {
                 this.Logger.LogDebug("Identifiant de classe rejeté {0}", idClasse);
-                return new Result<List<IdentiteEleve>>().AddError(1, "Pas le droit de charger une classe");
+                return new Result<List<IdentiteEleve>>().AddError("Pas le droit de charger une classe");
             }
             if (idClasse == 1)
             {
                 this.Logger.LogDebug("Identifiant de classe rejeté {0}", idClasse);
-                return new Result<List<IdentiteEleve>>().AddError(1000, "Erreur non resolvable");
+                return new Result<List<IdentiteEleve>>().AddError("Erreur non resolvable");
             }
             this.Logger.LogDebug("Identifiant de classe accepté {0}", idClasse);
             return this._elevesDal.ObtenirListeIdentiteEleve(idClasse);

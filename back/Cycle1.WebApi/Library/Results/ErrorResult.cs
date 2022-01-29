@@ -8,22 +8,15 @@
         /// <summary>
         /// Constructeur
         /// </summary>
-        /// <param name="errorId">Identifiant de l'erreur</param>
-        /// <param name="message">Message de l'erreur</param>
-        public ErrorResult(int errorId, string message)
+        /// <param name="id">Identifiant de l'erreur</param>
+        public ErrorResult(string id)
         {
-            this.ErrorId = errorId;
-            this.Message = message;
+            this.Id = id;
         }
 
         /// <summary>
         /// Identifiant de l'erreur
         /// </summary>
-        public int ErrorId { get; }
-
-        /// <summary>
-        /// Message de l'erreur
-        /// </summary>
-        public string Message { get; }
+        public string Id { get; }
     }
 }

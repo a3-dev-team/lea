@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Library.Mvc\Library.Mvc.csproj" />
+    <ProjectReference Include="..\Shared.WebApi.Core\Shared.WebApi.Core.csproj" />
   </ItemGroup>
 
 </Project>

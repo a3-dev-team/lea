@@ -28,11 +28,11 @@
 
   <ItemGroup>
     <EmbeddedResource Update="Classes\ClassesResources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ClassesResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Eleves\ElevesResources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ElevesResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>

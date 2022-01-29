@@ -117,7 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ContextName" xml:space="preserve">
-    <value>Utilisateurs</value>
+  <data name="Users.DefaultContextLabel" xml:space="preserve">
+    <value>Gestion des utilisateurs</value>
+  </data>
+  <data name="Users_PE_UserSignIn.IncorrectSignInInformation" xml:space="preserve">
+    <value>Les informations de connexion sont incorrectes.</value>
+  </data>
+  <data name="Users_PE_UserSignIn.Title" xml:space="preserve">
+    <value>Connexion d'un utilisateur</value>
+  </data>
+  <data name="Users_VE_UserValidation.Detail" xml:space="preserve">
+    <value>Des erreurs de validation ont été rencontré au moment de l'enregistrement d'un utilisateur.</value>
+  </data>
+  <data name="Users_VE_UserValidation.Title" xml:space="preserve">
+    <value>Enregistrement d'un utilisateur</value>
+  </data>
+  <data name="Users_VE_UserValidation.UserName.Property" xml:space="preserve">
+    <value>Nom de l'utilisateur</value>
+  </data>
+  <data name="Users_VE_UserValidation.UserName:BadFormat" xml:space="preserve">
+    <value>Le nom de l'utilisateur contient des cara interdit.</value>
+  </data>
+  <data name="Users_VE_UserValidation.UserName:Empty" xml:space="preserve">
+    <value>Le nom de l'utilisateur doit être renseigné.</value>
   </data>
 </root>

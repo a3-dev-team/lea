@@ -117,4 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Tests.DefaultContextLabel" xml:space="preserve">
+    <value>ProblemDetailsResolver dans le cadre des TU</value>
+  </data>
+  <data name="Tests_PE_TestProblem.ErreurGeneric1" xml:space="preserve">
+    <value>L'erreur 1 est survenue dans le cadre des TU</value>
+  </data>
+  <data name="Tests_PE_TestProblem.ErreurGeneric2" xml:space="preserve">
+    <value>L'erreur 2 est survenue dans le cadre des TU</value>
+  </data>
+  <data name="Tests_VE_TestValidation.Detail" xml:space="preserve">
+    <value>Detail pour validation d'un user dans le cadre des TU</value>
+  </data>
+  <data name="Tests_VE_TestValidation.Title" xml:space="preserve">
+    <value>Titre pour validation d'un user dans le cadre des TU</value>
+  </data>
+  <data name="Tests_VE_TestValidation.User.Property" xml:space="preserve">
+    <value>Nom de la propriété ne passant pas la validation</value>
+  </data>
+  <data name="Tests_VE_TestValidation.User:Erreur1" xml:space="preserve">
+    <value>Erreur 1 pour la propriété ne passant pas la validation</value>
+  </data>
+  <data name="Tests_VE_TestValidation.User:Erreur2" xml:space="preserve">
+    <value>Erreur 2 pour la propriété ne passant pas la validation</value>
+  </data>
 </root>

@@ -1,4 +1,5 @@
-﻿using A3.Library.Mvc;
+﻿using System.Resources;
+using A3.Library.Mvc.ProblemsDetails;
 using A3.Library.Results;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,8 +10,11 @@ namespace A3.Lea.Cycle1.WebApi.Core.Classes
     /// </summary>
     public class ClassesProblemDetailsResolver : ProblemDetailsResolver
     {
-        protected override string ContextName => ClassesResources.NomContexte;
+        private const string CONTEXT_NAME = "classes";
 
-        public ClassesProblemDetailsResolver(int startErrorId, int endErrorId) : base(startErrorId, endErrorId) { }
+        protected override ResourceManager ResourceManager => ClassesResources.ResourceManager;
+
+        public ClassesProblemDetailsResolver() : base(CONTEXT_NAME) { }
+
     }
 }

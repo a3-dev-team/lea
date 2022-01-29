@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
 
-using A3ProblemDetailsFactory = A3.Library.Mvc.ProblemDetailsFactory;
+using A3ProblemDetailsFactory = A3.Library.Mvc.ProblemsDetails.ProblemDetailsFactory;
 using HellangProblemDetailsFactory = Hellang.Middleware.ProblemDetails.ProblemDetailsFactory;
 
 namespace A3.Lea.Cycle1.WebApi.Extensions

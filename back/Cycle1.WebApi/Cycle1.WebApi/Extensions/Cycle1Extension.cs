@@ -17,7 +17,7 @@ namespace A3.Lea.Cycle1.WebApi.Extensions
         private static void AddElevesServices(IServiceCollection services)
         {
             ServicesExtensionHelper.AddServices<IElevesService, ElevesService, IElevesDal, ElevesDalMySql, ElevesProblemDetailsResolver>
-                (services, (serviceProvider) => new ElevesProblemDetailsResolver(10000, 10999));
+                (services, (serviceProvider) => new ElevesProblemDetailsResolver());
         }
 
         /// <summary>
@@ -27,17 +27,18 @@ namespace A3.Lea.Cycle1.WebApi.Extensions
         private static void AddClassesServices(IServiceCollection services)
         {
             ServicesExtensionHelper.AddServices<IClassesService, ClassesService, IClassesDal, ClassesDalMySql, ClassesProblemDetailsResolver>
-                (services, (serviceProvider) => new ClassesProblemDetailsResolver(11000, 11999));
+                (services, (serviceProvider) => new ClassesProblemDetailsResolver());
         }
 
         /// <summary>
         /// Ajoute les services pour le domaine "cycle 1"
         /// </summary>
         /// <param name="services">Collection de service</param>
-        public static void AddCycle1Services(this IServiceCollection services)
+        public static IServiceCollection AddCycle1Services(this IServiceCollection services)
         {
             AddElevesServices(services);
             AddClassesServices(services);
+            return services;
         }
     }
 }

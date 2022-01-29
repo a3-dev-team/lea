@@ -34,7 +34,7 @@
         /// <returns></returns>
         public static string GetErrorsAsString(this Result result)
         {
-            return string.Join(Environment.NewLine, result.GetErrors().Select(error => error.Message));
+            return string.Join(Environment.NewLine, result.GetErrors().Select(error => error.Id));
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using A3.Library.Mvc;
+﻿using A3.Library.Mvc.ProblemsDetails;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace A3.Lea.Cycle1.WebApi.Extensions

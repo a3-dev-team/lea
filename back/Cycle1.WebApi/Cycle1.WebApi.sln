@@ -23,13 +23,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{684D92
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{57FD4472-48C5-406D-915F-75FB75712C3F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.WebApi.Controllers", "Shared.WebApi.Controllers\Shared.WebApi.Controllers.csproj", "{02B35A00-902A-4127-A9DB-72D94A114220}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared.WebApi.Controllers", "Shared.WebApi.Controllers\Shared.WebApi.Controllers.csproj", "{02B35A00-902A-4127-A9DB-72D94A114220}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.WebApi.Core", "Shared.WebApi.Core\Shared.WebApi.Core.csproj", "{C1A9E7B7-75AD-4A1D-B280-9F709DE89857}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared.WebApi.Core", "Shared.WebApi.Core\Shared.WebApi.Core.csproj", "{C1A9E7B7-75AD-4A1D-B280-9F709DE89857}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.WebApi.Dal.MySql", "Shared.WebApi.Dal.MySql\Shared.WebApi.Dal.MySql.csproj", "{19FBA1F2-544E-4FA4-B594-9B92BDAF7D81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared.WebApi.Dal.MySql", "Shared.WebApi.Dal.MySql\Shared.WebApi.Dal.MySql.csproj", "{19FBA1F2-544E-4FA4-B594-9B92BDAF7D81}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cycle1.WebApi.Dal.MySql", "Cycle1.WebApi.Dal.MySql\Cycle1.WebApi.Dal.MySql.csproj", "{AEEDD5CD-882D-40A2-9E32-B9991FA7E550}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cycle1.WebApi.Dal.MySql", "Cycle1.WebApi.Dal.MySql\Cycle1.WebApi.Dal.MySql.csproj", "{AEEDD5CD-882D-40A2-9E32-B9991FA7E550}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{133FE38C-8396-4F1C-A91A-1CD226EE4BA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Mvc.Test", "Library.Mvc.Test\Library.Mvc.Test.csproj", "{9AF679B6-7FDC-4DAD-B0FE-9D5BDF065EED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -77,6 +81,10 @@ Global
 		{AEEDD5CD-882D-40A2-9E32-B9991FA7E550}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AEEDD5CD-882D-40A2-9E32-B9991FA7E550}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AEEDD5CD-882D-40A2-9E32-B9991FA7E550}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AF679B6-7FDC-4DAD-B0FE-9D5BDF065EED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AF679B6-7FDC-4DAD-B0FE-9D5BDF065EED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AF679B6-7FDC-4DAD-B0FE-9D5BDF065EED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AF679B6-7FDC-4DAD-B0FE-9D5BDF065EED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -92,6 +100,8 @@ Global
 		{C1A9E7B7-75AD-4A1D-B280-9F709DE89857} = {684D928B-A3E2-445F-ABEC-9E211196C5CC}
 		{19FBA1F2-544E-4FA4-B594-9B92BDAF7D81} = {684D928B-A3E2-445F-ABEC-9E211196C5CC}
 		{AEEDD5CD-882D-40A2-9E32-B9991FA7E550} = {E4C49C80-6047-49BE-890F-07ACE82C0280}
+		{133FE38C-8396-4F1C-A91A-1CD226EE4BA3} = {A840AAF5-E4E6-49DF-8135-228146EDC7A2}
+		{9AF679B6-7FDC-4DAD-B0FE-9D5BDF065EED} = {133FE38C-8396-4F1C-A91A-1CD226EE4BA3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1C941BE5-635C-46CB-92C6-562561CC4FAB}

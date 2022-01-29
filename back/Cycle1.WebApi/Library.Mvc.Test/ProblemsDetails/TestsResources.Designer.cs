@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace A3.Shared.WebApi.Core.Users {
+namespace Library.Mvc.Test.ProblemsDetails {
     using System;
     
     
@@ -22,24 +22,24 @@ namespace A3.Shared.WebApi.Core.Users {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class UsersResources {
+    internal class TestsResources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal UsersResources() {
+        internal TestsResources() {
         }
         
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("A3.Shared.WebApi.Core.Users.UsersResources", typeof(UsersResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Library.Mvc.Test.ProblemsDetails.TestsResources", typeof(TestsResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -51,7 +51,7 @@ namespace A3.Shared.WebApi.Core.Users {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,74 +61,74 @@ namespace A3.Shared.WebApi.Core.Users {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gestion des utilisateurs.
+        ///   Looks up a localized string similar to ProblemDetailsResolver dans le cadre des TU.
         /// </summary>
-        public static string Users_DefaultContextLabel {
+        internal static string Tests_DefaultContextLabel {
             get {
-                return ResourceManager.GetString("Users.DefaultContextLabel", resourceCulture);
+                return ResourceManager.GetString("Tests.DefaultContextLabel", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Les informations de connexion sont incorrectes..
+        ///   Looks up a localized string similar to L&apos;erreur 1 est survenue dans le cadre des TU.
         /// </summary>
-        public static string Users_PE_UserSignIn_IncorrectSignInInformation {
+        internal static string Tests_PE_TestProblem_ErreurGeneric1 {
             get {
-                return ResourceManager.GetString("Users_PE_UserSignIn.IncorrectSignInInformation", resourceCulture);
+                return ResourceManager.GetString("Tests_PE_TestProblem.ErreurGeneric1", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Connexion d&apos;un utilisateur.
+        ///   Looks up a localized string similar to L&apos;erreur 2 est survenue dans le cadre des TU.
         /// </summary>
-        public static string Users_PE_UserSignIn_Title {
+        internal static string Tests_PE_TestProblem_ErreurGeneric2 {
             get {
-                return ResourceManager.GetString("Users_PE_UserSignIn.Title", resourceCulture);
+                return ResourceManager.GetString("Tests_PE_TestProblem.ErreurGeneric2", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Des erreurs de validation ont été rencontré au moment de l&apos;enregistrement d&apos;un utilisateur..
+        ///   Looks up a localized string similar to Detail pour validation d&apos;un user dans le cadre des TU.
         /// </summary>
-        public static string Users_VE_UserValidation_Detail {
+        internal static string Tests_VE_TestValidation_Detail {
             get {
-                return ResourceManager.GetString("Users_VE_UserValidation.Detail", resourceCulture);
+                return ResourceManager.GetString("Tests_VE_TestValidation.Detail", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enregistrement d&apos;un utilisateur.
+        ///   Looks up a localized string similar to Titre pour validation d&apos;un user dans le cadre des TU.
         /// </summary>
-        public static string Users_VE_UserValidation_Title {
+        internal static string Tests_VE_TestValidation_Title {
             get {
-                return ResourceManager.GetString("Users_VE_UserValidation.Title", resourceCulture);
+                return ResourceManager.GetString("Tests_VE_TestValidation.Title", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Le nom de l&apos;utilisateur contient des cara interdit..
+        ///   Looks up a localized string similar to Erreur 1 pour la propriété ne passant pas la validation.
         /// </summary>
-        public static string Users_VE_UserValidation_UserName_BadFormat {
+        internal static string Tests_VE_TestValidation_User_Erreur1 {
             get {
-                return ResourceManager.GetString("Users_VE_UserValidation.UserName:BadFormat", resourceCulture);
+                return ResourceManager.GetString("Tests_VE_TestValidation.User:Erreur1", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Le nom de l&apos;utilisateur doit être renseigné..
+        ///   Looks up a localized string similar to Erreur 2 pour la propriété ne passant pas la validation.
         /// </summary>
-        public static string Users_VE_UserValidation_UserName_Empty {
+        internal static string Tests_VE_TestValidation_User_Erreur2 {
             get {
-                return ResourceManager.GetString("Users_VE_UserValidation.UserName:Empty", resourceCulture);
+                return ResourceManager.GetString("Tests_VE_TestValidation.User:Erreur2", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nom de l&apos;utilisateur.
+        ///   Looks up a localized string similar to Nom de la propriété ne passant pas la validation.
         /// </summary>
-        public static string Users_VE_UserValidation_UserName_Property {
+        internal static string Tests_VE_TestValidation_User_Property {
             get {
-                return ResourceManager.GetString("Users_VE_UserValidation.UserName.Property", resourceCulture);
+                return ResourceManager.GetString("Tests_VE_TestValidation.User.Property", resourceCulture);
             }
         }
     }

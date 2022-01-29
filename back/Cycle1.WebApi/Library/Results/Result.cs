@@ -45,13 +45,13 @@
             return this;
         }
 
-        public Result AddError(int errorId, string message)
+        public Result AddError(string errorId)
         {
             if (this._errors == null)
             {
                 this._errors = new List<ErrorResult>();
             }
-            this._errors.Add(new ErrorResult(errorId, message));
+            this._errors.Add(new ErrorResult(errorId));
             return this;
         }
     }
@@ -64,9 +64,9 @@
     {
         public T? Value { get; set; }
 
-        public new Result<T> AddError(int errorId, string message)
+        public new Result<T> AddError(string errorId)
         {
-            _ = base.AddError(errorId, message);
+            _ = base.AddError(errorId);
             return this;
         }
 

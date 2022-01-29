@@ -1,6 +1,8 @@
 ﻿using System.Net;
+using System.Resources;
+using A3.Library.Mvc.Extensions;
+using A3.Library.Mvc.ProblemsDetails;
 using A3.Library.Results;
-using Hellang.Middleware.ProblemDetails;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -9,8 +11,13 @@ namespace A3.Library.Mvc
     /// <summary>
     /// ControllerBase
     /// </summary>
-    public abstract class ControllerBase : Microsoft.AspNetCore.Mvc.ControllerBase
+    public abstract class ControllerBase<TSelf> : ControllerBase
+        where TSelf : ControllerBase<TSelf>
     {
+        protected ILogger<TSelf> Logger { get; }
+
+        protected virtual ResourceManager? ResourceManager => null;
+
         public new ProblemDetailsFactory ProblemDetailsFactory
         {
             get
@@ -25,13 +32,14 @@ namespace A3.Library.Mvc
 
         private IActionResult Problem(Result result)
         {
+            this.Logger.LogResult(result, this.ResourceManager);
             ProblemDetails? problemDetails = this.ProblemDetailsFactory.CreateProblemDetails(result);
             if (problemDetails != null)
             {
                 return this.StatusCode(problemDetails.Status ?? (int)HttpStatusCode.BadRequest, problemDetails);
             }
 
-            throw new ProblemDetailsException((int)HttpStatusCode.InternalServerError, "Erreur inconnue");
+            throw new Hellang.Middleware.ProblemDetails.ProblemDetailsException((int)HttpStatusCode.InternalServerError, "Erreur inconnue");
         }
 
         private IActionResult ResultAsActionResult<T>(Result<T> result)
@@ -66,16 +74,6 @@ namespace A3.Library.Mvc
         {
             return this.ResultAsActionResult(result);
         }
-    }
-
-    /// <summary>
-    /// ControllerBase
-    /// </summary>
-    /// <typeparam name="TSelf">ControllerBase</typeparam>
-    public abstract class ControllerBase<TSelf> : ControllerBase
-        where TSelf : ControllerBase
-    {
-        protected ILogger<TSelf> Logger { get; }
 
         protected ControllerBase(ILogger<TSelf> logger)
         {
@@ -89,7 +87,7 @@ namespace A3.Library.Mvc
     /// <typeparam name="TSelf">ControllerBase</typeparam>
     /// <typeparam name="TService">Type de service lié au controller</typeparam>
     public abstract class ControllerBase<TSelf, TService> : ControllerBase<TSelf>
-        where TSelf : ControllerBase
+        where TSelf : ControllerBase<TSelf>
         where TService : class
     {
         protected TService Service { get; }
