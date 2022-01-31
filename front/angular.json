@@ -28,14 +28,16 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "projects/cycle1-app/src/favicon.ico",
-              "projects/cycle1-app/src/assets"
+              "projects/cycle1-app/src/assets",
+              "projects/cycle1-app/src/manifest.webmanifest"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "projects/cycle1-app/src/styles.scss",
               "projects/shared-lib/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "serviceWorker": true,
+            "ngswConfigPath": "projects/cycle1-app/ngsw-config.json"
           },
           "configurations": {
             "production": {
@@ -98,10 +100,10 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "projects/cycle1-app/src/favicon.ico",
-              "projects/cycle1-app/src/assets"
+              "projects/cycle1-app/src/assets",
+              "projects/cycle1-app/src/manifest.webmanifest"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "projects/cycle1-app/src/styles.scss"
             ],
             "scripts": []
