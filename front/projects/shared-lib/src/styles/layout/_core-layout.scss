@@ -1,41 +1,94 @@
-body,
-html {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+@use '../core-variables' as variables;
+
+
+*{
+  box-sizing: border-box;
 }
 
+  body,
+  html {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin:0;
+    
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+  }
+
+  // Cadre global
+app-root{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: variables.$core-theme-background-color;
+ 
+  >header {
+    border-radius: variables.$core-theme-border-radius variables.$core-theme-border-radius   0 0;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: variables.$core-theme-main-background-color ;
+  }
+  >:nth-child(3){
+    flex: 1;
+  }
+  >footer {
+        border-radius: 0 0 variables.$core-theme-border-radius variables.$core-theme-border-radius ;
+    background-color: variables.$core-theme-main-background-color;
+    padding: 0.25rem 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+// Fonctionnalité
 article {
   height: 100%;
-  max-width: 1200px;
   display: flex;
   flex-direction: column;
   justify-content: stretch;
   align-items: stretch;
+  row-gap: 0.25rem;
+  padding: 0 0.25rem;
 
   header {
-    padding: 0.25rem 0.5rem;
+    padding: 1rem;
     display: flex;
     flex-direction: row;
-    justify-content: stretch;
+    justify-content: center;
     align-items: center;
+    border-radius: variables.$core-theme-border-radius variables.$core-theme-border-radius 0 0;
+    background-color: variables.$core-theme-fonctionnality-background-color;
   }
   section {
-    padding: 0.25rem 0.5rem;
-    flex: 1;
+    padding: 0.5rem;
     display: flex;
     flex-direction: column;
-    justify-content: start;
-    align-items: start;
+    justify-content: flex-start;
+    align-items: flex-start;
     overflow-y: auto;
+    background-color: variables.$core-theme-fonctionnality-background-color;
   }
   footer {
-    padding: 0.25rem 0.5rem;
+    padding: 0.5rem;
     display: flex;
     flex-direction: row;
-    justify-content: stretch;
+    justify-content: center;
     align-items: center;
+    border-radius: 0 0 variables.$core-theme-border-radius variables.$core-theme-border-radius;
+    background-color: variables.$core-theme-fonctionnality-background-color;
+    column-gap: 0.25rem;
+  }
+
+  form{
+    input + label{
+      margin-top: 0.5rem;
+    }
   }
 }
