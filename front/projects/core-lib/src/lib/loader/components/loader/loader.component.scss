@@ -1,3 +1,4 @@
+@use "sass:math";
 $size: 100px;
 
 .container {
@@ -49,7 +50,7 @@ $size: 100px;
 .cube .sides * {
     box-sizing: border-box;
     background-color: var(--core-theme-main-background-color);
-    border: $size / 10 solid var(--core-theme-background-color);
+    border: math.div($size, 10) solid var(--core-theme-background-color);
 }
 
 @mixin side($name, $rotate, $i) {
@@ -68,11 +69,11 @@ $size: 100px;
         }
         20% {
             opacity: 1;
-            transform: #{$rotate} translateZ($size / 2);
+            transform: #{$rotate} translateZ(math.div($size, 2));
         }
         70% {
             opacity: 1;
-            transform: #{$rotate} translateZ($size / 2);
+            transform: #{$rotate} translateZ(math.div($size, 2));
         }
         90% {
             opacity: 1;
