@@ -13,8 +13,12 @@
         "projects/cycle-classe-lib/src/"
       ],
       "@cycle1-objectif-lib": [
-        "dist/cycle1-objectif-lib/cycle1-objectif-lib",
-        "dist/cycle1-objectif-lib"
+        "projects/cycle1-objectif-lib/src/public-api.ts",
+        "projects/cycle1-objectif-lib/src"
+      ],
+      "@core-lib": [
+        "projects/core-lib/src/public-api.ts",
+        "projects/core-lib/src"
       ]
     },
     "outDir": "./dist/out-tsc",

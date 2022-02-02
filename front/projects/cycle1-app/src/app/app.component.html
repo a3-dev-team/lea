@@ -6,17 +6,18 @@
             class="negative">
         <span>Accéder à la gestion des ressources</span>
     </button>
+    <button *ngIf="(authenticationManager.userSignedInState$ | async)"
+            class="negative"
+            (click)="authenticationManager.signOut()">
+        <span i18n>Se déconnecter</span>
+    </button>
 </header>
 <router-outlet></router-outlet>
 <footer>
     <h6>a3-dev-team - 2022 @copyright</h6>
 </footer>
 
-
-<section *ngIf="estErreurAfficheeState$ | async"
-         class="erreur core-flex-column-start-center">
-    <p>erreurLevee$ | async</p>
-    <button class="negative">
-        <span>Fermer</span>
-    </button>
-</section>
+<lib-error>
+</lib-error>
+<lib-loader>
+</lib-loader>

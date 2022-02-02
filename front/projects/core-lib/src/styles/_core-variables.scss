@@ -1,0 +1,27 @@
+$core-theme-background-color: var(--core-theme-background-color);
+$core-theme-color: var(--core-theme-color);
+$core-theme-main-background-color: var(--core-theme-main-background-color);
+$core-theme-main-color: var(--core-theme-main-color);
+$core-theme-fonctionnality-background-color: var(--core-theme-fonctionnality-background-color);
+$core-theme-fonctionnality-color: var(--core-theme-fonctionnality-color);
+$core-theme-border-radius: 0;
+
+// BUTTON
+
+$core-theme-button-background-color: var(--core-theme-main-background-color);
+$core-theme-button-disabled-background-color: var(--core-theme-main-disabled-background-color);
+$core-theme-button-color: var(--core-theme-fonctionnality-background-color);
+$core-theme-button-border-color: var(--core-theme-fonctionnality-background-color);
+
+$core-theme-button-border-radius: 0;
+$core-theme-button-height: 2rem;
+
+// INPUT
+
+$core-theme-input-background-color: var(--core-theme-fonctionnality-background-color);
+$core-theme-input-color: var(--core-theme-fonctionnality-color);
+$core-theme-input-border-color: var(--core-theme-main-background-color);
+$core-theme-input-height: 2rem;
+$core-theme-input-active-background-color: var(--core-theme-main-active-background-color);
+$core-theme-input-active-border-color: var(--core-theme-main-background-color);
+$core-theme-input-disabled-border-color: var(--core-theme-main-disabled-background-color);

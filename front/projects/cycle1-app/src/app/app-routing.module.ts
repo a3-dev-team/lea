@@ -1,16 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthenticationGuard } from 'projects/core-lib/src/lib/authentication/guards/authentication.guard';
 import { AccueilModule } from './accueil/accueil.module';
 
 const routes: Routes = [
   {
-    path:'', loadChildren:() => AccueilModule
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'accueil'
   },
   {
-    path:'validation', loadChildren:() => import('./validation/validation.module').then((module)=>module.ValidationModule)
+    path: 'accueil', loadChildren: () => AccueilModule, canActivate: [AuthenticationGuard],
   },
   {
-    path:'appreciation', loadChildren:() => import('./appreciation/appreciation.module').then((module)=>module.AppreciationModule)
+    path: 'validation', loadChildren: () => import('./validation/validation.module').then((module) => module.ValidationModule), canActivate: [AuthenticationGuard],
+  },
+  {
+    path: 'appreciation', loadChildren: () => import('./appreciation/appreciation.module').then((module) => module.AppreciationModule)
   }
 ];
 

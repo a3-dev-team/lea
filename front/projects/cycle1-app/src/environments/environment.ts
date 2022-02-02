@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  backUrl: 'https://localhost:7057'
+  tokenName: 'authentication_token',
+  backUrl: 'https://localhost:7057/api/lea/'
 };
 
 /*
