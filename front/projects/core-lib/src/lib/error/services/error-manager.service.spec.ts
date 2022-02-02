@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
-import { ErrorManagerService } from './error-manager.service';
+import { ErrorManager } from './error-manager.service';
 
 
 describe('ErrorManagerService', () => {
-  let service: ErrorManagerService;
+  let service: ErrorManager;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(ErrorManagerService);
+    service = TestBed.inject(ErrorManager);
   });
 
   it('should be created', () => {

@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
+import { LoaderManager } from './loader-manager.service';
 
-import { LoaderManagerService } from './loader-manager.service';
 
-describe('LoaderManagerService', () => {
-  let service: LoaderManagerService;
+describe('LoaderManager', () => {
+  let service: LoaderManager;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(LoaderManagerService);
+    service = TestBed.inject(LoaderManager);
   });
 
   it('should be created', () => {

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRoute, ActivatedRouteSnapshot, CanActivate, CanActivateChild, CanLoad, Route, Router, RouterStateSnapshot, UrlSegment, UrlTree } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, CanActivateChild, CanLoad, Route, Router, RouterStateSnapshot, UrlSegment, UrlTree } from '@angular/router';
 import { map, Observable, tap } from 'rxjs';
 import { UserSignIn } from '../models/user-sign-in.model';
 import { AuthenticationManager } from '../services/authentication-manager.service';
@@ -25,7 +25,6 @@ export class AuthenticationGuard implements CanActivate, CanActivateChild, CanLo
 
   constructor(
     private readonly router: Router,
-    private readonly activatedRoute: ActivatedRoute,
     private readonly authenticationManager: AuthenticationManager) { }
 
   canActivate(

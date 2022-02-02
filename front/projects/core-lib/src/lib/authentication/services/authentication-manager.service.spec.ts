@@ -1,13 +1,20 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
-import { AuthenticationManagerService } from './authentication-manager.service';
+import { RouterTestingModule } from '@angular/router/testing';
+import { AuthenticationManager } from './authentication-manager.service';
 
 
-describe('AuthenticationManagerService', () => {
-  let service: AuthenticationManagerService;
+describe('AuthenticationManager', () => {
+  let service: AuthenticationManager;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(AuthenticationManagerService);
+    TestBed.configureTestingModule({
+      imports: [
+        RouterTestingModule,
+        HttpClientTestingModule
+      ]
+    });
+    service = TestBed.inject(AuthenticationManager);
   });
 
   it('should be created', () => {

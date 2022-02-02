@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { AuthenticationManager } from 'projects/core-lib/src/lib/authentication/services/authentication-manager.service';
+import { AuthenticationManager } from '@core-lib';
 import { ApplicationStore } from './core/application-store/application-store';
+
 
 @Component({
   selector: 'app-root',

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CoreLibModule } from 'projects/core-lib/src/public-api';
+import { CoreLibModule } from '@core-lib';
 
 
 

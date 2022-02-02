@@ -5,8 +5,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AuthenticationInterceptor } from './authentication/interceptors/authentication.interceptor';
 import { SignInComponent } from './authentication/pages/sign-in/sign-in.component';
 import { CoreLibRoutingModule } from './core-lib-routing.module';
-import { ErrorComponent } from './erreur/components/erreur/error.component';
-import { ErrorInterceptor } from './erreur/interceptors/error.interceptor';
+import { ErrorComponent } from './error/components/error/error.component';
+import { ErrorInterceptor } from './error/interceptors/error.interceptor';
 import { LoaderComponent } from './loader/components/loader/loader.component';
 import { LoaderInterceptor } from './loader/interceptors/loader.interceptor';
 
