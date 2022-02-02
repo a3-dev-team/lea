@@ -1,43 +1,43 @@
-@use '../core-variables' as variables;
+@use "../core-variables" as variables;
 
-
-*{
+* {
   box-sizing: border-box;
 }
 
-  body,
-  html {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin:0;
-    
-    font-family: Roboto, "Helvetica Neue", sans-serif;
-  }
+body,
+html {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0;
 
-  // Cadre global
-app-root{
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+// Cadre global
+app-root {
   height: 100%;
   display: flex;
   flex-direction: column;
   background-color: variables.$core-theme-background-color;
- 
-  >header {
-    border-radius: variables.$core-theme-border-radius variables.$core-theme-border-radius   0 0;
+
+  > header {
+    border-radius: variables.$core-theme-border-radius variables.$core-theme-border-radius 0 0;
     padding: 0.5rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: variables.$core-theme-main-background-color ;
+    background-color: variables.$core-theme-main-background-color;
+    height: 3rem;
   }
-  >:nth-child(3){
+  > :nth-child(3) {
     flex: 1;
   }
-  >footer {
-        border-radius: 0 0 variables.$core-theme-border-radius variables.$core-theme-border-radius ;
+  > footer {
+    border-radius: 0 0 variables.$core-theme-border-radius variables.$core-theme-border-radius;
     background-color: variables.$core-theme-main-background-color;
     padding: 0.25rem 0.5rem;
     display: flex;
@@ -86,8 +86,8 @@ article {
     column-gap: 0.25rem;
   }
 
-  form{
-    input + label{
+  form {
+    input + label {
       margin-top: 0.5rem;
     }
   }

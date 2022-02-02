@@ -6,4 +6,4 @@ import { ObjectifModule } from './objectif/objectif.module';
   imports: [ObjectifModule],
   exports: [ObjectifModule],
 })
-export class Cycle1ObjectifLibModule {}
+export class Cycle1ObjectifLibModule { }
