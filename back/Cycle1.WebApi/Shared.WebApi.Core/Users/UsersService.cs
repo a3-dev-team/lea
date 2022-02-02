@@ -1,4 +1,5 @@
 ﻿using A3.Library.Mvc;
+using A3.Library.Mvc.Jwt;
 using A3.Library.Results;
 using A3.Shared.WebApi.Core.Users.Models;
 using Microsoft.Extensions.Logging;
@@ -9,18 +10,34 @@ namespace A3.Shared.WebApi.Core.Users
     {
         public UsersService(ILogger<UsersService> logger) : base(logger) { }
 
-        public Result<User?> GetUserForSignIn(SignInInformationDto signInInformation)
+        public Result<AuthenticatedUser?> GetAuthenticatedUser(SignInInformation signInInformation, JwtSettings jwtSettings)
         {
-            Result<User?> result = new Result<User?>();
-            string? userId = signInInformation.UserId;
+            Result<AuthenticatedUser?> result = new Result<AuthenticatedUser?>();
+            string? userLogin = signInInformation.Login;
 
-            if (string.IsNullOrWhiteSpace(userId) ||
-                !userId.Equals("bertrand", StringComparison.OrdinalIgnoreCase))
+            if (string.IsNullOrWhiteSpace(userLogin) ||
+                !userLogin.Equals("bdolet@isagri.fr", StringComparison.OrdinalIgnoreCase))
             {
                 result.AddError("Users_PE_UserSignIn.IncorrectSignInInformation");
                 return result;
             }
-            result.Value = new User(userId, userId);
+
+            User user = new User()
+            {
+                Id = 1,
+                FirstName = "Bertrand",
+                LastName = "DOLET",
+                Email = "bdolet@isagri.fr",
+                Role = "professeur"
+            };
+
+            result.Value = new AuthenticatedUser()
+            {
+                FirstName = "Bertrand",
+                LastName = "DOLET",
+                Role = "Professeur",
+                Token = JwtProvider.ProvideToken(user.ToClaims(), jwtSettings)
+            };
             return result;
         }
     }

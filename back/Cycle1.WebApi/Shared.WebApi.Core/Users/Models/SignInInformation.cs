@@ -2,10 +2,11 @@
 
 namespace A3.Shared.WebApi.Core.Users.Models
 {
-    public class SignInInformationDto
+    public class SignInInformation
     {
         [Required]
-        public string? UserId { get; set; }
+        [EmailAddress]
+        public string? Login { get; set; }
 
         [Required]
         public string? Password { get; set; }

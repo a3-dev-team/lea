@@ -39,7 +39,7 @@ namespace A3.Library.Mvc
                 return this.StatusCode(problemDetails.Status ?? (int)HttpStatusCode.BadRequest, problemDetails);
             }
 
-            throw new Hellang.Middleware.ProblemDetails.ProblemDetailsException((int)HttpStatusCode.InternalServerError, "Erreur inconnue");
+            throw new Hellang.Middleware.ProblemDetails.ProblemDetailsException((int)HttpStatusCode.InternalServerError, nameof(HttpStatusCode.InternalServerError));
         }
 
         private IActionResult ResultAsActionResult<T>(Result<T> result)
@@ -60,7 +60,7 @@ namespace A3.Library.Mvc
         {
             if (result.IsValid)
             {
-                return routeName != null ? this.CreatedAtRoute(routeName, result.Value) : this.StatusCode((int)HttpStatusCode.Created);
+                return routeName != null ? this.CreatedAtRoute(routeName, result.Value) : this.StatusCode((int)HttpStatusCode.Created, result.Value);
             }
             return this.Problem(result);
         }

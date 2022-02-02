@@ -1,7 +1,6 @@
 ﻿using System.Security.Claims;
-using A3.Shared.WebApi.Core.Users.Models;
 
-namespace A3.Shared.WebApi.Controllers.Users
+namespace A3.Shared.WebApi.Core.Users.Models
 {
     internal static class UserExtension
     {
@@ -9,9 +8,10 @@ namespace A3.Shared.WebApi.Controllers.Users
         {
             return new List<Claim>()
             {
-                new Claim(ClaimTypes.NameIdentifier, user.Id),
-                new Claim(ClaimTypes.Name, user.Name),
-                new Claim("ZOP", "sdfgsdg")
+                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                new Claim(ClaimTypes.Name, $"{user.FirstName} {user.LastName}"),
+                new Claim(ClaimTypes.Email, user.Email),
+                new Claim(ClaimTypes.Role, user.Role)
             };
         }
 

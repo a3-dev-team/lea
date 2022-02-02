@@ -59,5 +59,14 @@ namespace A3.Lea.Cycle1.WebApi.Core.Eleves {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo.
+        /// </summary>
+        public static string eleves_Prout_Teub {
+            get {
+                return ResourceManager.GetString("eleves_Prout.Teub", resourceCulture);
+            }
+        }
     }
 }
