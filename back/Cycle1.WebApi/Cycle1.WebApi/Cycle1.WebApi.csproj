@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -9,13 +9,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Hellang.Middleware.ProblemDetails" Version="6.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.1" />
+    <PackageReference Include="Serilog.AspNetCore" Version="4.1.0" />
+    <PackageReference Include="Serilog.Extensions.Hosting" Version="4.2.0" />
+    <PackageReference Include="Serilog.Extensions.Logging" Version="3.1.0" />
+    <PackageReference Include="Serilog.Sinks.Async" Version="1.5.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Cycle1.WebApi.Controllers\Cycle1.WebApi.Controllers.csproj" />
     <ProjectReference Include="..\Cycle1.WebApi.Core\Cycle1.WebApi.Core.csproj" />
-    <ProjectReference Include="..\Cycle1.WebApi.MySql\Cycle1.WebApi.MySql.csproj" />
+    <ProjectReference Include="..\Cycle1.WebApi.Dal.MySql\Cycle1.WebApi.Dal.MySql.csproj" />
+    <ProjectReference Include="..\Shared.WebApi.Controllers\Shared.WebApi.Controllers.csproj" />
+    <ProjectReference Include="..\Shared.WebApi.Core\Shared.WebApi.Core.csproj" />
+    <ProjectReference Include="..\Shared.WebApi.Dal.MySql\Shared.WebApi.Dal.MySql.csproj" />
   </ItemGroup>
 
 </Project>

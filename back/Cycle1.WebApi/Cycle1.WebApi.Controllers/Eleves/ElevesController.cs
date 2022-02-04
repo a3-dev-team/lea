@@ -1,25 +1,25 @@
-﻿
+﻿using System.Resources;
 using A3.Lea.Cycle1.WebApi.Core.Eleves;
-using A3.Lea.Cycle1.WebApi.Core.Eleves.Entites;
+using A3.Lea.Cycle1.WebApi.Core.Eleves.Modeles;
+using A3.Library.Mvc;
+using A3.Library.Results;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace A3.Lea.Cycle1.WebApi.Controllers
 {
-    [ApiController]
-    [Route("api/lea/cycle1/v1/eleves")]
-    public class ElevesController : ControllerBase
+    [Route(Routes.ControllerBaseRouteV1)]
+    public class ElevesController : ControllerBase<ElevesController, IElevesService>
     {
-        private readonly IElevesService _elevesService;
+        protected override ResourceManager? ResourceManager => ElevesResources.ResourceManager;
 
-        [HttpGet(Name = "GetListeCarteIdentiteEleve")]
-        public IEnumerable<CarteIdentiteEleve> Get()
+        [HttpGet("{idClasse}")]
+        public IActionResult Get(int idClasse)
         {
-            return _elevesService.GetListeCarteIdentiteEleve(1);
+            Result<List<IdentiteEleve>> resultat = this.Service.ObtenirListeIdentiteEleve(idClasse);
+            return this.GetActionResult(resultat);
         }
 
-        public ElevesController(IElevesService elevesService)
-        {
-            _elevesService = elevesService;
-        }
+        public ElevesController(IElevesService elevesService, ILogger<ElevesController> logger) : base(elevesService, logger) { }
     }
 }
