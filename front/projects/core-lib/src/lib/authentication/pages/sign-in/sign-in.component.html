@@ -1,0 +1,43 @@
+<article>
+    <header>
+        <h2 i18n>Authentification
+        </h2>
+    </header>
+    <section class="core-flex-column-start-center">
+        <form id="authenticationForm"
+              class="core-grid-1"
+              [formGroup]="authenticationFormGroup"
+              (ngSubmit)="onSubmit()">
+            <label for="loginInput"
+                   i18n>
+                Identifiant
+            </label>
+            <input id="loginInput"
+                   autocomplete="username"
+                   placeholder="Saisir son login"
+                   i18n
+                   formControlName="login" />
+            <label for="passwordInput"
+                   i18n>
+                Mot de passe
+            </label>
+            <input id="passwordInput"
+                   type="password"
+                   autocomplete="current-password"
+                   placeholder="Saisir son mot de passe"
+                   i18n
+                   formControlName="password" />
+            <label>
+
+            </label>
+        </form>
+    </section>
+    <footer>
+        <button type="submit"
+                form="authenticationForm"
+                i18n
+                [disabled]="!authenticationFormGroup.valid">
+            S'authentifier
+        </button>
+    </footer>
+</article>

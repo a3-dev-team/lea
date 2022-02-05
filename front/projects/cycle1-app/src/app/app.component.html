@@ -1,14 +1,23 @@
 <header>
-    <mat-toolbar color="primary"
-                 class="core-flex-row-space-between-center">
-        <span>Cycle 1</span>
-        <span>{{(applicationStore.eleveSelectionneState$ | async)?.prenom}} {{(applicationStore.eleveSelectionneState$ |
-            async)?.nom}}</span>
-        <button mat-flat-button
-                *ngIf="!(applicationStore.estModeValidationActifState$ | async)">
-            <mat-icon>settings</mat-icon>
-            <span>Accéder à la gestion des ressources</span>
-        </button>
-    </mat-toolbar>
+    <h1>Cycle 1</h1>
+    <span>{{(applicationStore.eleveSelectionneState$ | async)?.prenom}} {{(applicationStore.eleveSelectionneState$ |
+        async)?.nom}}</span>
+    <button *ngIf="!(applicationStore.estModeValidationActifState$ | async)"
+            class="negative">
+        <span>Accéder à la gestion des ressources</span>
+    </button>
+    <button *ngIf="(authenticationManager.userSignedInState$ | async)"
+            class="negative"
+            (click)="authenticationManager.signOut()">
+        <span i18n>Se déconnecter</span>
+    </button>
 </header>
 <router-outlet></router-outlet>
+<footer>
+    <h6>a3-dev-team - 2022 @copyright</h6>
+</footer>
+
+<lib-error>
+</lib-error>
+<lib-loader>
+</lib-loader>

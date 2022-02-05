@@ -10,6 +10,8 @@ import { BehaviorSubject } from 'rxjs';
 
 export class ApplicationStore {
 
+
+
   private estModeValidationActifSubject = new BehaviorSubject<boolean>(false);
   public estModeValidationActifState$ = this.estModeValidationActifSubject.asObservable();
 
