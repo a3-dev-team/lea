@@ -12,7 +12,11 @@
         <span i18n>Se déconnecter</span>
     </button>
 </header>
-<router-outlet></router-outlet>
+<section [@routeAnimations]="prepareRoute(outlet)">
+    <router-outlet #outlet="outlet">
+    </router-outlet>
+</section>
+
 <footer>
     <h6>a3-dev-team - 2022 @copyright</h6>
 </footer>

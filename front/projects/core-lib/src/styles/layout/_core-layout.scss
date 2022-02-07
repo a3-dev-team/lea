@@ -33,7 +33,7 @@ app-root {
     background-color: variables.$core-theme-main-background-color;
     height: 3rem;
   }
-  > :nth-child(3) {
+  > section {
     flex: 1;
   }
   > footer {
