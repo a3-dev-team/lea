@@ -56,7 +56,7 @@
       "runOptions": {
         "runOn": "folderOpen"
       }
-    }
+    },
     {
       "label": "Run dotnet run",
       "type": "shell",
