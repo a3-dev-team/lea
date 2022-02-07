@@ -3,11 +3,20 @@
 @use "./styles/display/core-flex";
 @use "./styles/responsive/core-responsive";
 @use "./styles/size/core-width";
+@use "./styles/size/core-height";
 @use "./styles/cursor/core-cursor";
+@use "./styles/text/core-text";
+@use "./styles/input/core-input";
+@use "./styles/button/core-button";
+@use "./styles/theme/core-theme";
 
 @forward "./styles/layout/core-layout";
 @forward "./styles/grid/core-grid";
 @forward "./styles/display/core-flex";
 @forward "./styles/responsive/core-responsive";
 @forward "./styles/size/core-width";
+@forward "./styles/size/core-height";
 @forward "./styles/cursor/core-cursor";
+@forward "./styles/text/core-text";
+@forward "./styles/input/core-input";
+@forward "./styles/button/core-button";

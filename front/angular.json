@@ -28,14 +28,16 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "projects/cycle1-app/src/favicon.ico",
-              "projects/cycle1-app/src/assets"
+              "projects/cycle1-app/src/assets",
+              "projects/cycle1-app/src/manifest.webmanifest"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "projects/cycle1-app/src/styles.scss",
-              "projects/shared-lib/src/styles.scss"
+              "projects/core-lib/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "serviceWorker": true,
+            "ngswConfigPath": "projects/cycle1-app/ngsw-config.json"
           },
           "configurations": {
             "production": {
@@ -98,11 +100,12 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "projects/cycle1-app/src/favicon.ico",
-              "projects/cycle1-app/src/assets"
+              "projects/cycle1-app/src/assets",
+              "projects/cycle1-app/src/manifest.webmanifest"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
-              "projects/cycle1-app/src/styles.scss"
+              "projects/cycle1-app/src/styles.scss",
+              "projects/core-lib/src/styles.scss"
             ],
             "scripts": []
           }
@@ -198,6 +201,37 @@
             "main": "projects/cycle1-objectif-lib/src/test.ts",
             "tsConfig": "projects/cycle1-objectif-lib/tsconfig.spec.json",
             "karmaConfig": "projects/cycle1-objectif-lib/karma.conf.js"
+          }
+        }
+      }
+    },
+    "core-lib": {
+      "projectType": "library",
+      "root": "projects/core-lib",
+      "sourceRoot": "projects/core-lib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/core-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/core-lib/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/core-lib/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/core-lib/src/test.ts",
+            "tsConfig": "projects/core-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/core-lib/karma.conf.js"
           }
         }
       }
