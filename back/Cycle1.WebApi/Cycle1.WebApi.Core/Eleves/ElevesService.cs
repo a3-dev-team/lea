@@ -17,7 +17,7 @@ namespace A3.Lea.Cycle1.WebApi.Core.Eleves
             this._elevesDal = elevesDal;
         }
 
-        public async Task<Result<List<Eleve>>> ObtenirListeIdentiteEleve(int idClasse)
+        public async Task<Result<List<Eleve>>> ObtenirListeEleve(int idClasse)
         {
             if (idClasse == 0)
             {
@@ -30,7 +30,7 @@ namespace A3.Lea.Cycle1.WebApi.Core.Eleves
                 return new Result<List<Eleve>>().AddError("Erreur non resolvable");
             }
             this.Logger.LogDebug("Identifiant de classe accepté {0}", idClasse);
-            return await this._elevesDal.ObtenirListeIdentiteEleve(idClasse);
+            return await this._elevesDal.ObtenirListeEleve(idClasse);
         }
 
     }

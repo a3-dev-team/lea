@@ -24,7 +24,7 @@ namespace A3.Lea.Cycle1.WebApi.Core.Eleves.Modeles
             this.Prenom = prenom;
             this.Sexe = sexe;
             this.Niveau = niveau;
-            this.Photo = photo;
+            //this.Photo = photo;
         }
 
         public bool EstUnGarcon()

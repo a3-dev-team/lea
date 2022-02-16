@@ -16,7 +16,7 @@ namespace A3.Lea.Cycle1.WebApi.Controllers
         [HttpGet("{idClasse}")]
         public async Task<IActionResult> Get(int idClasse)
         {
-            Result<List<Eleve>> resultat = await this.Service.ObtenirListeIdentiteEleve(idClasse);
+            Result<List<Eleve>> resultat = await this.Service.ObtenirListeEleve(idClasse);
             return this.GetActionResult(resultat);
         }
 
