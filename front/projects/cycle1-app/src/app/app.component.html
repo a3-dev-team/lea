@@ -12,7 +12,7 @@
         <span i18n>Se déconnecter</span>
     </button>
 </header>
-<section [@routeAnimations]="prepareRoute(outlet)">
+<section [@routeAnimations]="outlet?.isActivated && outlet?.activatedRoute ? outlet?.activatedRoute : null">
     <router-outlet #outlet="outlet">
     </router-outlet>
 </section>

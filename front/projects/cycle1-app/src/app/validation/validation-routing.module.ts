@@ -6,11 +6,14 @@ import { ValidationObjectifComponent } from './validation-objectif/validation-ob
 import { ValidationComponent } from './validation.component';
 
 const routes: Routes = [
-  { path: '', component: ValidationComponent,
+  {
+    path: '', component: ValidationComponent,
     children: [
-      {path: 'eleves', component: SelectionEleveComponent},
-      {path: 'eleves/:ideleve/objectifs', component: SelectionObjectifComponent},
-      {path: 'eleves/:ideleve/objectifs/:idobjectif', component: ValidationObjectifComponent}
+
+      { path: '', redirectTo: 'eleves', pathMatch: 'full' },
+      { path: 'eleves', component: SelectionEleveComponent },
+      { path: 'eleves/:ideleve/objectifs', component: SelectionObjectifComponent },
+      { path: 'eleves/:ideleve/objectifs/:idobjectif', component: ValidationObjectifComponent }
     ]
   }
 ];

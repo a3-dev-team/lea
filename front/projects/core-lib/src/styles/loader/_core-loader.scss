@@ -1,0 +1,100 @@
+@use "sass:math";
+$size: 100px;
+
+.core-loader {
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: 0 auto;
+    width: 50%;
+
+    @keyframes rotate {
+        0% {
+            transform: rotateX(-37.5deg) rotateY(45deg);
+        }
+        50% {
+            transform: rotateX(-37.5deg) rotateY(405deg);
+        }
+        100% {
+            transform: rotateX(-37.5deg) rotateY(405deg);
+        }
+    }
+
+    .core-loader-cube,
+    .core-loader-cube * {
+        position: absolute;
+        width: $size + 1;
+        height: $size + 1;
+    }
+
+    .core-loader-sides {
+        animation: rotate 3s ease infinite;
+        animation-delay: 0.8s;
+        transform-style: preserve-3d;
+        transform: rotateX(-37.5deg) rotateY(45deg);
+    }
+
+    .core-loader-cube .core-loader-sides * {
+        box-sizing: border-box;
+        background-color: var(--core-theme-main-background-color);
+        border: math.div($size, 10) solid var(--core-theme-background-color);
+    }
+
+    @mixin side($name, $rotate, $i) {
+        .#{$name} {
+            animation: #{$name}-animation 3s ease infinite;
+            animation-delay: $i * 100ms;
+            transform: #{$rotate} translateZ($size);
+            animation-fill-mode: forwards;
+            transform-origin: 50% 50%;
+        }
+
+        @keyframes #{$name}-animation {
+            0% {
+                opacity: 1;
+                transform: #{$rotate} translateZ($size);
+            }
+            20% {
+                opacity: 1;
+                transform: #{$rotate} translateZ(math.div($size, 2));
+            }
+            70% {
+                opacity: 1;
+                transform: #{$rotate} translateZ(math.div($size, 2));
+            }
+            90% {
+                opacity: 1;
+                transform: #{$rotate} translateZ($size);
+            }
+            100% {
+                opacity: 1;
+                transform: #{$rotate} translateZ($size);
+            }
+        }
+    }
+
+    .core-loader-cube .core-loader-sides {
+        @include side("core-loader-side-top", rotateX(90deg), 0);
+        @include side("core-loader-side-bottom", rotateX(-90deg), 0);
+        @include side("core-loader-side-front", rotateY(0deg), 1);
+        @include side("core-loader-side-back", rotateY(-180deg), 1);
+        @include side("core-loader-side-left", rotateY(-90deg), 1);
+        @include side("core-loader-side-right", rotateY(90deg), 1);
+    }
+
+    .core-loader-text {
+        margin-top: $size * 3;
+        color: var(--core-theme-color);
+        font-size: large;
+        width: 100%;
+        font-weight: 500;
+        text-align: center;
+    }
+}

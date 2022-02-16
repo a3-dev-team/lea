@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { AuthenticationManager } from '@core-lib';
 import { slideInAnimation } from './app.animation';
 import { ApplicationStore } from './core/application-store/application-store';
@@ -19,7 +18,4 @@ export class AppComponent {
     public readonly authenticationManager: AuthenticationManager,
     public readonly applicationStore: ApplicationStore) { }
 
-  public prepareRoute(outlet: RouterOutlet) {
-    return outlet?.activatedRoute;
-  }
 }

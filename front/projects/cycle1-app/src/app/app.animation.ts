@@ -2,6 +2,26 @@ import { animate, animateChild, group, query, style, transition, trigger } from 
 
 export const slideInAnimation =
   trigger('routeAnimations', [
+    transition('void <=> *', [
+      style({ position: 'relative' }),
+      query(':enter', [
+        style({
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%'
+        })
+      ]),
+      query(':enter', [
+        style({ left: '-100%' })
+      ]),
+      group([
+        query(':enter', [
+          animate('300ms ease-out', style({ left: '0%' }))
+        ])
+      ]),
+      query(':enter', animateChild()),
+    ]),
     transition('* <=> *', [
       style({ position: 'relative' }),
       query(':enter, :leave', [

@@ -5,15 +5,42 @@
   <meta charset="utf-8">
   <title>Lea - Cycle 1</title>
   <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="manifest" href="manifest.webmanifest">
-  <meta name="theme-color" content="#1976d2">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+  <link rel="icon"
+        type="image/x-icon"
+        href="favicon.ico">
+  <link rel="manifest"
+        href="manifest.webmanifest">
+  <meta name="theme-color"
+        content="#1976d2">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
 </head>
 
 <body class="mat-typography">
-  <app-root></app-root>
+
+  <app-root>
+    <section class="core-loader core-height-100 core-width-100 core-flex-column-center-center">
+      <div class="core-loader-cube">
+        <div class="core-loader-sides">
+          <div class="core-loader-side-top"></div>
+          <img class="core-loader-side-right"
+               src="assets/icons/icon-512x512.png" />
+          <img class="core-loader-side-left"
+               src="assets/icons/icon-512x512.png" />
+          <img class="core-loader-side-front"
+               src="assets/icons/icon-512x512.png" />
+          <img class="core-loader-side-back"
+               src="assets/icons/icon-512x512.png" />
+          <div class="core-loader-side-bottom"></div>
+        </div>
+      </div>
+      <footer class="core-loader-text">
+        <span>Chargement de l'application</span>
+      </footer>
+    </section>
+  </app-root>
   <noscript>Please enable JavaScript to continue using this application.</noscript>
 </body>
 

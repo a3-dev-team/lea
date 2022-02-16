@@ -1,20 +1,20 @@
 <section *ngIf="loaderManager.isLoadingState$ | async"
-         class="core-height-100 core-width-100 core-flex-column-center-center container ">
-    <div class="cube">
-        <div class="sides">
-            <div class="top"></div>
-            <img class="right"
-                 src="assets/icons/icon-512x512.png" />
-            <img class="left"
-                 src="assets/icons/icon-512x512.png" />
-            <img class="front"
-                 src="assets/icons/icon-512x512.png" />
-            <img class="back"
-                 src="assets/icons/icon-512x512.png" />
-            <div class="bottom"></div>
-        </div>
-    </div>
-    <footer class="text">
-        <span>Chargement ...</span>
-    </footer>
+         class="core-height-100 core-width-100 core-flex-column-center-center core-loader">
+     <div class="core-loader-cube">
+          <div class="core-loader-sides">
+               <div class="core-loader-side-top"></div>
+               <img class="core-loader-side-right"
+                    src="assets/icons/icon-512x512.png" />
+               <img class="core-loader-side-left"
+                    src="assets/icons/icon-512x512.png" />
+               <img class="core-loader-side-front"
+                    src="assets/icons/icon-512x512.png" />
+               <img class="core-loader-side-back"
+                    src="assets/icons/icon-512x512.png" />
+               <div class="core-loader-side-bottom"></div>
+          </div>
+     </div>
+     <footer class="core-loader-text">
+          <span>Chargement ...</span>
+     </footer>
 </section>
