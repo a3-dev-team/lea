@@ -1,5 +1,5 @@
 ﻿using A3.Shared.WebApi.Core.Users;
-using A3.Shared.WebApi.Dal.MySql.Users;
+using A3.Shared.WebApi.Dal.Users;
 
 namespace A3.Lea.Cycle1.WebApi.Extensions
 {
@@ -7,7 +7,7 @@ namespace A3.Lea.Cycle1.WebApi.Extensions
     {
         private static void AddUsersServices(IServiceCollection services)
         {
-            ServicesExtensionHelper.AddServices<IUsersService, UsersService, IUsersDal, UsersDalMySql, UsersProblemDetailsResolver>
+            ServicesExtensionHelper.AddServices<IUsersService, UsersService, IUsersDal, UsersDal, UsersProblemDetailsResolver>
                 (services, (serviceProvider) => new UsersProblemDetailsResolver());
         }
 

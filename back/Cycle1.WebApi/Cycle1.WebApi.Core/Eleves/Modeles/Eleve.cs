@@ -2,6 +2,14 @@
 {
     public class Eleve
     {
+        public int Id { get; set; }
+
+        public string? Nom { get; set; }
+
+        public string? Prenom { get; set; }
+
+        public Classe? Classe { get; set; }
+        public int? ClasseId { get; set; }
 
     }
 }

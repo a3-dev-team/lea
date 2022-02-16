@@ -1,4 +1,4 @@
-using A3.Lea.Cycle1.WebApi.Core.Eleves.Entites;
+using A3.Lea.Cycle1.WebApi.Core.Eleves.Modeles;
 using Microsoft.EntityFrameworkCore;
 
 namespace A3.Lea.Cycle1.WebApi.MySql
@@ -19,11 +19,11 @@ namespace A3.Lea.Cycle1.WebApi.MySql
             base.OnModelCreating(modelBuilder);
 
 
-            modelBuilder.Entity<CarteIdentiteEleve>(entity =>
+            modelBuilder.Entity<Eleve>(entity =>
             {
                 // La suppression d'un classe n'entraine pas la suppression des élèves associés.
-                entity.HasOne(c => c.Classe)
-                .WithMany(c => c.CarteIdentiteEleves)
+                entity.HasOne(e => e.Classe)
+                .WithMany(e => e.Eleves)
                 .OnDelete(DeleteBehavior.SetNull);
             });
 
@@ -46,19 +46,19 @@ namespace A3.Lea.Cycle1.WebApi.MySql
             this.Set<Classe>().Add(classe2);
 
 
-            this.Set<CarteIdentiteEleve>().Add(new CarteIdentiteEleve()
+            this.Set<Eleve>().Add(new Eleve()
             {
                 Nom = "GALLAIS",
                 Prenom = "Jonathan",
                 ClasseId = classe1.Id
             });
-            this.Set<CarteIdentiteEleve>().Add(new CarteIdentiteEleve()
+            this.Set<Eleve>().Add(new Eleve()
             {
                 Nom = "DOLET",
                 Prenom = "Bertrand",
                 ClasseId = classe1.Id
             });
-            this.Set<CarteIdentiteEleve>().Add(new CarteIdentiteEleve()
+            this.Set<Eleve>().Add(new Eleve()
             {
                 Nom = "DERUCHE",
                 Prenom = "Thomas",

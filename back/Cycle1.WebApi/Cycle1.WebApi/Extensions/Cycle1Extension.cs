@@ -1,7 +1,7 @@
 ﻿using A3.Lea.Cycle1.WebApi.Core.Classes;
 using A3.Lea.Cycle1.WebApi.Core.Eleves;
-using A3.Lea.Cycle1.WebApi.Dal.MySql.Classes;
-using A3.Lea.Cycle1.WebApi.Dal.MySql.Eleves;
+using A3.Lea.Cycle1.WebApi.Dal.Classes;
+using A3.Lea.Cycle1.WebApi.Dal.Eleves;
 
 namespace A3.Lea.Cycle1.WebApi.Extensions
 {
@@ -16,7 +16,7 @@ namespace A3.Lea.Cycle1.WebApi.Extensions
         /// <param name="services"></param>
         private static void AddElevesServices(IServiceCollection services)
         {
-            ServicesExtensionHelper.AddServices<IElevesService, ElevesService, IElevesDal, ElevesDalMySql, ElevesProblemDetailsResolver>
+            ServicesExtensionHelper.AddServices<IElevesService, ElevesService, IElevesDal, ElevesDal, ElevesProblemDetailsResolver>
                 (services, (serviceProvider) => new ElevesProblemDetailsResolver());
         }
 
@@ -26,7 +26,7 @@ namespace A3.Lea.Cycle1.WebApi.Extensions
         /// <param name="services">Collection de service</param>
         private static void AddClassesServices(IServiceCollection services)
         {
-            ServicesExtensionHelper.AddServices<IClassesService, ClassesService, IClassesDal, ClassesDalMySql, ClassesProblemDetailsResolver>
+            ServicesExtensionHelper.AddServices<IClassesService, ClassesService, IClassesDal, ClassesDal, ClassesProblemDetailsResolver>
                 (services, (serviceProvider) => new ClassesProblemDetailsResolver());
         }
 

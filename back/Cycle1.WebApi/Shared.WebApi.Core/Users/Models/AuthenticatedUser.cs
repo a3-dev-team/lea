@@ -6,7 +6,7 @@
 
         public string LastName { get; init; } = string.Empty;
 
-        public string Email { get; set; }
+        public string Email { get; set; } = string.Empty;
 
         public string Role { get; init; } = string.Empty;
 

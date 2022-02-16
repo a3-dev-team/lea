@@ -17,20 +17,21 @@ namespace A3.Lea.Cycle1.WebApi.Core.Eleves
             this._elevesDal = elevesDal;
         }
 
-        public Result<List<IdentiteEleve>> ObtenirListeIdentiteEleve(int idClasse)
+        public async Task<Result<List<Eleve>>> ObtenirListeIdentiteEleve(int idClasse)
         {
             if (idClasse == 0)
             {
                 this.Logger.LogDebug("Identifiant de classe rejeté {0}", idClasse);
-                return new Result<List<IdentiteEleve>>().AddError("Pas le droit de charger une classe");
+                return new Result<List<Eleve>>().AddError("Pas le droit de charger une classe");
             }
             if (idClasse == 1)
             {
                 this.Logger.LogDebug("Identifiant de classe rejeté {0}", idClasse);
-                return new Result<List<IdentiteEleve>>().AddError("Erreur non resolvable");
+                return new Result<List<Eleve>>().AddError("Erreur non resolvable");
             }
             this.Logger.LogDebug("Identifiant de classe accepté {0}", idClasse);
-            return this._elevesDal.ObtenirListeIdentiteEleve(idClasse);
+            return await this._elevesDal.ObtenirListeIdentiteEleve(idClasse);
         }
+
     }
 }

@@ -24,10 +24,10 @@
   <ItemGroup>
     <ProjectReference Include="..\Cycle1.WebApi.Controllers\Cycle1.WebApi.Controllers.csproj" />
     <ProjectReference Include="..\Cycle1.WebApi.Core\Cycle1.WebApi.Core.csproj" />
-    <ProjectReference Include="..\Cycle1.WebApi.Dal.MySql\Cycle1.WebApi.Dal.MySql.csproj" />
+    <ProjectReference Include="..\Cycle1.WebApi.Dal\Cycle1.WebApi.Dal.csproj" />
     <ProjectReference Include="..\Shared.WebApi.Controllers\Shared.WebApi.Controllers.csproj" />
     <ProjectReference Include="..\Shared.WebApi.Core\Shared.WebApi.Core.csproj" />
-    <ProjectReference Include="..\Shared.WebApi.Dal.MySql\Shared.WebApi.Dal.MySql.csproj" />
+    <ProjectReference Include="..\Shared.WebApi.Dal\Shared.WebApi.Dal.csproj" />
   </ItemGroup>
 
 </Project>

@@ -27,9 +27,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared.WebApi.Controllers",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared.WebApi.Core", "Shared.WebApi.Core\Shared.WebApi.Core.csproj", "{C1A9E7B7-75AD-4A1D-B280-9F709DE89857}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared.WebApi.Dal.MySql", "Shared.WebApi.Dal.MySql\Shared.WebApi.Dal.MySql.csproj", "{19FBA1F2-544E-4FA4-B594-9B92BDAF7D81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared.WebApi.Dal", "Shared.WebApi.Dal\Shared.WebApi.Dal.csproj", "{19FBA1F2-544E-4FA4-B594-9B92BDAF7D81}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cycle1.WebApi.Dal.MySql", "Cycle1.WebApi.Dal.MySql\Cycle1.WebApi.Dal.MySql.csproj", "{AEEDD5CD-882D-40A2-9E32-B9991FA7E550}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cycle1.WebApi.Dal", "Cycle1.WebApi.Dal\Cycle1.WebApi.Dal.csproj", "{AEEDD5CD-882D-40A2-9E32-B9991FA7E550}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{133FE38C-8396-4F1C-A91A-1CD226EE4BA3}"
 EndProject

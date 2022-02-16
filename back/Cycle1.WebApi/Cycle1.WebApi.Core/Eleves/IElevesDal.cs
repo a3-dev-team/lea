@@ -8,6 +8,6 @@ namespace A3.Lea.Cycle1.WebApi.Core.Eleves
     /// </summary>
     public interface IElevesDal
     {
-        Result<List<IdentiteEleve>> ObtenirListeIdentiteEleve(int idClasse);
+        Task<Result<List<Eleve>>> ObtenirListeEleve(int idClasse);
     }
 }
