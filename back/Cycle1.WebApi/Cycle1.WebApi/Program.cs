@@ -28,8 +28,6 @@ builder.Services.AddDbContext<DatabaseContext>(options =>
    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString), b => b.MigrationsAssembly("A3.Lea.Cycle1.WebApi"))
    );
 
-
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
