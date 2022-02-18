@@ -1,9 +1,8 @@
 using A3.Lea.Cycle1.WebApi.Core.Eleves.Modeles;
 using Microsoft.EntityFrameworkCore;
 
-namespace A3.Lea.Cycle1.WebApi.MySql
+namespace A3.Lea.Cycle1.WebApi.Dal
 {
-
     public class DatabaseContext : DbContext
     {
 

@@ -1,7 +1,7 @@
+using A3.Lea.Cycle1.WebApi.Dal;
 using A3.Lea.Cycle1.WebApi.Extensions;
 using Hellang.Middleware.ProblemDetails.Mvc;
 using Microsoft.AspNetCore.Mvc.Authorization;
-using A3.Lea.Cycle1.WebApi.MySql;
 using Microsoft.EntityFrameworkCore;
 
 var allowAllOriginsInDev = "_allowAllOriginsInDev";
@@ -25,10 +25,19 @@ string connectionString = builder.Configuration.GetConnectionString("MySQLConnec
 //      MigrationAssembly : https://docs.microsoft.com/fr-fr/ef/core/managing-schemas/migrations/projects?tabs=dotnet-core-cli
 //      => Permet de simplifier la commande de génération des migrations lorsque le DbContext n'est pas dans l'assembly de démarrage
 builder.Services.AddDbContext<DatabaseContext>(options =>
-   options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString), b => b.MigrationsAssembly("A3.Lea.Cycle1.WebApi"))
+   options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString), b => b.MigrationsAssembly("A3.Lea.Cycle1.WebApi")),
+   ServiceLifetime.Singleton
    );
 
 var app = builder.Build();
+
+using (var serviceScope = app.Services.CreateScope())
+{
+    DatabaseContext databaseContext = serviceScope.ServiceProvider.GetRequiredService<DatabaseContext>();
+    databaseContext.Database.EnsureDeleted();
+    databaseContext.Database.EnsureCreated();
+    databaseContext.AjouterDonnees();
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -47,13 +56,8 @@ else
        .UseExceptionHandler("/error")
        .UseHsts();
 }
-using (var serviceScope = app.Services.CreateScope())
-{
-    DatabaseContext databaseContext = serviceScope.ServiceProvider.GetRequiredService<DatabaseContext>();
-    databaseContext.Database.EnsureDeleted();
-    databaseContext.Database.EnsureCreated();
-    databaseContext.AjouterDonnees();
-}
+
+
 
 app.UseDefaultFiles()                      // Pour la prise en charge de l'index.html Angular dans le sous-répertoire wwwroot
    .UseStaticFiles(new StaticFileOptions() // Pour la prise en charge des fichiers static Angular

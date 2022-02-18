@@ -1,6 +1,5 @@
 ﻿using A3.Lea.Cycle1.WebApi.Core.Eleves;
 using A3.Lea.Cycle1.WebApi.Core.Eleves.Modeles;
-using A3.Lea.Cycle1.WebApi.MySql;
 using A3.Library.Mvc;
 using A3.Library.Results;
 using Microsoft.EntityFrameworkCore;
