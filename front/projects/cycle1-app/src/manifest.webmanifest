@@ -4,9 +4,9 @@
   "theme_color": "#998017",
   "background_color": "#322e2f",
   "display": "standalone",
-  "scope": "./",
+  "scope": "/",
   "id": "/",
-  "start_url": "http://localhost:4200/",
+  "start_url": "/",
   "icons": [
     {
       "src": "assets/icons/icon-72x72.png",
