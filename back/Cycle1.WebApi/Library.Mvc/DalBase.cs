@@ -49,24 +49,26 @@ namespace A3.Library.Mvc
             this.DbContext.Set<T>().Remove(entity);
         }
 
-        public async Task CreateAndSave(T entity, bool saveChanges = true)
+        public async Task CreateAndSaveAsync(T entity, bool saveChanges = true)
         {
             this.DbContext.Set<T>().Add(entity);
             await this.SaveAsync();
         }
 
-        public async Task CreateAndSave<T1>(T1 entity)
+        public async Task CreateAndSaveAsync<T1>(T1 entity)
         where T1 : class
         {
             this.DbContext.Set<T1>().Add(entity);
             await this.SaveAsync();
         }
 
-        public async Task UpdateAndSave(T entity)
+        public async Task UpdateAndSaveAsync(T entity)
         {
             this.DbContext.Set<T>().Update(entity);
             await this.SaveAsync();
         }
+
+
 
         public async Task DeleteAndSave(T entity)
         {

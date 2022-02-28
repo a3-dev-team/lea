@@ -41,28 +41,11 @@
       }
     },
     {
-      "label": "Run json-server on startup",
+      "label": "Run dotnet watch",
       "type": "shell",
-      "command": "json-server --watch db.json",
+      "command": "dotnet watch",
       "windows": {
-        "command": "json-server --watch db.json"
-      },
-      "options": {
-        "cwd": "${workspaceFolder}/front"
-      },
-      "presentation": {
-        "reveal": "always",
-      },
-      "runOptions": {
-        "runOn": "folderOpen"
-      }
-    },
-    {
-      "label": "Run dotnet run",
-      "type": "shell",
-      "command": "dotnet run",
-      "windows": {
-        "command": "dotnet run"
+        "command": "dotnet watch"
       },
       "options": {
         "cwd": "${workspaceFolder}/back/Cycle1.WebApi/Cycle1.WebApi"

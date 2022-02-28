@@ -1,8 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { UrlHelper } from 'projects/cycle1-app/src/app/core/helpers/url-helper';
 import { environment } from 'projects/cycle1-app/src/environments/environment';
 import { BehaviorSubject } from 'rxjs';
+import { IAuthenticatedUser } from '../models/authenticated-user.model';
 import { UserSignIn } from '../models/user-sign-in.model';
 
 @Injectable({
@@ -17,7 +19,7 @@ export class AuthenticationManager {
    * @private
    * @type {UserSignIn}
    */
-  private userSignedInSubject = new BehaviorSubject<UserSignIn | null>(null);
+  private userSignedInSubject = new BehaviorSubject<IAuthenticatedUser | null>(null);
   public userSignedInState$ = this.userSignedInSubject.asObservable();
 
   /**
@@ -27,7 +29,7 @@ export class AuthenticationManager {
    * @private
    * @type {string}
    */
-  private webApiUrl = environment.backUrl + "shared/v1/users/signin"
+  private webApiUrl = UrlHelper.backApiUrl + "users/signin"
 
   constructor(
     private readonly httpClient: HttpClient,
@@ -43,17 +45,12 @@ export class AuthenticationManager {
    * @param {string} routeToNavigate
    */
   public signIn(userSignedIn: UserSignIn, routeToNavigate: string) {
-    // this.httpClient.post(this.webApiUrl, userSignedIn, { responseType: 'text' })
-    //   .pipe(
-    //     tap((token: string) => {
-    //       this.saveToken(token);
-    //       this.userSignedInSubject.next(userSignedIn);
-    //       this.router.navigateByUrl(routeToNavigate);
-    //     })
-    //   ).subscribe();
-    this.saveToken("lala");
-    this.userSignedInSubject.next(userSignedIn);
-    this.router.navigate([routeToNavigate])
+    this.httpClient.post<IAuthenticatedUser>(this.webApiUrl, userSignedIn)
+      .subscribe((authenticatedUser: IAuthenticatedUser) => {
+        this.saveToken(authenticatedUser.token);
+        this.userSignedInSubject.next(authenticatedUser);
+        this.router.navigateByUrl(routeToNavigate);
+      });
   }
 
   public signOut() {

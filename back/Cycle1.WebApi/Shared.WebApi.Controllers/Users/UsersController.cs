@@ -20,14 +20,14 @@ namespace A3.Shared.WebApi.Controllers.Users
 
         [HttpPost("signin")]
         [AllowAnonymous]
-        public IActionResult SignIn(SignInInformation signInInformation)
+        public async Task<IActionResult> SignInAsync([FromBody] SignInInformation signInInformation)
         {
             if (!this.ModelState.IsValid)
             {
                 return this.ValidationProblem(this.ModelState);
             }
 
-            Result<AuthenticatedUser?> authenticatedUser = this.Service.GetAuthenticatedUser(signInInformation, this._jwtSettings);
+            Result<AuthenticatedUser?> authenticatedUser = await this.Service.GetAuthenticatedUserAsync(signInInformation, this._jwtSettings);
             return this.PostActionResult(authenticatedUser);
         }
 

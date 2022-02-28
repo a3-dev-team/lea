@@ -19,10 +19,11 @@ export class ErrorInterceptor implements HttpInterceptor {
         console.warn(error);
         switch (error.status) {
           case 401:
-            this.authenticationManager.signOut()
+            this.authenticationManager.signOut();
+            this.errorManager.throwError("Echec de l'authentification");
             return EMPTY;
           default:
-            this.errorManager.throwError(error.message)
+            this.errorManager.throwError(error.message);
             return throwError(() => error);
         }
       })

@@ -4,11 +4,11 @@ namespace A3.Lea.Cycle1.WebApi.Core.Eleves.Modeles
 {
     public class Classe
     {
-        public int Id { get; set; }
+        public int Id { get; init; }
 
         [Required]
-        public string? Nom { get; set; }
+        public string? Nom { get; init; }
 
-        public virtual ICollection<Eleve>? Eleves { get; set; }
+        public virtual ICollection<Eleve>? Eleves { get; init; }
     }
 }

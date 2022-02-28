@@ -2,14 +2,14 @@
 {
     public class Eleve
     {
-        public int Id { get; set; }
+        public int Id { get; init; }
 
-        public string? Nom { get; set; }
+        public string? Nom { get; init; }
 
-        public string? Prenom { get; set; }
+        public string? Prenom { get; init; }
 
-        public Classe? Classe { get; set; }
-        public int? ClasseId { get; set; }
+        public Classe? Classe { get; init; }
+        public int? ClasseId { get; init; }
 
     }
 }

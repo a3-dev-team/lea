@@ -1,4 +1,5 @@
 ﻿using A3.Shared.WebApi.Core.Users;
+using A3.Shared.WebApi.Core.Users.Helpers;
 using A3.Shared.WebApi.Dal.Users;
 
 namespace A3.Lea.Cycle1.WebApi.Extensions
@@ -13,6 +14,7 @@ namespace A3.Lea.Cycle1.WebApi.Extensions
 
         public static IServiceCollection AddSharedServices(this IServiceCollection services)
         {
+            services.AddSingleton<IPasswordHasher, PasswordHasher>();
             AddUsersServices(services);
             return services;
         }

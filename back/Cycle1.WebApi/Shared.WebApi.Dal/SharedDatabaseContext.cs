@@ -1,14 +1,18 @@
+using A3.Shared.WebApi.Core.Users.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace A3.Lea.Cycle1.WebApi.Dal
+namespace A3.Shared.WebApi.Dal
 {
-    public class DatabaseContext : DbContext
-    {
 
-        public DatabaseContext()
+    public class SharedDatabaseContext : DbContext
+    {
+        // Documentation :
+        // https://docs.microsoft.com/fr-fr/ef/core/modeling/
+
+        public SharedDatabaseContext()
         { }
 
-        public DatabaseContext(DbContextOptions<DatabaseContext> options)
+        public SharedDatabaseContext(DbContextOptions<SharedDatabaseContext> options)
         : base(options)
         { }
 
@@ -16,6 +20,10 @@ namespace A3.Lea.Cycle1.WebApi.Dal
         {
             base.OnModelCreating(modelBuilder);
 
+            // new UserEntityTypeConfiguration().Configure(modelBuilder.Entity<User>());
+
+            // Il est possible d’appliquer l’ensemble de la configuration spécifiée dans les types qui implémentent IEntityTypeConfiguration dans un assembly donné.
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(SharedDatabaseContext).Assembly);
 
             // modelBuilder.Entity<Eleve>(entity =>
             // {
@@ -29,6 +37,12 @@ namespace A3.Lea.Cycle1.WebApi.Dal
 
         public void AjouterDonnees()
         {
+            User user = new User()
+            {
+                Email = "lea@a3.fr",
+                Password = "10000.mY0XS4oKB/c8UWyZvskgUw==.Xd08mpEMVBVypL1QEE+eMyjXnn3DLEwEKoOaq48sIVI="
+            };
+            this.Set<User>().Add(user);
             // var classe1 = new Classe()
             // {
             //     Id = 1,
@@ -64,7 +78,7 @@ namespace A3.Lea.Cycle1.WebApi.Dal
             // });
 
 
-            // this.SaveChanges();
+            this.SaveChanges();
 
 
             // // test suppression

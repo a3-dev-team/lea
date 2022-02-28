@@ -4,11 +4,12 @@ namespace A3.Shared.WebApi.Core.Users.Models
 {
     public class SignInInformation
     {
-        [Required]
-        [EmailAddress]
-        public string? Login { get; set; }
+        // [Required(AllowEmptyStrings = false)]
+        // [EmailAddress]
+        public string Login { get; init; } = string.Empty;
 
-        [Required]
-        public string? Password { get; set; }
+        [Required(AllowEmptyStrings = false)]
+        [MinLength(8)]
+        public string Password { get; init; } = string.Empty;
     }
 }

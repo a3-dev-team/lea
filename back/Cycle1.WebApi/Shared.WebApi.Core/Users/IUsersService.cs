@@ -6,6 +6,6 @@ namespace A3.Shared.WebApi.Core.Users
 {
     public interface IUsersService
     {
-        Result<AuthenticatedUser?> GetAuthenticatedUser(SignInInformation signInInformation, JwtSettings jwtSettings);
+        Task<Result<AuthenticatedUser?>> GetAuthenticatedUserAsync(SignInInformation signInInformation, JwtSettings jwtSettings);
     }
 }

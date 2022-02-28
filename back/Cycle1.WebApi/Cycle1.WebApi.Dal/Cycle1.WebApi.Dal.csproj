@@ -4,8 +4,8 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <AssemblyName>A3.$(MSBuildProjectName)</AssemblyName>
-    <RootNamespace>A3.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+   <AssemblyName>A3.Lea.$(MSBuildProjectName)</AssemblyName>
+    <RootNamespace>A3.Lea.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

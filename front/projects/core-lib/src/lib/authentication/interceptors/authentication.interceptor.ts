@@ -3,23 +3,33 @@ import {
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'projects/cycle1-app/src/environments/environment';
-import { Observable } from 'rxjs';
+import { first, mergeMap, Observable } from 'rxjs';
+import { IAuthenticatedUser } from '../models/authenticated-user.model';
+import { AuthenticationManager } from '../services/authentication-manager.service';
 
 @Injectable()
 export class AuthenticationInterceptor implements HttpInterceptor {
 
-  constructor() { }
+  constructor(private readonly authenticationManager: AuthenticationManager) { }
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    const authenticationToken: string | null = this.loadToken();
-    if (!!authenticationToken) {
-      request = request.clone({
-        setHeaders: {
-          Authorization: `Bearer ${authenticationToken}`
-        }
-      });
-    }
-    return next.handle(request);
+    return this.authenticationManager.userSignedInState$
+      .pipe(
+        first(),
+        mergeMap((authenticatedUser: IAuthenticatedUser | null) => {
+          if (!!authenticatedUser) {
+            const authenticationToken: string | null = this.loadToken();
+            if (!!authenticationToken) {
+              request = request.clone({
+                setHeaders: {
+                  Authorization: `Bearer ${authenticationToken}`
+                }
+              });
+            }
+          }
+          return next.handle(request);
+        })
+      );
   }
 
 

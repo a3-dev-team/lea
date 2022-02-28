@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, CanActivateChild, CanLoad, Route, Router, RouterStateSnapshot, UrlSegment, UrlTree } from '@angular/router';
 import { map, Observable, tap } from 'rxjs';
-import { UserSignIn } from '../models/user-sign-in.model';
+import { IAuthenticatedUser } from '../models/authenticated-user.model';
 import { AuthenticationManager } from '../services/authentication-manager.service';
 
 @Injectable({
@@ -20,7 +20,7 @@ export class AuthenticationGuard implements CanActivate, CanActivateChild, CanLo
    */
   private isUserSignedIn$: Observable<boolean> = this.authenticationManager.userSignedInState$
     .pipe(
-      map((userSignedIn: UserSignIn | null) => !!userSignedIn),
+      map((authenticatedUser: IAuthenticatedUser | null) => !!authenticatedUser),
     );
 
   constructor(
