@@ -29,7 +29,7 @@ export class AuthenticationManager {
    * @private
    * @type {string}
    */
-  private webApiUrl = UrlHelper.backApiUrl + "users/signin"
+  private webApiUrl = UrlHelper.sharedBackApiUrl + "users/signin"
 
   constructor(
     private readonly httpClient: HttpClient,

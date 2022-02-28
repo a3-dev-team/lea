@@ -8,7 +8,7 @@ import { UrlHelper } from './../../../../../cycle1-app/src/app/core/helpers/url-
   providedIn: 'root',
 })
 export class ObjectifService {
-  private objectifsUrl = UrlHelper.backApiUrl + '/objectifs';
+  private objectifsUrl = UrlHelper.cycle1BackApiUrl + '/objectifs';
 
   public objectifs$ = this.http.get<Objectif[]>(this.objectifsUrl).pipe(
     catchError((error) => {
