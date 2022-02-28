@@ -16,7 +16,7 @@ namespace A3.Shared.WebApi.Core.Users.Helpers
 
         public PasswordHasher(IOptions<HashingOptions> options)
         {
-            Options = options.Value;
+            this.Options = options.Value;
         }
 
         private HashingOptions Options { get; }
@@ -35,7 +35,7 @@ namespace A3.Shared.WebApi.Core.Users.Helpers
             var salt = Convert.FromBase64String(parts[1]);
             var key = Convert.FromBase64String(parts[2]);
 
-            var needsUpgrade = iterations != Options.Iterations;
+            var needsUpgrade = iterations != this.Options.Iterations;
 
             using (var algorithm = new Rfc2898DeriveBytes(
               password,
@@ -56,15 +56,14 @@ namespace A3.Shared.WebApi.Core.Users.Helpers
             using (var algorithm = new Rfc2898DeriveBytes(
               password,
               SaltSize,
-              Options.Iterations,
+              this.Options.Iterations,
               HashAlgorithmName.SHA256))
             {
                 var key = Convert.ToBase64String(algorithm.GetBytes(KeySize));
                 var salt = Convert.ToBase64String(algorithm.Salt);
 
-                return $"{Options.Iterations}.{salt}.{key}";
+                return $"{this.Options.Iterations}.{salt}.{key}";
             }
         }
-
     }
 }

@@ -12,7 +12,7 @@ namespace A3.Library.Mvc
     {
         protected DbContext DbContext { get; set; }
 
-        public DalBase(DbContext dbContext)
+        protected DalBase(DbContext dbContext)
         {
             this.DbContext = dbContext;
         }
@@ -68,8 +68,6 @@ namespace A3.Library.Mvc
             await this.SaveAsync();
         }
 
-
-
         public async Task DeleteAndSave(T entity)
         {
             this.DbContext.Set<T>().Remove(entity);
@@ -80,6 +78,5 @@ namespace A3.Library.Mvc
         {
             await this.DbContext.SaveChangesAsync();
         }
-
     }
 }

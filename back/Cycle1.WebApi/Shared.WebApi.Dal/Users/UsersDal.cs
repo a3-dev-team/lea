@@ -12,7 +12,7 @@ namespace A3.Shared.WebApi.Dal.Users
              : base(sharedDatabaseContext)
         { }
 
-        async Task<Result<User>> IUsersDal.GetByEMail(string email)
+        public async Task<Result<User>> GetUserByEMail(string email)
         {
             return new Result<User>()
             {
@@ -20,9 +20,9 @@ namespace A3.Shared.WebApi.Dal.Users
             };
         }
 
-        Task IUsersDal.Update(User user)
+        public async Task UpdateUser(User user)
         {
-            return this.UpdateAndSaveAsync(user);
+            await this.UpdateAndSaveAsync(user);
         }
     }
 }

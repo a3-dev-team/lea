@@ -1,8 +1,8 @@
 ﻿using A3.Library.Mvc;
 using A3.Library.Mvc.Jwt;
 using A3.Library.Results;
-using A3.Shared.WebApi.Core.Users.Models;
 using A3.Shared.WebApi.Core.Users.Helpers;
+using A3.Shared.WebApi.Core.Users.Models;
 using Microsoft.Extensions.Logging;
 
 namespace A3.Shared.WebApi.Core.Users
@@ -22,7 +22,7 @@ namespace A3.Shared.WebApi.Core.Users
         {
             Result<AuthenticatedUser?> result = new Result<AuthenticatedUser?>();
 
-            Result<User> userResult = await this._usersDal.GetByEMail(signInInformation.Login);
+            Result<User> userResult = await this._usersDal.GetUserByEMail(signInInformation.Login);
 
             if (userResult.IsValid && userResult.Value != null)
             {
@@ -33,7 +33,7 @@ namespace A3.Shared.WebApi.Core.Users
                     {
                         // Si le mot de passe ne respecte pas le "nouveau" nombre de cyle de hachage paramétré, on le régénère
                         userResult.Value.Password = this._passwordHasher.Hash(signInInformation.Password);
-                        await this._usersDal.Update(userResult.Value);
+                        await this._usersDal.UpdateUser(userResult.Value);
                     }
                     result.Value = this.GetAuthenticatedUserFromUser(userResult.Value, jwtSettings);
                 }
@@ -48,7 +48,6 @@ namespace A3.Shared.WebApi.Core.Users
             }
 
             return result;
-
         }
 
         private AuthenticatedUser GetAuthenticatedUserFromUser(User user, JwtSettings jwtSettings)

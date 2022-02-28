@@ -5,7 +5,8 @@ namespace A3.Shared.WebApi.Core.Users
 {
     public interface IUsersDal
     {
-        public Task<Result<User>> GetByEMail(string email);
-        public Task Update(User user);
+        public Task<Result<User>> GetUserByEMail(string email);
+
+        public Task UpdateUser(User user);
     }
 }

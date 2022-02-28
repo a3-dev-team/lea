@@ -19,22 +19,8 @@ builder.Services.AddCycle1Authentication(builder.Configuration)
                 .AddProblemDetailsConventions()
                 .AddEndpointsApiExplorer() // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
                 .AddSwagger()
-                .AddCors(options => options.AddPolicy(name: allowAllOriginsInDev, builder => builder.WithOrigins("http://localhost:4200").AllowAnyHeader()));
-
-// Configuration de EF sur MySQL
-string connectionString = builder.Configuration.GetConnectionString("MySQLConnectionString");
-//      MigrationAssembly : https://docs.microsoft.com/fr-fr/ef/core/managing-schemas/migrations/projects?tabs=dotnet-core-cli
-//      => Permet de simplifier la commande de génération des migrations lorsque le DbContext n'est pas dans l'assembly de démarrage
-builder.Services.AddDbContext<DatabaseContext>(options =>
-   options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString), b => b.MigrationsAssembly("A3.Lea.Cycle1.WebApi")),
-   ServiceLifetime.Singleton
-   );
-
-builder.Services.AddDbContext<SharedDatabaseContext>(options =>
-    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString), b => b.MigrationsAssembly("A3.Lea.Cycle1.WebApi")),
-    ServiceLifetime.Singleton
-    );
-
+                .AddCors(options => options.AddPolicy(name: allowAllOriginsInDev, builder => builder.WithOrigins("http://localhost:4200").AllowAnyHeader()))
+                .AddEF(builder.Configuration.GetConnectionString("DBConnectionString"));
 
 var app = builder.Build();
 
@@ -49,7 +35,6 @@ using (var serviceScope = app.Services.CreateScope())
     sharedDatabaseContext.Database.EnsureDeleted();
     sharedDatabaseContext.Database.EnsureCreated();
     sharedDatabaseContext.AjouterDonnees();
-
 }
 
 // Configure the HTTP request pipeline.
