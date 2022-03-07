@@ -8,7 +8,7 @@ namespace A3.Shared.WebApi.Dal.Users
 {
     public class UsersDal : DalBase<User>, IUsersDal
     {
-        public UsersDal(SharedDatabaseContext sharedDatabaseContext)
+        public UsersDal(SharedDbContext sharedDatabaseContext)
              : base(sharedDatabaseContext)
         { }
 
