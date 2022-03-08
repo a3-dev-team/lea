@@ -1,4 +1,4 @@
-namespace A3.Shared.WebApi.Core.Users.Helpers
+namespace A3.Shared.WebApi.Core.Users.Passwords
 {
     /// <summary>
     /// Permet de définir le nombre de cycle de hachage du mot de passe (Niveau de sécurité / Performance)

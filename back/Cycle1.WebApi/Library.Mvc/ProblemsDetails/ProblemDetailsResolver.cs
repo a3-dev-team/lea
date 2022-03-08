@@ -109,7 +109,7 @@ namespace A3.Library.Mvc.ProblemsDetails
                 string errorProperty = this.GetErrorProperty(errorId);
                 string errorResource = this.ResourceManager.GetString(errorId) ?? errorId;
 
-                if (validationProblemDetails.Errors.TryGetValue(errorProperty, out string[] value))
+                if (validationProblemDetails.Errors.TryGetValue(errorProperty, out string[]? value))
                 {
                     validationProblemDetails.Errors[errorProperty] = value.Append(errorResource).ToArray();
                 }

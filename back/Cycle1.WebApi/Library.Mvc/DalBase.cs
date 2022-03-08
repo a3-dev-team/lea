@@ -10,7 +10,7 @@ namespace A3.Library.Mvc
     public abstract class DalBase<T>
        where T : class
     {
-        protected DbContext DbContext { get; set; }
+        protected DbContext DbContext { get; }
 
         protected DalBase(DbContext dbContext)
         {
