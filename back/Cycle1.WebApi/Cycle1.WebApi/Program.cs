@@ -22,12 +22,6 @@ builder.Services.AddCycle1Authentication(builder.Configuration)
 
 var app = builder.Build().InitDB();
 
-    SharedDatabaseContext sharedDatabaseContext = serviceScope.ServiceProvider.GetRequiredService<SharedDatabaseContext>();
-    sharedDatabaseContext.Database.EnsureDeleted();
-    sharedDatabaseContext.Database.EnsureCreated();
-    sharedDatabaseContext.AjouterDonnees();
-}
-
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
