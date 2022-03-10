@@ -1,8 +1,8 @@
 ﻿using A3.Library.Mvc;
 using A3.Library.Mvc.Jwt;
 using A3.Library.Results;
-using A3.Shared.WebApi.Core.Users.Helpers;
 using A3.Shared.WebApi.Core.Users.Models;
+using A3.Shared.WebApi.Core.Users.Passwords;
 using Microsoft.Extensions.Logging;
 
 namespace A3.Shared.WebApi.Core.Users
@@ -16,6 +16,18 @@ namespace A3.Shared.WebApi.Core.Users
         {
             this._usersDal = usersDal;
             this._passwordHasher = passwordHasher;
+        }
+
+        private AuthenticatedUser GetAuthenticatedUserFromUser(User user, JwtSettings jwtSettings)
+        {
+            return new AuthenticatedUser()
+            {
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Email = user.Email,
+                Role = user.Role,
+                Token = JwtProvider.ProvideToken(user.ToClaims(), jwtSettings)
+            };
         }
 
         public async Task<Result<AuthenticatedUser?>> GetAuthenticatedUserAsync(SignInInformation signInInformation, JwtSettings jwtSettings)
@@ -48,18 +60,6 @@ namespace A3.Shared.WebApi.Core.Users
             }
 
             return result;
-        }
-
-        private AuthenticatedUser GetAuthenticatedUserFromUser(User user, JwtSettings jwtSettings)
-        {
-            return new AuthenticatedUser()
-            {
-                FirstName = user.FirstName,
-                LastName = user.LastName,
-                Email = user.Email,
-                Role = user.Role,
-                Token = JwtProvider.ProvideToken(user.ToClaims(), jwtSettings)
-            };
         }
     }
 }

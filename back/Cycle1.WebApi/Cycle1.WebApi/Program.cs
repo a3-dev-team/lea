@@ -1,6 +1,4 @@
-using A3.Lea.Cycle1.WebApi.Dal;
 using A3.Lea.Cycle1.WebApi.Extensions;
-using A3.Shared.WebApi.Dal;
 using Hellang.Middleware.ProblemDetails.Mvc;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
@@ -22,20 +20,7 @@ builder.Services.AddCycle1Authentication(builder.Configuration)
                 .AddCors(options => options.AddPolicy(name: allowAllOriginsInDev, builder => builder.WithOrigins("http://localhost:4200").AllowAnyHeader()))
                 .AddEF(builder.Configuration.GetConnectionString("DBConnectionString"));
 
-var app = builder.Build();
-
-using (var serviceScope = app.Services.CreateScope())
-{
-    DatabaseContext databaseContext = serviceScope.ServiceProvider.GetRequiredService<DatabaseContext>();
-    databaseContext.Database.EnsureDeleted();
-    databaseContext.Database.EnsureCreated();
-    databaseContext.AjouterDonnees();
-
-    SharedDatabaseContext sharedDatabaseContext = serviceScope.ServiceProvider.GetRequiredService<SharedDatabaseContext>();
-    sharedDatabaseContext.Database.EnsureDeleted();
-    sharedDatabaseContext.Database.EnsureCreated();
-    sharedDatabaseContext.AjouterDonnees();
-}
+var app = builder.Build().InitDB();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

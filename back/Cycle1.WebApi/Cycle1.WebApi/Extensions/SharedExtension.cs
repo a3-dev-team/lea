@@ -1,5 +1,5 @@
 ﻿using A3.Shared.WebApi.Core.Users;
-using A3.Shared.WebApi.Core.Users.Helpers;
+using A3.Shared.WebApi.Core.Users.Passwords;
 using A3.Shared.WebApi.Dal.Users;
 
 namespace A3.Lea.Cycle1.WebApi.Extensions

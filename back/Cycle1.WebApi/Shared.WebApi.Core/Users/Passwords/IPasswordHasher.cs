@@ -1,4 +1,4 @@
-namespace A3.Shared.WebApi.Core.Users.Helpers
+namespace A3.Shared.WebApi.Core.Users.Passwords
 {
     /// <summary>
     /// Hachage et vérification de mot de passe

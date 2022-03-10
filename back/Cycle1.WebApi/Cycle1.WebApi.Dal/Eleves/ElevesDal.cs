@@ -12,7 +12,7 @@ namespace A3.Lea.Cycle1.WebApi.Dal.Eleves
     public class ElevesDal : DalBase<Eleve>, IElevesDal
     {
 
-        public ElevesDal(DatabaseContext databaseContext)
+        public ElevesDal(Cycle1DbContext databaseContext)
         : base(databaseContext)
         { }
 

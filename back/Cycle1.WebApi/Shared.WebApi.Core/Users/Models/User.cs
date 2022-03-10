@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Security.Claims;
 
 namespace A3.Shared.WebApi.Core.Users.Models
 {
@@ -25,5 +26,19 @@ namespace A3.Shared.WebApi.Core.Users.Models
         [Required(AllowEmptyStrings = false)]
         public string Role { get; set; } = string.Empty;
 
+    }
+
+    internal static class UserExtension
+    {
+        public static IEnumerable<Claim> ToClaims(this User user)
+        {
+            return new List<Claim>()
+            {
+                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                new Claim(ClaimTypes.Name, $"{user.FirstName} {user.LastName}"),
+                new Claim(ClaimTypes.Email, user.Email),
+                new Claim(ClaimTypes.Role, user.Role)
+            };
+        }
     }
 }

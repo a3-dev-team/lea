@@ -1,7 +1,7 @@
 using System.Security.Cryptography;
 using Microsoft.Extensions.Options;
 
-namespace A3.Shared.WebApi.Core.Users.Helpers
+namespace A3.Shared.WebApi.Core.Users.Passwords
 {
     /// <summary>
     /// Hachage et vérification de mot de passe
@@ -31,9 +31,9 @@ namespace A3.Shared.WebApi.Core.Users.Helpers
                   "Should be formatted as `{iterations}.{salt}.{hash}`");
             }
 
-            var iterations = Convert.ToInt32(parts[0]);
-            var salt = Convert.FromBase64String(parts[1]);
-            var key = Convert.FromBase64String(parts[2]);
+            int iterations = Convert.ToInt32(parts[0]);
+            byte[]? salt = Convert.FromBase64String(parts[1]);
+            byte[]? key = Convert.FromBase64String(parts[2]);
 
             var needsUpgrade = iterations != this.Options.Iterations;
 
