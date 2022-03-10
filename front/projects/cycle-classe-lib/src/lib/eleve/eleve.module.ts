@@ -3,11 +3,15 @@ import { NgModule } from '@angular/core';
 import { SharedLibModule } from '@shared-lib';
 import { EleveDetailComponent } from './components/eleve-detail/eleve-detail.component';
 import { EleveListComponent } from './components/eleve-list/eleve-list.component';
+import { EleveTileListComponent } from './components/eleve-tile-list/eleve-tile-list.component';
+import { EleveTileComponent } from './components/eleve-tile/eleve-tile.component';
 
 @NgModule({
   declarations: [
     EleveDetailComponent,
-    EleveListComponent
+    EleveListComponent,
+    EleveTileComponent,
+    EleveTileListComponent
   ],
   imports: [
     SharedLibModule,
@@ -15,7 +19,9 @@ import { EleveListComponent } from './components/eleve-list/eleve-list.component
   ],
   exports: [
     EleveDetailComponent,
-    EleveListComponent
+    EleveListComponent,
+    EleveTileComponent,
+    EleveTileListComponent
   ]
 })
-export class EleveModule {}
+export class EleveModule { }

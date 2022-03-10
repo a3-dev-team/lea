@@ -1,0 +1,23 @@
+.co-border-style-solid {
+    border-style: solid;
+}
+
+//************************
+// .core-border-radius-*
+//************************
+$i: 0;
+@while $i <= 0.5 {
+    .core-border-radius-#{$i*100} {
+        border-radius: percentage($i);
+    }
+    $i: $i + 0.1;
+}
+
+//************************
+// .core-border-radius-*rem
+//************************
+@for $i from 1 through 10 {
+    .core-border-radius-#{$i}rem {
+        border-radius: #{$i}rem;
+    }
+}

@@ -1,24 +1,30 @@
-@use '../core-variables' as variables;
+@use "../core-variables" as variables;
 
-h1{
+h1 {
     margin: 0;
     font-size: large;
     font-weight: 500;
     color: variables.$core-theme-main-color;
 }
-h2{
+h2 {
     margin: 0;
-    font-size:medium;
+    font-size: medium;
     font-weight: normal;
     color: variables.$core-theme-fonctionnality-color;
 }
-h6{   
+h3 {
+    margin: 0;
+    font-size: medium;
+    font-weight: normal;
+    color: variables.$core-theme-fonctionnality-color;
+}
+h6 {
     margin: 0;
     font-weight: normal;
-    color: variables.$core-theme-main-color;   
+    color: variables.$core-theme-main-color;
 }
 
-label{
+label {
     margin: 0;
     font-size: small;
     color: variables.$core-theme-fonctionnality-color;
