@@ -15,7 +15,7 @@
       },
       "root": "projects/cycle1-app",
       "sourceRoot": "projects/cycle1-app/src",
-      "prefix": "app",
+      "prefix": "cycle1",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -116,7 +116,7 @@
       "projectType": "library",
       "root": "projects/cycle-classe-lib",
       "sourceRoot": "projects/cycle-classe-lib/src",
-      "prefix": "lib",
+      "prefix": "classe",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
@@ -147,7 +147,7 @@
       "projectType": "library",
       "root": "projects/shared-lib",
       "sourceRoot": "projects/shared-lib/src",
-      "prefix": "lib",
+      "prefix": "shared",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
@@ -178,7 +178,7 @@
       "projectType": "library",
       "root": "projects/cycle1-objectif-lib",
       "sourceRoot": "projects/cycle1-objectif-lib/src",
-      "prefix": "lib",
+      "prefix": "objectif",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
@@ -209,7 +209,7 @@
       "projectType": "library",
       "root": "projects/core-lib",
       "sourceRoot": "projects/core-lib/src",
-      "prefix": "lib",
+      "prefix": "core",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
