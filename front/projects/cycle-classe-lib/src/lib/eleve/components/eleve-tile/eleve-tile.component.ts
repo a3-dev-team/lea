@@ -10,8 +10,8 @@ import { Eleve } from '../../models/eleve.model';
 export class EleveTileComponent implements OnInit {
 
 
-  @Input() public eleve!: Eleve;
-  @Output() public selection: EventEmitter<Eleve> = new EventEmitter<Eleve>();
+  @Input() public eleve!: Eleve | null;
+  @Output() public selection: EventEmitter<Eleve | null> = new EventEmitter<Eleve | null>();
 
 
   constructor() { }
