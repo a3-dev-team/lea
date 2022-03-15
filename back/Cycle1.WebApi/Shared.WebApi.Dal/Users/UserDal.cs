@@ -6,9 +6,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace A3.Shared.WebApi.Dal.Users
 {
-    public class UsersDal : DalBase<User>, IUsersDal
+    public class UserDal : EntityFrameworkDalBase<User>, IUserDal
     {
-        public UsersDal(SharedDbContext sharedDatabaseContext)
+        public UserDal(SharedDbContext sharedDatabaseContext)
              : base(sharedDatabaseContext)
         { }
 

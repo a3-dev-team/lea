@@ -7,12 +7,12 @@ using Microsoft.Extensions.Logging;
 
 namespace A3.Shared.WebApi.Core.Users
 {
-    public class UsersService : ServiceBase<UsersService>, IUsersService
+    public class UserService : ServiceBase<UserService>, IUserService
     {
-        private readonly IUsersDal _usersDal;
+        private readonly IUserDal _usersDal;
         private readonly IPasswordHasher _passwordHasher;
 
-        public UsersService(ILogger<UsersService> logger, IUsersDal usersDal, IPasswordHasher passwordHasher) : base(logger)
+        public UserService(ILogger<UserService> logger, IUserDal usersDal, IPasswordHasher passwordHasher) : base(logger)
         {
             this._usersDal = usersDal;
             this._passwordHasher = passwordHasher;

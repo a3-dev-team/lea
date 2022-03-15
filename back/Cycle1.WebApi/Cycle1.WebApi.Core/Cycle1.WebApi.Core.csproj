@@ -19,10 +19,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>ClassesResources.resx</DependentUpon>
     </Compile>
-    <Compile Update="Eleves\ElevesResources.Designer.cs">
+    <Compile Update="Eleves\EleveResources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>ElevesResources.resx</DependentUpon>
+      <DependentUpon>EleveResources.resx</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -31,9 +31,9 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ClassesResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Update="Eleves\ElevesResources.resx">
+    <EmbeddedResource Update="Eleves\EleveResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>ElevesResources.Designer.cs</LastGenOutput>
+      <LastGenOutput>EleveResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 

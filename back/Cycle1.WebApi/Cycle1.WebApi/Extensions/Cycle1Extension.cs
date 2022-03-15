@@ -16,8 +16,8 @@ namespace A3.Lea.Cycle1.WebApi.Extensions
         /// <param name="services"></param>
         private static void AddElevesServices(IServiceCollection services)
         {
-            ServicesExtensionHelper.AddServices<IElevesService, ElevesService, IElevesDal, ElevesDal, ElevesProblemDetailsResolver>
-                (services, (serviceProvider) => new ElevesProblemDetailsResolver());
+            ServicesExtensionHelper.AddServices<IEleveService, EleveService, IEleveDal, EleveDal, EleveProblemDetailsResolver>
+                (services, (serviceProvider) => new EleveProblemDetailsResolver());
         }
 
         /// <summary>
@@ -26,7 +26,7 @@ namespace A3.Lea.Cycle1.WebApi.Extensions
         /// <param name="services">Collection de service</param>
         private static void AddClassesServices(IServiceCollection services)
         {
-            ServicesExtensionHelper.AddServices<IClassesService, ClassesService, IClassesDal, ClassesDal, ClassesProblemDetailsResolver>
+            ServicesExtensionHelper.AddServices<IClassesService, ClassesService, IClassesDal, ClasseDal, ClassesProblemDetailsResolver>
                 (services, (serviceProvider) => new ClassesProblemDetailsResolver());
         }
 

@@ -3,7 +3,7 @@ using A3.Shared.WebApi.Core.Users.Models;
 
 namespace A3.Shared.WebApi.Core.Users
 {
-    public interface IUsersDal
+    public interface IUserDal
     {
         public Task<Result<User>> GetUserByEMail(string email);
 

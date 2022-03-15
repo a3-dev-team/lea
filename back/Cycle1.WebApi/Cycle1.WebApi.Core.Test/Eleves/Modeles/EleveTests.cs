@@ -8,7 +8,13 @@ namespace A3.Lea.Cycle1.WebApi.Core.Eleves.Modeles
         [Fact]
         public void EstGarcon_SexeMasculin_ReturnTrue()
         {
-            IdentiteEleve identiteEleve = new IdentiteEleve(1, "Nom", "Prenom", Sexe.Masculin, Niveau.PetiteSection, null);
+            IdentiteEleve identiteEleve = new IdentiteEleve()
+            {
+                Id = 1,
+                Nom = "Nom",
+                Prenom = "Prenom",
+                Sexe = Sexe.Masculin
+            };
             Assert.True(identiteEleve.EstUnGarcon(), $"{identiteEleve.Sexe} devrait être un garçon");
         }
     }

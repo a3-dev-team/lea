@@ -1,22 +1,23 @@
-﻿namespace A3.Lea.Cycle1.WebApi.Core.Commun.Modeles
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace A3.Lea.Cycle1.WebApi.Core.Commun.Modeles
 {
     public class Adresse
     {
-        public int Id { get; }
+        [Required]
+        public int Id { get; set; }
 
-        public string? Voie { get; set; }
+        [Required(AllowEmptyStrings = false)]
+        public string Voie { get; set; } = string.Empty;
 
         public string? Complement { get; set; }
 
         public string? BoitePostale { get; set; }
 
-        public string? CodePostal { get; set; }
+        [Required(AllowEmptyStrings = false)]
+        public string CodePostal { get; set; } = string.Empty;
 
-        public string? Commune { get; set; }
-
-        public Adresse(int id)
-        {
-            this.Id = id;
-        }
+        [Required(AllowEmptyStrings = false)]
+        public string Commune { get; set; } = string.Empty;
     }
 }

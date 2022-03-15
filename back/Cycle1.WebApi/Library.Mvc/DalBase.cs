@@ -3,16 +3,18 @@ using Microsoft.EntityFrameworkCore;
 
 namespace A3.Library.Mvc
 {
+    public abstract class DalBase<T> where T : class { }
+
     /// <summary>
     /// Classe de base pour les DALs permettant de simplifier, masquer la manipulation liée à EF
     /// </summary>
     /// <typeparam name="TSelf">DalBase</typeparam>
-    public abstract class DalBase<T>
+    public abstract class EntityFrameworkDalBase<T> : DalBase<T>
        where T : class
     {
         protected DbContext DbContext { get; }
 
-        protected DalBase(DbContext dbContext)
+        protected EntityFrameworkDalBase(DbContext dbContext)
         {
             this.DbContext = dbContext;
         }

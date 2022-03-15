@@ -1,15 +1,21 @@
-﻿namespace A3.Lea.Cycle1.WebApi.Core.Eleves.Modeles
+﻿using System.ComponentModel.DataAnnotations;
+using A3.Lea.Cycle1.WebApi.Core.Commun;
+
+namespace A3.Lea.Cycle1.WebApi.Core.Eleves.Modeles
 {
     public class Eleve
     {
-        public int Id { get; init; }
+        [Required]
+        public int Id { get; set; }
 
-        public string? Nom { get; init; }
+        [Required]
+        public int ClasseId { get; set; }
 
-        public string? Prenom { get; init; }
+        [Required]
+        public Niveau Niveau { get; set; }
 
-        public Classe? Classe { get; init; }
-        public int? ClasseId { get; init; }
+        public string? Emails { get; set; }
 
+        public IdentiteEleve Identite { get; set; } = new IdentiteEleve();
     }
 }

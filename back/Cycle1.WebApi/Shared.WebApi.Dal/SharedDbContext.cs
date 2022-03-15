@@ -9,12 +9,9 @@ namespace A3.Shared.WebApi.Dal
         // Documentation :
         // https://docs.microsoft.com/fr-fr/ef/core/modeling/
 
-        public SharedDbContext()
-        { }
+        public SharedDbContext() { }
 
-        public SharedDbContext(DbContextOptions<SharedDbContext> options)
-        : base(options)
-        { }
+        public SharedDbContext(DbContextOptions<SharedDbContext> options) : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -39,6 +36,7 @@ namespace A3.Shared.WebApi.Dal
         {
             User user = new User()
             {
+                Id = 1,
                 Email = "lea@a3.fr",
                 Password = "10000.mY0XS4oKB/c8UWyZvskgUw==.Xd08mpEMVBVypL1QEE+eMyjXnn3DLEwEKoOaq48sIVI="
             };

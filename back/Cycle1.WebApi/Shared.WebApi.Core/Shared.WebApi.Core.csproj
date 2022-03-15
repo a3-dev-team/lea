@@ -13,17 +13,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Users\UsersResources.Designer.cs">
+    <Compile Update="Users\UserResources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>UsersResources.resx</DependentUpon>
+      <DependentUpon>UserResources.resx</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Users\UsersResources.resx">
+    <EmbeddedResource Update="Users\UserResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>UsersResources.Designer.cs</LastGenOutput>
+      <LastGenOutput>UserResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 

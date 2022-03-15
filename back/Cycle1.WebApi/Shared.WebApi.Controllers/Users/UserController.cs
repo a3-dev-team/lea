@@ -12,11 +12,11 @@ using Microsoft.Extensions.Options;
 namespace A3.Shared.WebApi.Controllers.Users
 {
     [Route(Routes.ControllerBaseRouteV1)]
-    public class UsersController : ControllerBase<UsersController, IUsersService>
+    public class UserController : ControllerBase<UserController, IUserService>
     {
         private readonly JwtSettings _jwtSettings;
 
-        protected override ResourceManager? ResourceManager => UsersResources.ResourceManager;
+        protected override ResourceManager? ResourceManager => UserResources.ResourceManager;
 
         [HttpPost("signin")]
         [AllowAnonymous]
@@ -37,7 +37,7 @@ namespace A3.Shared.WebApi.Controllers.Users
         /// <param name="jwtSettings"></param>
         /// <param name="service"></param>
         /// <param name="logger"></param>
-        public UsersController(IOptions<JwtSettings> jwtSettings, IUsersService service, ILogger<UsersController> logger) : base(service, logger)
+        public UserController(IOptions<JwtSettings> jwtSettings, IUserService service, ILogger<UserController> logger) : base(service, logger)
         {
             this._jwtSettings = jwtSettings.Value;
         }

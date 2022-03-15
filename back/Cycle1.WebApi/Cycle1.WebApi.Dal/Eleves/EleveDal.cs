@@ -9,21 +9,16 @@ namespace A3.Lea.Cycle1.WebApi.Dal.Eleves
     /// <summary>
     /// Classe dal pour les élèves
     /// </summary>
-    public class ElevesDal : DalBase<Eleve>, IElevesDal
+    public class EleveDal : EntityFrameworkDalBase<Eleve>, IEleveDal
     {
+        public EleveDal(Cycle1DbContext databaseContext) : base(databaseContext) { }
 
-        public ElevesDal(Cycle1DbContext databaseContext)
-        : base(databaseContext)
-        { }
-
-        public async Task<Result<List<Eleve>>> ObtenirListeEleve(int idClasse)
+        public async Task<Result<List<Eleve>>> ObtenirListeEleve(int classeId)
         {
             return new Result<List<Eleve>>()
             {
-                Value = await this.FindByCondition(e => e.ClasseId.Equals(idClasse)).ToListAsync()
+                Value = await this.FindByCondition(eleve => eleve.ClasseId.Equals(classeId)).ToListAsync()
             };
         }
-
     }
-
 }

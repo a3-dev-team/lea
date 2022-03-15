@@ -1,5 +1,7 @@
 ﻿using A3.Lea.Cycle1.WebApi.Dal;
 using A3.Shared.WebApi.Dal;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Storage;
 
 namespace A3.Lea.Cycle1.WebApi.Extensions
 {
@@ -9,17 +11,20 @@ namespace A3.Lea.Cycle1.WebApi.Extensions
         {
             using (var serviceScope = app.Services.CreateScope())
             {
-                Cycle1DbContext databaseContext = serviceScope.ServiceProvider.GetRequiredService<Cycle1DbContext>();
-                databaseContext.Database.EnsureDeleted();
-                databaseContext.Database.EnsureCreated();
-                databaseContext.AjouterDonnees();
-
                 SharedDbContext sharedDatabaseContext = serviceScope.ServiceProvider.GetRequiredService<SharedDbContext>();
-                sharedDatabaseContext.Database.EnsureDeleted();
-                sharedDatabaseContext.Database.EnsureCreated();
-                sharedDatabaseContext.AjouterDonnees();
-            }
+                if (app.Environment.IsDevelopment())
+                {
+                    sharedDatabaseContext.Database.EnsureDeleted();
+                }
+                if (sharedDatabaseContext.Database.EnsureCreated())
+                {
+                    sharedDatabaseContext.AjouterDonnees();
 
+                    Cycle1DbContext cycle1DbContext = serviceScope.ServiceProvider.GetRequiredService<Cycle1DbContext>();
+                    cycle1DbContext.GetService<IRelationalDatabaseCreator>().CreateTables();
+                    cycle1DbContext.AjouterDonnees();
+                }
+            }
             return app;
         }
     }

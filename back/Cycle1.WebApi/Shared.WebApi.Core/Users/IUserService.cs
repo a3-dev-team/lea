@@ -4,7 +4,7 @@ using A3.Shared.WebApi.Core.Users.Models;
 
 namespace A3.Shared.WebApi.Core.Users
 {
-    public interface IUsersService
+    public interface IUserService
     {
         Task<Result<AuthenticatedUser?>> GetAuthenticatedUserAsync(SignInInformation signInInformation, JwtSettings jwtSettings);
     }

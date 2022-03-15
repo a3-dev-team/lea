@@ -6,8 +6,8 @@ namespace A3.Lea.Cycle1.WebApi.Core.Eleves
     /// <summary>
     /// Interface dal pour les élèves
     /// </summary>
-    public interface IElevesDal
+    public interface IEleveDal
     {
-        Task<Result<List<Eleve>>> ObtenirListeEleve(int idClasse);
+        Task<Result<List<Eleve>>> ObtenirListeEleve(int classeId);
     }
 }
