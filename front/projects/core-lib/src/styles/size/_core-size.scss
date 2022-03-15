@@ -1,0 +1,22 @@
+@each $size in width, height {
+  //************************
+  // .core-width-*
+  // .core-height-*
+  //************************
+  $i: 0;
+  @while $i <= 1 {
+    .core-#{$size}-#{$i*100} {
+      #{$size}: percentage($i);
+    }
+    $i: $i + 0.1;
+  }
+  //************************
+  // .core-width-*rem
+  // .core-height-*rem
+  //************************
+  @for $i from 1 through 25 {
+    .core-#{$size}-#{$i}rem {
+      #{$size}: #{$i}rem;
+    }
+  }
+}

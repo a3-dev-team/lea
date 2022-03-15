@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
-import { Eleve } from '../entities/eleve';
+import { Eleve } from '../models/eleve.model';
 import { UrlHelper } from './../../../../../cycle1-app/src/app/core/helpers/url-helper';
 
 @Injectable({
@@ -18,8 +18,15 @@ export class EleveService {
         return throwError(() => error);
       })
     )
-
-
+  // eleves$ = of([
+  //   new Eleve({
+  //     dateNaissance: new Date(2018, 1, 1),
+  //     prenom: "Tito",
+  //     emails: ["pablitoFamily@yahoo.Fr"],
+  //     id: 1,
+  //     nom: "PABLO"
+  //   })
+  // ])
   constructor(private readonly http: HttpClient) { }
 
   public ajouterEleve(eleve: Eleve): Observable<Eleve> {

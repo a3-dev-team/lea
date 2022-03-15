@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Eleve } from 'projects/cycle-classe-lib/src/lib/eleve/entities/eleve';
+import { Eleve } from 'projects/cycle-classe-lib/src/lib/eleve/models/eleve.model';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
-import { Eleve } from '../entities/eleve';
+import { Eleve } from '../models/eleve.model';
 import { EleveService } from './eleve.service';
 
 
@@ -28,7 +28,10 @@ describe('EleveService', () => {
 
   it('should return expected eleves (HttpClient called once)', () => {
     const testData: Eleve[] =
-      [{ id: 1, nom: 'nom1', prenom: 'prenom1' }, { id: 2, nom: 'nom2', prenom: 'prenom2' }];
+      [
+        new Eleve({ id: 1, nom: 'nom1', prenom: 'prenom1', emails: ['prenom1.nom1@lea.fr'], dateNaissance: new Date(2022, 1, 3) }),
+        new Eleve({ id: 2, nom: 'nom2', prenom: 'prenom2', emails: ['prenom2.nom2@lea.fr'], dateNaissance: new Date(2021, 2, 4) })
+      ];
 
     service.eleves$.subscribe(data =>
       expect(data).toBe(testData)

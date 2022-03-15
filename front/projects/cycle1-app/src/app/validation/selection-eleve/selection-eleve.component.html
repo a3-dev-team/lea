@@ -1,15 +1,10 @@
 <article>
     <header>
     </header>
-    <section class="core-grid-1
-                    core-grid-3-sup
-                    core-grid-4-mup
-                    core-grid-5-l">
-        <cycle-eleve-detail *ngFor="let eleve of (eleveStore.eleves$ | async)"
-                            [eleve]="eleve"
-                            (selection)="onEleveSelection(eleve)"
-                            class="core-width-100">
-        </cycle-eleve-detail>
+    <section>
+        <classe-eleve-tile-list [eleves$]="eleveStore.eleves$">
+
+        </classe-eleve-tile-list>
     </section>
     <footer>
     </footer>

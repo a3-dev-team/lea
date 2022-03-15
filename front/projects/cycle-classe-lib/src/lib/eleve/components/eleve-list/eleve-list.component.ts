@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Eleve } from '../../entities/eleve';
+import { Eleve } from '../../models/eleve.model';
 
 @Component({
-  selector: 'cycle-eleve-list',
+  selector: 'classe-eleve-list',
   templateUrl: './eleve-list.component.html',
   styleUrls: ['./eleve-list.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush

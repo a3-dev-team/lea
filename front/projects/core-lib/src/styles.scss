@@ -2,14 +2,15 @@
 @use "./styles/grid/core-grid";
 @use "./styles/display/core-flex";
 @use "./styles/responsive/core-responsive";
-@use "./styles/size/core-width";
-@use "./styles/size/core-height";
+@use "./styles/size/core-size";
 @use "./styles/cursor/core-cursor";
 @use "./styles/text/core-text";
 @use "./styles/input/core-input";
 @use "./styles/button/core-button";
 @use "./styles/loader/core-loader";
 @use "./styles/theme/core-theme";
+@use "./styles/border/core-border";
+@use "./styles/color/core-background-color";
 
 // @forward "./styles/loader/core-loader";
 // @forward "./styles/layout/core-layout";
