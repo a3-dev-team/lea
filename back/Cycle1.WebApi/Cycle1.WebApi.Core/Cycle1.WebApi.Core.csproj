@@ -14,10 +14,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Classes\ClassesResources.Designer.cs">
+    <Compile Update="Classes\ClasseResources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>ClassesResources.resx</DependentUpon>
+      <DependentUpon>ClasseResources.resx</DependentUpon>
     </Compile>
     <Compile Update="Eleves\EleveResources.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -27,9 +27,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Classes\ClassesResources.resx">
+    <EmbeddedResource Update="Classes\ClasseResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>ClassesResources.Designer.cs</LastGenOutput>
+      <LastGenOutput>ClasseResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Eleves\EleveResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

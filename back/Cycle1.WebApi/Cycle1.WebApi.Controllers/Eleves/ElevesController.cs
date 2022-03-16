@@ -9,7 +9,7 @@ using Microsoft.Extensions.Logging;
 namespace A3.Lea.Cycle1.WebApi.Controllers
 {
     [Route(Routes.ControllerBaseRouteV1)]
-    public class EleveController : ControllerBase<EleveController, IEleveService>
+    public class ElevesController : ControllerBase<ElevesController, IEleveService>
     {
         protected override ResourceManager? ResourceManager => EleveResources.ResourceManager;
 
@@ -20,6 +20,6 @@ namespace A3.Lea.Cycle1.WebApi.Controllers
             return this.GetActionResult(resultat);
         }
 
-        public EleveController(IEleveService service, ILogger<EleveController> logger) : base(service, logger) { }
+        public ElevesController(IEleveService service, ILogger<ElevesController> logger) : base(service, logger) { }
     }
 }

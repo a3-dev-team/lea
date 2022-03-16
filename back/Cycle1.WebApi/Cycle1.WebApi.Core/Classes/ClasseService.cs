@@ -6,8 +6,8 @@ namespace A3.Lea.Cycle1.WebApi.Core.Classes
     /// <summary>
     /// Classe implémentation de service pour les élèves
     /// </summary>
-    public class ClassesService : ServiceBase<ClassesService>, IClassesService
+    public class ClasseService : ServiceBase<ClasseService>, IClasseService
     {
-        public ClassesService(ILogger<ClassesService> logger) : base(logger) { }
+        public ClasseService(ILogger<ClasseService> logger) : base(logger) { }
     }
 }

@@ -3,7 +3,7 @@
     /// <summary>
     /// Interface de service pour les classes
     /// </summary>
-    public interface IClassesService
+    public interface IClasseService
     {
     }
 }

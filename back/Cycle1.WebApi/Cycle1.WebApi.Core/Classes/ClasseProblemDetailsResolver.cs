@@ -8,13 +8,13 @@ namespace A3.Lea.Cycle1.WebApi.Core.Classes
     /// <summary>
     /// Classe permettant la déduction d'un <see cref="ProblemDetails"/> à partir d'un <see cref="Result"/> pour les classes
     /// </summary>
-    public class ClassesProblemDetailsResolver : ProblemDetailsResolver
+    public class ClasseProblemDetailsResolver : ProblemDetailsResolver
     {
         private const string CONTEXT_NAME = "classes";
 
-        protected override ResourceManager ResourceManager => ClassesResources.ResourceManager;
+        protected override ResourceManager ResourceManager => ClasseResources.ResourceManager;
 
-        public ClassesProblemDetailsResolver() : base(CONTEXT_NAME) { }
+        public ClasseProblemDetailsResolver() : base(CONTEXT_NAME) { }
 
     }
 }

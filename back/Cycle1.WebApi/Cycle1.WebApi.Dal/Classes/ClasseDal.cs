@@ -5,7 +5,7 @@ namespace A3.Lea.Cycle1.WebApi.Dal.Classes
     /// <summary>
     /// Classe dal pour les classes
     /// </summary>
-    public class ClasseDal : IClassesDal
+    public class ClasseDal : IClasseDal
     {
     }
 }

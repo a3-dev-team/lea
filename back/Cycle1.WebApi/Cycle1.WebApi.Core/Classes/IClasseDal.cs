@@ -3,7 +3,7 @@
     /// <summary>
     /// Interface dal pour les classes
     /// </summary>
-    public interface IClassesDal
+    public interface IClasseDal
     {
     }
 }

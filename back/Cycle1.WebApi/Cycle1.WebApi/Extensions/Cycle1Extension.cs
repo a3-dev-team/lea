@@ -26,8 +26,8 @@ namespace A3.Lea.Cycle1.WebApi.Extensions
         /// <param name="services">Collection de service</param>
         private static void AddClassesServices(IServiceCollection services)
         {
-            ServicesExtensionHelper.AddServices<IClassesService, ClassesService, IClassesDal, ClasseDal, ClassesProblemDetailsResolver>
-                (services, (serviceProvider) => new ClassesProblemDetailsResolver());
+            ServicesExtensionHelper.AddServices<IClasseService, ClasseService, IClasseDal, ClasseDal, ClasseProblemDetailsResolver>
+                (services, (serviceProvider) => new ClasseProblemDetailsResolver());
         }
 
         /// <summary>
