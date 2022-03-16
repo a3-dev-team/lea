@@ -12,12 +12,4 @@ namespace A3.Lea.Cycle1.WebApi.Dal.Eleves
 
         }
     }
-
-    internal class IdentiteEleveConfiguration : IEntityTypeConfiguration<IdentiteEleve>
-    {
-        public void Configure(EntityTypeBuilder<IdentiteEleve> builder)
-        {
-
-        }
-    }
 }

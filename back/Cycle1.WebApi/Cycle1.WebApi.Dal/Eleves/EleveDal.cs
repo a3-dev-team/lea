@@ -13,7 +13,7 @@ namespace A3.Lea.Cycle1.WebApi.Dal.Eleves
     {
         public EleveDal(Cycle1DbContext databaseContext) : base(databaseContext) { }
 
-        public async Task<Result<List<Eleve>>> ObtenirListeEleve(int classeId)
+        public async Task<Result<List<Eleve>>> ChargerListeEleveClasse(int classeId)
         {
             return new Result<List<Eleve>>()
             {

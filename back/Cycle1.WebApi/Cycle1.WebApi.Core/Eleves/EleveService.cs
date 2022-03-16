@@ -17,9 +17,9 @@ namespace A3.Lea.Cycle1.WebApi.Core.Eleves
             this._elevesDal = elevesDal;
         }
 
-        public async Task<Result<List<Eleve>>> ObtenirListeEleve(int classeId)
+        public async Task<Result<List<Eleve>>> ChargerListeEleveClasse(int classeId)
         {
-            return await this._elevesDal.ObtenirListeEleve(classeId);
+            return await this._elevesDal.ChargerListeEleveClasse(classeId);
         }
     }
 }

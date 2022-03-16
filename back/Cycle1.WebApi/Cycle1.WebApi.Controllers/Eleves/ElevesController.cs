@@ -14,9 +14,9 @@ namespace A3.Lea.Cycle1.WebApi.Controllers
         protected override ResourceManager? ResourceManager => EleveResources.ResourceManager;
 
         [HttpGet("{classeId}")]
-        public async Task<IActionResult> Get(int classeId)
+        public async Task<IActionResult> ChargerListeEleveClasse(int classeId)
         {
-            Result<List<Eleve>> resultat = await this.Service.ObtenirListeEleve(classeId);
+            Result<List<Eleve>> resultat = await this.Service.ChargerListeEleveClasse(classeId);
             return this.GetActionResult(resultat);
         }
 

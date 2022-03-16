@@ -51,7 +51,7 @@ namespace A3.Shared.WebApi.Core.Users
                 }
                 else
                 {
-                    result.AddError("lala");
+                    result.AddError("Users_PE_UserSignIn.IncorrectSignInInformation");
                 }
             }
             else

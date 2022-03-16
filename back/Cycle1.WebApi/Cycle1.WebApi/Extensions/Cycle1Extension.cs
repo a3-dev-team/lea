@@ -1,7 +1,9 @@
 ﻿using A3.Lea.Cycle1.WebApi.Core.Classes;
 using A3.Lea.Cycle1.WebApi.Core.Eleves;
+using A3.Lea.Cycle1.WebApi.Core.Professeurs;
 using A3.Lea.Cycle1.WebApi.Dal.Classes;
 using A3.Lea.Cycle1.WebApi.Dal.Eleves;
+using A3.Lea.Cycle1.WebApi.Dal.Professeurs;
 
 namespace A3.Lea.Cycle1.WebApi.Extensions
 {
@@ -11,13 +13,23 @@ namespace A3.Lea.Cycle1.WebApi.Extensions
     internal static class Cycle1Extension
     {
         /// <summary>
-        /// Ajoute les services pour le contexte "eleves" du domaine "cycle 1"
+        /// Ajoute les services pour le contexte "professeurs" du domaine "cycle 1"
         /// </summary>
-        /// <param name="services"></param>
-        private static void AddElevesServices(IServiceCollection services)
+        // /// <param name="services">Collection de service</param>
+        // private static void AddEcolesServices(IServiceCollection services)
+        // {
+        //     ServicesExtensionHelper.AddServices<IEcoleService, EcoleService, IEcoleDal, EcoleDal, EcoleProblemDetailsResolver>
+        //         (services, (serviceProvider) => new EcoleProblemDetailsResolver());
+        // }
+
+        /// <summary>
+        /// Ajoute les services pour le contexte "professeurs" du domaine "cycle 1"
+        /// </summary>
+        /// <param name="services">Collection de service</param>
+        private static void AddProfesseursServices(IServiceCollection services)
         {
-            ServicesExtensionHelper.AddServices<IEleveService, EleveService, IEleveDal, EleveDal, EleveProblemDetailsResolver>
-                (services, (serviceProvider) => new EleveProblemDetailsResolver());
+            ServicesExtensionHelper.AddServices<IProfesseurService, ProfesseurService, IProfesseurDal, ProfesseurDal, ProfesseurProblemDetailsResolver>
+                (services, (serviceProvider) => new ProfesseurProblemDetailsResolver());
         }
 
         /// <summary>
@@ -31,11 +43,23 @@ namespace A3.Lea.Cycle1.WebApi.Extensions
         }
 
         /// <summary>
+        /// Ajoute les services pour le contexte "eleves" du domaine "cycle 1"
+        /// </summary>
+        /// <param name="services"></param>
+        private static void AddElevesServices(IServiceCollection services)
+        {
+            ServicesExtensionHelper.AddServices<IEleveService, EleveService, IEleveDal, EleveDal, EleveProblemDetailsResolver>
+                (services, (serviceProvider) => new EleveProblemDetailsResolver());
+        }
+
+        /// <summary>
         /// Ajoute les services pour le domaine "cycle 1"
         /// </summary>
         /// <param name="services">Collection de service</param>
         public static IServiceCollection AddCycle1Services(this IServiceCollection services)
         {
+            // AddEcolesServices(services);
+            AddProfesseursServices(services);
             AddElevesServices(services);
             AddClassesServices(services);
             return services;

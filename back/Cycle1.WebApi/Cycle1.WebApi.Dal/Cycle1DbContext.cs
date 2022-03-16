@@ -47,10 +47,10 @@ namespace A3.Lea.Cycle1.WebApi.Dal
                 ClasseId = 1,
                 Niveau = Core.Commun.Niveau.MoyenneSection
             };
-            bertrand.Identite.Id = 1;
-            bertrand.Identite.Nom = "DOLET";
-            bertrand.Identite.Prenom = "Bertrand";
-            bertrand.Identite.Sexe = Core.Commun.Sexe.Masculin;
+            bertrand.Nom = "DOLET";
+            bertrand.Prenom = "Bertrand";
+            bertrand.Sexe = Core.Commun.Sexe.Masculin;
+            bertrand.DateNaissance = new DateTime(1988, 11, 11);
 
             this.Set<Eleve>().Add(bertrand);
 

@@ -1,9 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
-using A3.Lea.Cycle1.WebApi.Core.Commun;
+using System.ComponentModel.DataAnnotations;
 
-namespace A3.Lea.Cycle1.WebApi.Core.Eleves.Modeles
+namespace A3.Lea.Cycle1.WebApi.Core.Professeurs.Modeles
 {
-    public class Eleve
+    public class Professeur
     {
         [Required]
         public int Id { get; set; }
@@ -14,9 +13,6 @@ namespace A3.Lea.Cycle1.WebApi.Core.Eleves.Modeles
         [Required]
         public int ClasseId { get; set; }
 
-        [Required]
-        public Niveau Niveau { get; set; }
-
         [Required(AllowEmptyStrings = false)]
         public string Nom { get; set; } = string.Empty;
 
@@ -26,10 +22,7 @@ namespace A3.Lea.Cycle1.WebApi.Core.Eleves.Modeles
         [Required]
         public DateTime? DateNaissance { get; set; }
 
-        [Required]
-        public Sexe Sexe { get; set; }
-
         [Required(AllowEmptyStrings = false)]
-        public string Emails { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
     }
 }
