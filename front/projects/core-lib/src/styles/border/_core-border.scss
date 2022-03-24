@@ -1,7 +1,12 @@
+@use "../core-variables" as variables;
+
 .co-border-style-solid {
     border-style: solid;
 }
 
+.core-border-radius-theme-main {
+    border-radius: variables.$core-theme-main-border-radius;
+}
 //************************
 // .core-border-radius-*
 //************************

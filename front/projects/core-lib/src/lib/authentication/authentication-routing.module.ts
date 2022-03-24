@@ -1,7 +1,7 @@
 // Angular
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SignInComponent } from './authentication/pages/sign-in/sign-in.component';
+import { SignInComponent } from './pages/sign-in/sign-in.component';
 
 // Routes vers la page de sélection du dossier courant
 const routes: Routes = [
@@ -21,4 +21,4 @@ const routes: Routes = [
     imports: [RouterModule.forChild(routes)],
     exports: [RouterModule],
 })
-export class CoreLibRoutingModule { }
+export class AuthenticationRoutingModule { }

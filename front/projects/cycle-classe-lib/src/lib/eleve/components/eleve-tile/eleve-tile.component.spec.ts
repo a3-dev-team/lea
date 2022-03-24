@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EleveTileComponent } from './eleve-tile.component';
+
 
 describe('EleveTileComponent', () => {
   let component: EleveTileComponent;
@@ -8,9 +9,14 @@ describe('EleveTileComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EleveTileComponent ]
+      imports: [
+        BrowserAnimationsModule
+      ],
+      declarations: [
+        EleveTileComponent
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

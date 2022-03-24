@@ -13,7 +13,7 @@ export class AuthenticationInterceptor implements HttpInterceptor {
   constructor(private readonly authenticationManager: AuthenticationManager) { }
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    return this.authenticationManager.userSignedInState$
+    return this.authenticationManager.authenticatedUserState$
       .pipe(
         first(),
         mergeMap((authenticatedUser: IAuthenticatedUser | null) => {

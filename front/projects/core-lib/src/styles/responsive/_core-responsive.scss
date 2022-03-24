@@ -3,21 +3,21 @@ $core-break-medium: 62rem;
 $core-break-large: 75rem;
 
 // Medium devices (tablets, 768px and up)
-@mixin core-ecran-sup() {
+@mixin core-screen-sup() {
   @media only screen and (min-width: $core-break-small) {
     @content;
   }
 }
 
 // Large devices (desktops, 992px and up)
-@mixin core-ecran-mup() {
+@mixin core-screen-mup() {
   @media only screen and (min-width: $core-break-medium) {
     @content;
   }
 }
 
 // Extra large devices (large desktops, 1200px and up)
-@mixin core-ecran-l() {
+@mixin core-screen-l() {
   @media only screen and (min-width: $core-break-large) {
     @content;
   }

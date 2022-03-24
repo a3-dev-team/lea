@@ -2,6 +2,7 @@
 {
     internal static class Routes
     {
-        public const string ControllerBaseRouteV1 = "api/lea/cycle1/v1/[controller]";
+        public const string BaseRouteV1 = "api/lea/cycle1/v1/";
+        public const string ControllerBaseRouteV1 = $"{BaseRouteV1}[controller]";
     }
 }

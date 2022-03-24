@@ -1,32 +1,34 @@
 @use "../responsive/core-responsive" as responsive;
 
-@mixin core-grid($nb-columns) {
+@mixin core-grid($nb-columns, $column-template) {
   display: grid;
   row-gap: 0.5rem;
   column-gap: 0.5rem;
-  grid-template-columns: repeat($nb-columns, 1fr);
+  grid-template-columns: repeat($nb-columns, $column-template);
 }
 
 @for $i from 1 through 12 {
   //************************
   // .core-grid-*
   //************************
-  .core-grid-#{$i} {
-    @include core-grid(#{$i});
-  }
-  .core-grid-#{$i}-sup {
-    @include responsive.core-ecran-sup() {
-      @include core-grid(#{$i});
+  @each $column-template in auto, 1fr {
+    .core-grid-#{$i}-#{$column-template} {
+      @include core-grid(#{$i}, #{$column-template});
     }
-  }
-  .core-grid-#{$i}-mup {
-    @include responsive.core-ecran-mup() {
-      @include core-grid(#{$i});
+    .core-grid-#{$i}-#{$column-template}-sup {
+      @include responsive.core-screen-sup() {
+        @include core-grid(#{$i}, #{$column-template});
+      }
     }
-  }
-  .core-grid-#{$i}-l {
-    @include responsive.core-ecran-l() {
-      @include core-grid(#{$i});
+    .core-grid-#{$i}-#{$column-template}-mup {
+      @include responsive.core-screen-mup() {
+        @include core-grid(#{$i}, #{$column-template});
+      }
+    }
+    .core-grid-#{$i}-#{$column-template}-l {
+      @include responsive.core-screen-l() {
+        @include core-grid(#{$i}, #{$column-template});
+      }
     }
   }
   //************************
@@ -35,24 +37,20 @@
   //************************
   @each $direction in row, column {
     .core-grid-#{$direction}-#{$i} {
-      // #{$i} nécessaire sinon il fait une division lors de la transpilation
       grid-#{$direction}: #{$i} / #{$i};
     }
     .core-grid-#{$direction}-#{$i}-sup {
-      @include responsive.core-ecran-sup() {
-        // #{$i} nécessaire sinon il fait une division lors de la transpilation
+      @include responsive.core-screen-sup() {
         grid-#{$direction}: #{$i} / #{$i};
       }
     }
     .core-grid-#{$direction}-#{$i}-mup {
-      @include responsive.core-ecran-mup() {
-        // #{$i} nécessaire sinon il fait une division lors de la transpilation
+      @include responsive.core-screen-mup() {
         grid-#{$direction}: #{$i} / #{$i};
       }
     }
     .core-grid-#{$direction}-#{$i}-l {
-      @include responsive.core-ecran-l() {
-        // #{$i} nécessaire sinon il fait une division lors de la transpilation
+      @include responsive.core-screen-l() {
         grid-#{$direction}: #{$i} / #{$i};
       }
     }
@@ -65,17 +63,17 @@
         grid-row: #{$i} / span #{$j};
       }
       .core-grid-#{$direction}-#{$i}-span-#{$j}-sup {
-        @include responsive.core-ecran-sup() {
+        @include responsive.core-screen-sup() {
           grid-#{$direction}: #{$i} / span #{$j};
         }
       }
       .core-grid-#{$direction}-#{$i}-span-#{$j}-mup {
-        @include responsive.core-ecran-mup() {
+        @include responsive.core-screen-mup() {
           grid-#{$direction}: #{$i} / span #{$j};
         }
       }
       .core-grid-#{$direction}-#{$i}-span-#{$j}-l {
-        @include responsive.core-ecran-l() {
+        @include responsive.core-screen-l() {
           grid-#{$direction}: #{$i} / span #{$j};
         }
       }

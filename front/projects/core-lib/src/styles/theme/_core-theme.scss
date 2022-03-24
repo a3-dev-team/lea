@@ -1,34 +1,37 @@
-:root{
-    --core-theme-background-color : #322e2f;
-    --core-theme-color : #efefef;
-    --core-theme-main-background-color : #998017;
-    --core-theme-main-disabled-background-color : #5a4e1c;
-    --core-theme-main-active-background-color : #4c4028;
-    --core-theme-main-color : #322e2f;
-    --core-theme-fonctionnality-background-color : #322e2f;
-    --core-theme-fonctionnality-color : #efefef;
-    .clair{
-        --core-theme-background-color : #e7e7e7;
-        --core-theme-main-active-background-color : #dbd3c2;
-        --core-theme-color : #322e2f;
-        --core-theme-main-color : #e7e7e7;
-        --core-theme-fonctionnality-background-color : #e7e7e7;
-        --core-theme-fonctionnality-color : #322e2f;         
+:root {
+    --core-theme-background-color: #322e2f;
+    --core-theme-color: #efefef;
+    --core-theme-main-background-color: #998017;
+    --core-theme-main-disabled-background-color: #5a4e1c;
+    --core-theme-main-active-background-color: #4c4028;
+    --core-theme-main-color: #322e2f;
+    --core-theme-fonctionnality-background-color: #322e2f;
+    --core-theme-fonctionnality-color: #efefef;
+    --core-theme-main-padding: 0.5rem;
+    --core-theme-main-border-radius: 0rem;
+
+    .clair {
+        --core-theme-background-color: #e7e7e7;
+        --core-theme-main-active-background-color: #dbd3c2;
+        --core-theme-color: #322e2f;
+        --core-theme-main-color: #e7e7e7;
+        --core-theme-fonctionnality-background-color: #e7e7e7;
+        --core-theme-fonctionnality-color: #322e2f;
     }
-    .garcon{
-        --core-theme-main-background-color : #174b99;
-        --core-theme-main-disabled-background-color : #1c355a;
-        --core-theme-main-active-background-color : #283b4c; 
-        &.clair{
-            --core-theme-main-active-background-color : #c2cedb;
+    .garcon {
+        --core-theme-main-background-color: #174b99;
+        --core-theme-main-disabled-background-color: #1c355a;
+        --core-theme-main-active-background-color: #283b4c;
+        &.clair {
+            --core-theme-main-active-background-color: #c2cedb;
         }
     }
-    .fille{
-        --core-theme-main-background-color : #991767;
-        --core-theme-main-disabled-background-color : #5a1c40;
-        --core-theme-main-active-background-color : #4c283d; 
-        &.clair{
-            --core-theme-main-active-background-color : #c2cedb;
+    .fille {
+        --core-theme-main-background-color: #991767;
+        --core-theme-main-disabled-background-color: #5a1c40;
+        --core-theme-main-active-background-color: #4c283d;
+        &.clair {
+            --core-theme-main-active-background-color: #c2cedb;
         }
     }
 }

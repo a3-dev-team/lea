@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Classe, EleveService } from '@cycle-classe-lib';
 import { Eleve } from 'projects/cycle-classe-lib/src/lib/eleve/models/eleve.model';
-import { EleveStore } from 'projects/cycle-classe-lib/src/lib/eleve/store/eleve-store';
+import { first, mergeMap, of } from 'rxjs';
+import { ApplicationStore } from '../../core/application-store/application-store';
 
 @Component({
   selector: 'app-selection-eleve',
@@ -10,9 +12,24 @@ import { EleveStore } from 'projects/cycle-classe-lib/src/lib/eleve/store/eleve-
 })
 export class SelectionEleveComponent {
 
+  public listeEleveClasse$ =
+    this.applicationStore.classeState$
+      .pipe(
+        first(),
+        mergeMap((classe: Classe | null) => {
+          if (classe) {
+            return this.eleveService.chargerListeEleveClasse(classe.id)
+          }
+          else {
+            return of([])
+          }
+        })
+      );
+
   constructor(
     private readonly router: Router,
-    public readonly eleveStore: EleveStore) {
+    private readonly applicationStore: ApplicationStore,
+    public readonly eleveService: EleveService) {
   }
 
   public onEleveSelection(eleve: Eleve) {

@@ -10,14 +10,12 @@ import { ApplicationStore } from './../core/application-store/application-store'
 export class ValidationComponent implements OnInit, OnDestroy {
 
   constructor(private readonly applicationStore: ApplicationStore) {
-    this.applicationStore.MettreAJourEstModeValidationActif(true);
   }
 
   ngOnInit(): void {
   }
 
   ngOnDestroy(): void {
-    this.applicationStore.MettreAJourEstModeValidationActif(false);
   }
 
 }

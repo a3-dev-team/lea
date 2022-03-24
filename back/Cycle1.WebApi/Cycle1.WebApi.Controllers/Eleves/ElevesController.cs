@@ -13,7 +13,7 @@ namespace A3.Lea.Cycle1.WebApi.Controllers
     {
         protected override ResourceManager? ResourceManager => EleveResources.ResourceManager;
 
-        [HttpGet("{classeId}")]
+        [HttpGet($"~/{Routes.BaseRouteV1}classes/{{classeId:int}}/eleves")]
         public async Task<IActionResult> ChargerListeEleveClasse(int classeId)
         {
             Result<List<Eleve>> resultat = await this.Service.ChargerListeEleveClasse(classeId);

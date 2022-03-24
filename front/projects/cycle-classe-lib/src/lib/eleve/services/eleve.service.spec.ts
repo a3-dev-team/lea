@@ -33,11 +33,11 @@ describe('EleveService', () => {
         new Eleve({ id: 2, nom: 'nom2', prenom: 'prenom2', emails: ['prenom2.nom2@lea.fr'], dateNaissance: new Date(2021, 2, 4) })
       ];
 
-    service.eleves$.subscribe(data =>
+    service.chargerListeEleveClasse(1).subscribe(data =>
       expect(data).toBe(testData)
     );
 
-    const testRequest = httpTestingController.expectOne('https://localhost:7057/api/lea/cycle1/v1/eleves');
+    const testRequest = httpTestingController.expectOne('https://localhost:7057/api/lea/cycle1/v1/classes/1/eleves');
     expect(testRequest.request.method).toEqual('GET');
     testRequest.flush(testData);
 

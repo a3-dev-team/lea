@@ -18,7 +18,7 @@ export class AuthenticationGuard implements CanActivate, CanActivateChild, CanLo
    * @private
    * @type {*}
    */
-  private isUserSignedIn$: Observable<boolean> = this.authenticationManager.userSignedInState$
+  private isUserSignedIn$: Observable<boolean> = this.authenticationManager.authenticatedUserState$
     .pipe(
       map((authenticatedUser: IAuthenticatedUser | null) => !!authenticatedUser),
     );

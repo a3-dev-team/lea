@@ -1,6 +1,7 @@
 using A3.Lea.Cycle1.WebApi.Core.Classes.Modeles;
 using A3.Lea.Cycle1.WebApi.Core.Ecoles.Modeles;
 using A3.Lea.Cycle1.WebApi.Core.Eleves.Modeles;
+using A3.Lea.Cycle1.WebApi.Core.Professeurs.Modeles;
 using Microsoft.EntityFrameworkCore;
 
 namespace A3.Lea.Cycle1.WebApi.Dal
@@ -33,6 +34,20 @@ namespace A3.Lea.Cycle1.WebApi.Dal
             ecole.Adresse.Commune = "AMIENS";
             this.Set<Ecole>().Add(ecole);
 
+
+            var professeur = new Professeur()
+            {
+                Id = 1,
+                Nom = "TOURNESOL",
+                EcoleId = 1,
+                ClasseId = 1,
+                Prenom = "Professeur",
+                Email = "lea@a3.fr",
+                DateNaissance = new DateTime(1901, 11, 11)
+            };
+
+            this.Set<Professeur>().Add(professeur);
+
             var classe = new Classe()
             {
                 Id = 1,
@@ -54,7 +69,18 @@ namespace A3.Lea.Cycle1.WebApi.Dal
 
             this.Set<Eleve>().Add(bertrand);
 
+            Eleve jonathan = new Eleve()
+            {
+                Id = 2,
+                ClasseId = 1,
+                Niveau = Core.Commun.Niveau.GrandeSection
+            };
+            jonathan.Nom = "GALLAIS";
+            jonathan.Prenom = "Jonathan";
+            jonathan.Sexe = Core.Commun.Sexe.Masculin;
+            jonathan.DateNaissance = new DateTime(1979, 07, 27);
 
+            this.Set<Eleve>().Add(jonathan);
 
             this.SaveChanges();
 

@@ -21,11 +21,11 @@ namespace A3.Lea.Cycle1.WebApi.Dal.Professeurs
             };
         }
 
-        public async Task<Result<Professeur>> ChargerProfesseurParEmail(string eMail)
+        public async Task<Result<Professeur>> ChargerProfesseurParEmail(string email)
         {
             return new Result<Professeur>()
             {
-                Value = await this.FindByCondition(professeur => professeur.Email.Equals(eMail)).SingleOrDefaultAsync()
+                Value = await this.FindByCondition(professeur => professeur.Email.Equals(email)).SingleOrDefaultAsync()
             };
         }
     }

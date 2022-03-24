@@ -1,0 +1,5 @@
+@use "../core-variables" as variables;
+
+.core-padding-theme-main {
+    padding: variables.$core-theme-main-padding;
+}

@@ -22,9 +22,9 @@ namespace A3.Lea.Cycle1.WebApi.Core.Professeurs
             return await this._professeursDal.ChargerProfesseur(professeurId);
         }
 
-        public async Task<Result<Professeur>> ChargerProfesseurParEmail(string eMail)
+        public async Task<Result<Professeur>> ChargerProfesseurParEmail(string email)
         {
-            return await this._professeursDal.ChargerProfesseurParEmail(eMail);
+            return await this._professeursDal.ChargerProfesseurParEmail(email);
         }
     }
 }

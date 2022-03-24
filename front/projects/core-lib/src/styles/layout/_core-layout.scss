@@ -55,9 +55,9 @@ article {
   justify-content: stretch;
   align-items: stretch;
   row-gap: 0.25rem;
-  padding: 0 0.25rem;
+  //padding: 0 0.25rem;
 
-  header {
+  > header {
     padding: 1rem;
     display: flex;
     flex-direction: row;
@@ -66,7 +66,7 @@ article {
     border-radius: variables.$core-theme-border-radius variables.$core-theme-border-radius 0 0;
     background-color: variables.$core-theme-fonctionnality-background-color;
   }
-  section {
+  > section {
     padding: 0.5rem;
     display: flex;
     flex-direction: column;
@@ -75,7 +75,7 @@ article {
     overflow-y: auto;
     background-color: variables.$core-theme-fonctionnality-background-color;
   }
-  footer {
+  > footer {
     padding: 0.5rem;
     display: flex;
     flex-direction: row;

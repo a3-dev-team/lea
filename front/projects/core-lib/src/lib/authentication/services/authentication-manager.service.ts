@@ -19,21 +19,26 @@ export class AuthenticationManager {
    * @private
    * @type {UserSignIn}
    */
-  private userSignedInSubject = new BehaviorSubject<IAuthenticatedUser | null>(null);
-  public userSignedInState$ = this.userSignedInSubject.asObservable();
+  private authenticationUserSubject = new BehaviorSubject<IAuthenticatedUser | null>(null);
+  public authenticatedUserState$ = this.authenticationUserSubject.asObservable();
 
   /**
-   * Sous-Url vers le controlleur d'authentification
+   * Url d'accès à l'authentification
    * @date 01/02/2022 - 10:21:49
    *
    * @private
    * @type {string}
    */
-  private webApiUrl = UrlHelper.sharedBackApiUrl + "users/signin"
+  private authenticationUrl = UrlHelper.sharedBackApiUrl + "users/signin"
 
   constructor(
     private readonly httpClient: HttpClient,
-    private readonly router: Router) { }
+    private readonly router: Router) {
+    this.authenticationUserSubject
+      .subscribe((authenticationUser: IAuthenticatedUser | null) => {
+        console.log("UserSignedIn : " + authenticationUser?.email);
+      });
+  }
 
 
   /**
@@ -45,16 +50,23 @@ export class AuthenticationManager {
    * @param {string} routeToNavigate
    */
   public signIn(userSignedIn: UserSignIn, routeToNavigate: string) {
-    this.httpClient.post<IAuthenticatedUser>(this.webApiUrl, userSignedIn)
+    this.httpClient.post<IAuthenticatedUser>(this.authenticationUrl, userSignedIn)
       .subscribe((authenticatedUser: IAuthenticatedUser) => {
         this.saveToken(authenticatedUser.token);
-        this.userSignedInSubject.next(authenticatedUser);
+        this.authenticationUserSubject.next(authenticatedUser);
         this.router.navigateByUrl(routeToNavigate);
       });
   }
 
+
+  /**
+   * Déconnexion d'un utilisateur
+   * @date 23/03/2022 - 00:23:52
+   *
+   * @public
+   */
   public signOut() {
-    this.userSignedInSubject.next(null);
+    this.authenticationUserSubject.next(null);
     this.deleteToken();
     this.router.navigate(["signIn"])
   }

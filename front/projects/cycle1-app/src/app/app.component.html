@@ -1,16 +1,12 @@
 <header>
     <h1>Cycle 1</h1>
-    <span>{{(applicationStore.eleveSelectionneState$ | async)?.prenom}} {{(applicationStore.eleveSelectionneState$ |
-        async)?.nom}}</span>
-    <button *ngIf="!(applicationStore.estModeValidationActifState$ | async)"
-            class="negative">
-        <span>Accéder à la gestion des ressources</span>
-    </button>
-    <button *ngIf="(authenticationManager.userSignedInState$ | async)"
-            class="negative"
-            (click)="authenticationManager.signOut()">
-        <span i18n>Se déconnecter</span>
-    </button>
+    <ng-container *ngIf="(authenticationManager.authenticatedUserState$ | async) as authenticatedUser">
+        <span>{{authenticatedUser.firstName}} {{authenticatedUser.lastName}}</span>
+        <button class="negative"
+                (click)="authenticationManager.signOut()">
+            <span i18n>Se déconnecter</span>
+        </button>
+    </ng-container>
 </header>
 <section [@routeAnimations]="outlet?.isActivated && outlet?.activatedRoute ? outlet?.activatedRoute : null">
     <router-outlet #outlet="outlet">

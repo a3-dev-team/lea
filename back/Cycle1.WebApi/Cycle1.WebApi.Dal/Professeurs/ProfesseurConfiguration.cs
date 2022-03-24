@@ -9,11 +9,11 @@ namespace A3.Lea.Cycle1.WebApi.Dal.Professeurs
         public void Configure(EntityTypeBuilder<Professeur> builder)
         {
             builder.HasIndex(p => new { p.EcoleId, p.Id }).IsUnique();
-            // Le chargement d'un professeur se fera par son eMail (Version 1)
+            // Le chargement d'un professeur se fera par son email (Version 1)
             // Séquence chargement : 
             //  - Chargement User
-            //  - Récupération eMail User
-            //  - Chargement Professeur correspondant à l'eMail User
+            //  - Récupération email User
+            //  - Chargement Professeur correspondant à l'email User
             builder.HasIndex(p => new { p.Email }).IsUnique();
         }
     }

@@ -25,11 +25,22 @@ export class EleveService {
   //     emails: ["pablitoFamily@yahoo.Fr"],
   //     id: 1,
   //     nom: "PABLO"
+  //   }),
+  //   new Eleve({
+  //     dateNaissance: new Date(2018, 1, 1),
+  //     prenom: "Tito",
+  //     emails: ["pablitoFamily@yahoo.Fr"],
+  //     id: 2,
+  //     nom: "PABLO"
   //   })
   // ])
   constructor(private readonly http: HttpClient) { }
 
   public ajouterEleve(eleve: Eleve): Observable<Eleve> {
     return this.http.post<Eleve>(this.elevesUrl, eleve);
+  }
+
+  public chargerListeEleveClasse(classeId: number): Observable<Eleve[]> {
+    return this.http.get<Eleve[]>(`${UrlHelper.cycle1BackApiUrl}classes/${classeId}/eleves`);
   }
 }
