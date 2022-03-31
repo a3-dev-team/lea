@@ -5,20 +5,20 @@
     "baseUrl": "./",
     "paths": {
       "@cycle-classe-lib": [
-        "projects/cycle-classe-lib/src/public-api.ts",
-        "projects/cycle-classe-lib/src/"
+        "libs/cycle-classe-lib/src/public-api.ts",
+        "libs/cycle-classe-lib/src/"
       ],
       "@shared-lib": [
-        "projects/shared-lib/src/public-api.ts",
-        "projects/cycle-classe-lib/src/"
+        "libs/shared-lib/src/public-api.ts",
+        "libs/shared-lib/src/"
       ],
       "@cycle1-objectif-lib": [
-        "projects/cycle1-objectif-lib/src/public-api.ts",
-        "projects/cycle1-objectif-lib/src"
+        "libs/cycle1-objectif-lib/src/public-api.ts",
+        "libs/cycle1-objectif-lib/src"
       ],
       "@core-lib": [
-        "projects/core-lib/src/public-api.ts",
-        "projects/core-lib/src"
+        "libs/core-lib/src/public-api.ts",
+        "libs/core-lib/src"
       ]
     },
     "outDir": "./dist/out-tsc",
