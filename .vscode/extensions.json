@@ -2,6 +2,11 @@
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=827846
   "recommendations": [
     "angular.ng-template",
-    "github.vscode-pull-request-github"
+    "github.vscode-pull-request-github",
+    "ms-dotnettools.csharp",
+    "sibiraj-s.vscode-scss-formatter",
+    "mrmlnc.vscode-scss",
+    "vscode-icons-team.vscode-icons",
+    "kimlimjustin.jsdoc-generator"
   ]
 }
