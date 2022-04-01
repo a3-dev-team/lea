@@ -15,13 +15,25 @@ describe('UrlHelper', () => {
 
             const backBaseUrl: string = UrlHelper.GetBackBaseUrl(environment);
 
-            expect(backBaseUrl).not.toBe("https://localhost:7057/")
+            expect(backBaseUrl).not.toBe("https://localhost:7057")
         })
 
         it(`devrait retourner 'environment.backUrl'`, () => {
             const environment: IEnvironment = {
                 production: false,
                 backUrl: 'https://localhost:7057/',
+                tokenName: 'tokenName'
+            }
+
+            const backBaseUrl: string = UrlHelper.GetBackBaseUrl(environment);
+
+            expect(backBaseUrl).toBe("https://localhost:7057/")
+        })
+
+        it(`devrait retourner 'environment.backUrl' avec un '/'`, () => {
+            const environment: IEnvironment = {
+                production: false,
+                backUrl: 'https://localhost:7057',
                 tokenName: 'tokenName'
             }
 
