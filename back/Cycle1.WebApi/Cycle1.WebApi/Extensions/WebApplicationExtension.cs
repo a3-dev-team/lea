@@ -12,10 +12,10 @@ namespace A3.Lea.Cycle1.WebApi.Extensions
             using (var serviceScope = app.Services.CreateScope())
             {
                 SharedDbContext sharedDatabaseContext = serviceScope.ServiceProvider.GetRequiredService<SharedDbContext>();
-                if (app.Environment.IsDevelopment())
-                {
-                    sharedDatabaseContext.Database.EnsureDeleted();
-                }
+                // if (app.Environment.IsDevelopment())
+                // {
+                sharedDatabaseContext.Database.EnsureDeleted();
+                // }
                 if (sharedDatabaseContext.Database.EnsureCreated())
                 {
                     sharedDatabaseContext.AjouterDonnees();
