@@ -15,7 +15,7 @@ export class SelectionEleveComponent {
   public listeEleveClasse$ =
     this.applicationStore.classeState$
       .pipe(
-        first(),
+        first(classe => !!classe),
         mergeMap((classe: Classe | null) => {
           if (classe) {
             return this.eleveService.chargerListeEleveClasse(classe.id)

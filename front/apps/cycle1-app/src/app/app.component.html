@@ -8,8 +8,8 @@
         </button>
     </ng-container>
 </header>
-<section [@routeAnimations]="outlet?.isActivated && outlet?.activatedRoute ? outlet?.activatedRoute : null">
-    <router-outlet #outlet="outlet">
+<section [@routeAnimations]="prepareRoute(routerOutlet)">
+    <router-outlet #routerOutlet="outlet">
     </router-outlet>
 </section>
 

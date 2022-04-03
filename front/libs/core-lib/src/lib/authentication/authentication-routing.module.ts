@@ -7,7 +7,8 @@ import { SignInComponent } from './pages/sign-in/sign-in.component';
 const routes: Routes = [
     {
         path: 'signIn',
-        component: SignInComponent
+        component: SignInComponent,
+        data: { animationState: 'SignIn' }
     },
 ];
 

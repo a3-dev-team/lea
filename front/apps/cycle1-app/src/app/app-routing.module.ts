@@ -10,13 +10,19 @@ const routes: Routes = [
     redirectTo: 'accueil'
   },
   {
-    path: 'accueil', loadChildren: () => AccueilModule, canActivate: [AuthenticationGuard],
+    path: 'accueil', loadChildren: () => AccueilModule,
+    data: { animationState: 'Accueil' },
+    canActivate: [AuthenticationGuard],
   },
   {
-    path: 'validation', loadChildren: () => import('./validation/validation.module').then((module) => module.ValidationModule), canActivate: [AuthenticationGuard],
+    path: 'validation', loadChildren: () => import('./validation/validation.module').then((module) => module.ValidationModule),
+    data: { animationState: 'Validation' },
+    canActivate: [AuthenticationGuard],
   },
   {
-    path: 'appreciation', loadChildren: () => import('./appreciation/appreciation.module').then((module) => module.AppreciationModule)
+    path: 'appreciation', loadChildren: () => import('./appreciation/appreciation.module').then((module) => module.AppreciationModule),
+    data: { animationState: 'Appreciation' },
+    canActivate: [AuthenticationGuard]
   }
 ];
 
