@@ -8,6 +8,7 @@ namespace A3.Lea.Cycle1.WebApi.Core.Eleves
     /// </summary>
     public interface IEleveService
     {
+        Task<Result<Eleve>> ChargerEleve(int eleveId);
         Task<Result<List<Eleve>>> ChargerListeEleveClasse(int classeId);
     }
 }

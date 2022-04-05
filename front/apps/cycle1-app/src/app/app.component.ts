@@ -7,7 +7,6 @@ import { mergeMap, of, takeUntil, tap } from 'rxjs';
 import { routeAnimations } from './app.animation';
 import { ApplicationStore } from './core/application-store/application-store';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -26,7 +25,7 @@ export class AppComponent extends BaseComponent implements OnInit {
     super();
   }
 
-  override ngOnInit(): void {
+  public override ngOnInit(): void {
 
     super.ngOnInit();
 
@@ -63,7 +62,7 @@ export class AppComponent extends BaseComponent implements OnInit {
 
   }
 
-  prepareRoute(routerOutlet: RouterOutlet) {
+  public prepareRoute(routerOutlet: RouterOutlet) {
     return routerOutlet &&
       routerOutlet.activatedRouteData &&
       routerOutlet.activatedRouteData['animationState'];

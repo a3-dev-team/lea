@@ -13,14 +13,14 @@ export class EleveTileListComponent extends FullSizeBaseComponent {
   @HostBinding('class') class = "core-position-relative"
 
   @Input() public eleves$!: Observable<Eleve[]>
-  @Output() public selection: EventEmitter<Eleve> = new EventEmitter<Eleve>();
+  @Output() public selected: EventEmitter<Eleve> = new EventEmitter<Eleve>();
 
   constructor() {
     super();
   }
 
   onEleveSelected(eleve: Eleve) {
-    this.selection.emit(eleve);
+    this.selected.emit(eleve);
   }
 
 }

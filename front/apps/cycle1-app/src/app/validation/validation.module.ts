@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { CycleClasseLibModule } from '@cycle-classe-lib';
 import { Cycle1ObjectifLibModule } from '@cycle1-objectif-lib';
 import { WebcamModule } from 'ngx-webcam';
+import { SharedModule } from '../shared/shared.module';
 import { SelectionEleveComponent } from './selection-eleve/selection-eleve.component';
 import { SelectionObjectifComponent } from './selection-objectif/selection-objectif.component';
 import { ValidationObjectifComponent } from './validation-objectif/validation-objectif.component';
@@ -20,10 +21,11 @@ import { ValidationComponent } from './validation.component';
   ],
   imports: [
     CommonModule,
+    SharedModule,
     ValidationRoutingModule,
     CycleClasseLibModule,
     Cycle1ObjectifLibModule,
-    WebcamModule
+    WebcamModule,
   ]
 })
 export class ValidationModule { }

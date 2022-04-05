@@ -48,4 +48,10 @@ export class EleveService {
   public chargerListeEleveClasse(classeId: number): Observable<Eleve[]> {
     return this.http.get<Eleve[]>(`${UrlHelper.GetBackApiUrl(this.environment, this.apiProperties)}classes/${classeId}/eleves`);
   }
+
+  public chargerEleve(eleveId: number): Observable<Eleve> {
+    return this.http.get<Eleve>(`${UrlHelper.GetBackApiUrl(this.environment, this.apiProperties)}eleves/${eleveId}`);
+  }
+
+
 }

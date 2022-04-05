@@ -1,1 +1,15 @@
-<router-outlet></router-outlet>
+<article>
+    <header class="core-flex-row-stretch-stretch"
+            *ngIf="(validationStore.eleveState$ | async) as eleve">
+        <classe-eleve-tile *ngIf="eleve"
+                           [eleve]="eleve">
+        </classe-eleve-tile>
+    </header>
+    <section class="core-flex-1">
+        <div [@routeAnimations]="prepareRoute(routerOutlet)"
+             class="core-width-100 core-height-100">
+            <router-outlet #routerOutlet="outlet">
+            </router-outlet>
+        </div>
+    </section>
+</article>

@@ -16,7 +16,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatToolbarModule,
     MatGridListModule,
     MatTableModule,
-    MatCardModule
+    MatCardModule,
   ],
   exports: [
     MatIconModule,

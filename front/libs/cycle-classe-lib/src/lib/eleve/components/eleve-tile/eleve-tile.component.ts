@@ -1,13 +1,13 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { BehaviorSubject, take } from 'rxjs';
 import { Eleve } from '../../models/eleve.model';
-import { eleveTileAnimation } from './eleve-tile.animation';
+import { eleveTileAnimations } from './eleve-tile.animation';
 
 @Component({
   selector: 'classe-eleve-tile',
   templateUrl: './eleve-tile.component.html',
   styleUrls: ['./eleve-tile.component.css'],
-  animations: [eleveTileAnimation],
+  animations: [eleveTileAnimations],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EleveTileComponent implements OnInit {

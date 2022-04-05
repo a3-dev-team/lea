@@ -7,7 +7,7 @@
                 core-background-color-theme-main
                 core-border-radius-theme-main
                 core-padding-theme-main"
-         [@eleveTileAnimation]="(selectedState$ | async) ? 'selected' : 'notSelected'"
+         [@eleveTileAnimations]="(selectedState$ | async) ? 'selected' : 'notSelected'"
          (click)="onTileClick()">
      <img src="https://previews.123rf.com/images/jemastock/jemastock1705/jemastock170508361/78184821-t%C3%AAte-de-dessin-visage-souriant-illustration-de-vecteur-de-caract%C3%A8re-enfant.jpg"
           class="core-width-10rem

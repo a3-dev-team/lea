@@ -1,7 +1,15 @@
 <article>
+    <header>
+        <h2>Sélectionner l'élève</h2>
+
+    </header>
     <section class="core-flex-1">
-        <classe-eleve-tile-list [eleves$]="listeEleveClasse$">
+        <classe-eleve-tile-list [eleves$]="listeEleveClasse$"
+                                (selected)="onEleveSelected($event)">
 
         </classe-eleve-tile-list>
     </section>
+    <footer>
+        <button [routerLink]="['/accueil']">Retour accueil</button>
+    </footer>
 </article>

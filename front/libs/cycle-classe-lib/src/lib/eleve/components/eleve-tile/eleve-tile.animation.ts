@@ -1,7 +1,7 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 
-export const eleveTileAnimation =
-    trigger('eleveTileAnimation', [
+export const eleveTileAnimations =
+    trigger('eleveTileAnimations', [
         state('selected', style({
             position: 'absolute'
 
@@ -15,4 +15,11 @@ export const eleveTileAnimation =
         transition('notSelected => selected', [
             animate('300ms ease-out')
         ]),
+        transition(':enter', [
+            style({ opacity: 0 }),
+            animate('600ms ease-out', style({ opacity: 1 }))
+        ]),
+        transition(':leave', [
+            animate('600ms ease-out', style({ opacity: 0 }))
+        ])
     ]);

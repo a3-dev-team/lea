@@ -13,6 +13,14 @@ namespace A3.Lea.Cycle1.WebApi.Dal.Eleves
     {
         public EleveDal(Cycle1DbContext databaseContext) : base(databaseContext) { }
 
+        public async Task<Result<Eleve>> ChargerEleve(int eleveId)
+        {
+            return new Result<Eleve>()
+            {
+                Value = await this.FindByCondition(eleve => eleve.Id.Equals(eleveId)).SingleOrDefaultAsync()
+            };
+        }
+
         public async Task<Result<List<Eleve>>> ChargerListeEleveClasse(int classeId)
         {
             return new Result<List<Eleve>>()
@@ -20,5 +28,6 @@ namespace A3.Lea.Cycle1.WebApi.Dal.Eleves
                 Value = await this.FindByCondition(eleve => eleve.ClasseId.Equals(classeId)).ToListAsync()
             };
         }
+
     }
 }

@@ -1,3 +1,4 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Cycle1ObjectifLibModule, ObjectifStore } from '@cycle1-objectif-lib';
@@ -19,6 +20,7 @@ describe('SelectionObjectifComponent', () => {
     await TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
+        HttpClientTestingModule,
         Cycle1ObjectifLibModule
       ],
       declarations: [SelectionObjectifComponent],

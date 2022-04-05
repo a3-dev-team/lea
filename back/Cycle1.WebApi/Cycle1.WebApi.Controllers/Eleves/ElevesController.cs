@@ -13,6 +13,15 @@ namespace A3.Lea.Cycle1.WebApi.Controllers
     {
         protected override ResourceManager? ResourceManager => EleveResources.ResourceManager;
 
+        public ElevesController(IEleveService service, ILogger<ElevesController> logger) : base(service, logger) { }
+
+        [HttpGet("{eleveId:int}")]
+        public async Task<IActionResult> ChargerEleve(int eleveId)
+        {
+            Result<Eleve> resultat = await this.Service.ChargerEleve(eleveId);
+            return this.GetActionResult(resultat);
+        }
+
         [HttpGet($"~/{Routes.BaseRouteV1}classes/{{classeId:int}}/eleves")]
         public async Task<IActionResult> ChargerListeEleveClasse(int classeId)
         {
@@ -20,6 +29,5 @@ namespace A3.Lea.Cycle1.WebApi.Controllers
             return this.GetActionResult(resultat);
         }
 
-        public ElevesController(IEleveService service, ILogger<ElevesController> logger) : base(service, logger) { }
     }
 }
