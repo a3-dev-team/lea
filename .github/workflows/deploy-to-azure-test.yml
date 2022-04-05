@@ -21,9 +21,12 @@ jobs:
       - name: npm ci, build & test
         working-directory: front
         run: |
+          npm version prerelease
           npm ci
           npm run build:ci -- --output-path ../release/wwwroot 
           npm run test:ci
+          npm version prerelease
+          npm run git push -m "[RELEASE TEST] %s"
 
       - name: Use .Net Core 6.0.x
         uses: actions/setup-dotnet@v1

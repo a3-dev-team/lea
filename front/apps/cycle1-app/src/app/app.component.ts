@@ -4,6 +4,7 @@ import { AuthenticationManager, IAuthenticatedUser } from '@core-lib';
 import { Classe, ClasseService, Professeur, ProfesseurService } from '@cycle-classe-lib';
 import { BaseComponent } from '@shared-lib';
 import { mergeMap, of, takeUntil, tap } from 'rxjs';
+import * as packageInfo from '../../../../package.json';
 import { routeAnimations } from './app.animation';
 import { ApplicationStore } from './core/application-store/application-store';
 
@@ -16,6 +17,11 @@ import { ApplicationStore } from './core/application-store/application-store';
   ]
 })
 export class AppComponent extends BaseComponent implements OnInit {
+
+  // Expose package.json, pas une bonne pratique, risque sécurité
+  // https://stackoverflow.com/questions/64993118/error-should-not-import-the-named-export-version-imported-as-version
+  public packageInfo = packageInfo
+  public version: string = this.packageInfo.version;
 
   constructor(
     public readonly authenticationManager: AuthenticationManager,
