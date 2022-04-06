@@ -57,7 +57,7 @@ jobs:
 
   publish :
     runs-on: ubuntu-latest
-    needs: [check angular, check .Net Core]
+    needs: [check-angular, check-dotnet_core]
     steps:
       - uses: actions/checkout@v3
         with:
