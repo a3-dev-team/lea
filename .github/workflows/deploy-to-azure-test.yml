@@ -17,7 +17,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "16.x"
-      -name: setup git config
+      - name: setup git config
         run: |
           # setup the username and email. Here : 'GitHub Actions Bot' with no email by default
           git config user.name "GitHub Actions Bot"
