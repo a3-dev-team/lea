@@ -20,8 +20,8 @@ jobs:
       - name: setup git config
         run: |
           # setup the username and email. Here : 'GitHub Actions Bot' with no email by default
-          git config user.name "GitHub Actions Bot"
-          git config user.email "<>"
+          git config user.name "jo-belix"
+          git config user.email "jo.belix@outlook.fr"
 
       - name: npm ci, build & test
         working-directory: front
