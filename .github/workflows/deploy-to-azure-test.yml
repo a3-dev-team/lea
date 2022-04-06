@@ -80,6 +80,15 @@ jobs:
           npm ci
           npm version prerelease
           npm run build:ci -- --output-path ../release/wwwroot 
+    
+      - name: Use .Net Core 6.0.x
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: "6.0.x"
+
+      - name: install dependencies
+        working-directory: back/Cycle1.WebApi
+        run: dotnet restore Cycle1.WebApi.sln
 
       - name: dotnet publish
         working-directory: back/Cycle1.WebApi
