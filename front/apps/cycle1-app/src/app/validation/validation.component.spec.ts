@@ -1,7 +1,11 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
+import { Eleve } from '@cycle-classe-lib';
+import { of } from 'rxjs';
 import { ValidationComponent } from './validation.component';
+import { ValidationStore } from './validation.store';
 
 
 describe('ValidationComponent', () => {
@@ -9,12 +13,20 @@ describe('ValidationComponent', () => {
   let fixture: ComponentFixture<ValidationComponent>;
 
   beforeEach(async () => {
+    let validationStoreStub = {
+      eleveState$: of(new Eleve({ prenom: "Prénom", nom: "Nom" }))
+    };
+
     await TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
-        HttpClientTestingModule
+        HttpClientTestingModule,
+        BrowserAnimationsModule
       ],
-      declarations: [ValidationComponent]
+      declarations: [ValidationComponent],
+      providers: [
+        { provide: ValidationStore, useValue: validationStoreStub }
+      ]
     })
       .compileComponents();
   });

@@ -34,9 +34,11 @@ describe('SelectionEleveComponent', () => {
         MatCardModule,
         CycleClasseLibModule],
       declarations: [SelectionEleveComponent],
-      providers: [ApplicationStore,
+      providers: [
+        ApplicationStore,
         { provide: EleveStore, useValue: eleveStoreStub },
-        { provide: ENVIRONMENT, useValue: environmentStub }]
+        { provide: ENVIRONMENT, useValue: environmentStub }
+      ]
 
     })
       .compileComponents();
