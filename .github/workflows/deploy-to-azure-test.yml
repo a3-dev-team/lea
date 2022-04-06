@@ -7,7 +7,7 @@ on:
       - master
 
 jobs:
-  check angular:
+  check-angular:
     runs-on: ubuntu-latest
     if: ${{ !contains(github.event.head_commit.message, '#release') }}
 
@@ -31,7 +31,7 @@ jobs:
         working-directory: front
         run: npm run test:ci          
 
-  check .Net Core:
+  check-dotnet_core:
     runs-on: ubuntu-latest
     if: ${{ !contains(github.event.head_commit.message, '#release') }}
 
