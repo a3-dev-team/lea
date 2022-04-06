@@ -17,16 +17,27 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "16.x"
+      -name: setup git config
+        run: |
+          # setup the username and email. Here : 'GitHub Actions Bot' with no email by default
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
 
       - name: npm ci, build & test
         working-directory: front
         run: |
-          npm version prerelease
           npm ci
+          npm version prerelease
           npm run build:ci -- --output-path ../release/wwwroot 
           npm run test:ci
-          npm version prerelease
-          npm run git push -m "[RELEASE TEST] %s"
+         
+      - name: commit version updated
+        working-directory: front
+        run: |
+          # Stage the file, commit and push
+          git add package.json
+          git commit -m "[RELEASE TEST] %s"
+          git push
 
       - name: Use .Net Core 6.0.x
         uses: actions/setup-dotnet@v1
