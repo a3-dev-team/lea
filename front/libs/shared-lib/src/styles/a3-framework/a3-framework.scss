@@ -7,6 +7,8 @@
 @use "./border/a3-border";
 @use "./position/a3-position";
 @use "./overflow/a3-overflow";
+@use "./text/a3-text";
+@use "./color/a3-background-color";
 
 @forward "./grid/a3-grid";
 @forward "./display/a3-flex";
@@ -16,3 +18,5 @@
 @forward "./border/a3-border";
 @forward "./position/a3-position";
 @forward "./overflow/a3-overflow";
+@forward "./text/a3-text";
+@forward "./color/a3-background-color";

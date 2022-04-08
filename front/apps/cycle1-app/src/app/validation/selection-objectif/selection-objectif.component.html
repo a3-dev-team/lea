@@ -1,16 +1,26 @@
 <article>
-  <header>
-    <h2 i18n>SELECTIONNER OBJECTIF</h2>
-  </header>
+
   <section class="a3-flex-1">
+    <classe-eleve-tile class="a3-width-100 a3-height-100"
+                       [eleve]="(validationStore.eleveState$ | async)">
+      <header class="a3-header
+                      a3-background-color-transparent">
+        <h2 i18n>SELECTIONNER OBJECTIF</h2>
+      </header>
+      <section class="a3-section
+                      a3-background-color-transparent
+                      a3-flex-1">
+      </section>
+      <footer class="a3-footer
+                    a3-background-color-transparent">
+        <button class="a3-button-negative"
+                [routerLink]="['/validation/eleves']"
+                i18n>
+          FERMER
+        </button>
+      </footer>
+    </classe-eleve-tile>
     <!-- <cycle1-obectif-liste [objectifs$]="objectifStore.objectifs$">
     </cycle1-obectif-liste> -->
   </section>
-  <footer>
-    <button class="core-negative"
-            [routerLink]="['/validation/eleves']"
-            i18n>
-      Retour sélection élève
-    </button>
-  </footer>
 </article>

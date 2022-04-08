@@ -14,7 +14,7 @@ button{
     &:disabled{
         background-color: variables.$core-theme-button-disabled-background-color;
     }
-    &.negative{
+    &.a3-button-negative{
         border: 0.0625rem solid variables.$core-theme-button-border-color;
     }
 }

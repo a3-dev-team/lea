@@ -92,3 +92,35 @@ article {
     }
   }
 }
+
+.a3-header {
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: variables.$core-theme-border-radius variables.$core-theme-border-radius 0 0;
+  background-color: variables.$core-theme-fonctionnality-background-color;
+}
+
+.a3-section {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow-y: auto;
+  background-color: variables.$core-theme-fonctionnality-background-color;
+}
+
+.a3-footer{
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 0 variables.$core-theme-border-radius variables.$core-theme-border-radius;
+  background-color: variables.$core-theme-fonctionnality-background-color;
+  column-gap: 0.25rem;
+
+}

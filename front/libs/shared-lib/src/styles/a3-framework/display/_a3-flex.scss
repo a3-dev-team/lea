@@ -28,7 +28,12 @@
   justify-content: space-between;
   align-items: center;
 }
-
+.a3-flex-column-stretch-stretch {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+}
 .a3-flex-gap {
   row-gap: 0.5rem;
   column-gap: 0.5rem;

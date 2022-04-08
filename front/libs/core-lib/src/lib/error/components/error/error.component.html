@@ -2,7 +2,7 @@
     <section *ngIf="isErrorDisplayedState$ | async"
              class="a3-flex-column-center-center">
         <p>{{errorThrowed}}</p>
-        <button class="negative"
+        <button class="a3-button-negative"
                 (click)="onCloseClick()">
             <span i18n>Fermer</span>
         </button>

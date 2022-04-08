@@ -1,32 +1,38 @@
-<section class="a3-width-100
+<div class="a3-width-100
                 a3-height-100
-                a3-top-0
-                a3-left-0    
-                a3-grid-2-auto
                 a3-cursor-pointer                
                 core-background-color-theme-main
                 a3-border-radius-theme-main
-                core-padding-theme-main"
-         [@eleveTileAnimations]="(selectedState$ | async) ? 'selected' : 'notSelected'"
-         (click)="onTileClick()">
-     <img src="https://previews.123rf.com/images/jemastock/jemastock1705/jemastock170508361/78184821-t%C3%AAte-de-dessin-visage-souriant-illustration-de-vecteur-de-caract%C3%A8re-enfant.jpg"
-          class="a3-width-10rem
+                core-padding-theme-main
+                a3-flex-column-stretch-stretch"
+     (click)="onTileClick()">
+     <header class="a3-grid-2-auto">
+          <!-- [@eleveTileAnimations]="(selectedState$ | async) ? 'selected' : 'notSelected'" -->
+          <img src="https://previews.123rf.com/images/jemastock/jemastock1705/jemastock170508361/78184821-t%C3%AAte-de-dessin-visage-souriant-illustration-de-vecteur-de-caract%C3%A8re-enfant.jpg"
+               class="a3-width-10rem
                a3-height-10rem
                a3-grid-row-1
                a3-border-radius-50"
-          alt="Photo de l'élève"
-          aria-label="Photo de l'élève">
-     <button *ngIf="selectedState$ | async"
-             class="negative
+               alt="Photo de l'élève"
+               aria-label="Photo de l'élève">
+          <!-- <button *ngIf="selectedState$ | async"
+             class="a3-button-negative
                     a3-grid-column-2"
              (click)="onCloseButtonClick($event)">
           <span i18n>
                Fermer
           </span>
-     </button>
-     <div class="a3-grid-1"
-          [class]="(selectedState$ | async) ? 'a3-grid-column-1' : 'a3-grid-column-2'">
-          <h3 aria-label="Prénom de l'élève">{{eleve?.nom}}</h3>
-          <h3 aria-lalel="Nom de l'élève">{{eleve?.prenom}}</h3>
-     </div>
-</section>
+     </button> -->
+          <div class="a3-grid-1-auto
+                    a3-grid-column-2">
+               <!-- [class]="(selectedState$ | async) ? 'a3-grid-column-1' : 'a3-grid-column-2'"> -->
+               <h3 aria-label="Prénom de l'élève">{{eleve?.nom}}</h3>
+               <h3 class="a3-text-transform-uppercase"
+                   aria-lalel="Nom de l'élève">{{eleve?.prenom}}</h3>
+          </div>
+     </header>
+     <ng-content>
+     </ng-content>
+     <ng-content select="[action]">
+     </ng-content>
+</div>
