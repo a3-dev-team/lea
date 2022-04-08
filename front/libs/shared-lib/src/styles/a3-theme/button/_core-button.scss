@@ -1,0 +1,20 @@
+@use '../a3-theme-variables' as variables;
+
+
+
+button{
+    height: variables.$core-theme-button-height ;
+    background-color: variables.$core-theme-button-background-color;
+    border: 0;
+    color: variables.$core-theme-button-color;
+    border-radius: variables.$core-theme-button-border-radius ;
+    padding: 0 0.5rem;
+    cursor: pointer;
+    font-weight: bold;
+    &:disabled{
+        background-color: variables.$core-theme-button-disabled-background-color;
+    }
+    &.negative{
+        border: 0.0625rem solid variables.$core-theme-button-border-color;
+    }
+}

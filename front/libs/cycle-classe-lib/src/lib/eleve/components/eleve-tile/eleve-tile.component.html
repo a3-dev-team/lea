@@ -1,31 +1,31 @@
-<section class="core-width-100
-                core-height-100
-                core-top-0
-                core-left-0    
-                core-grid-2-auto
-                core-cursor-pointer                
+<section class="a3-width-100
+                a3-height-100
+                a3-top-0
+                a3-left-0    
+                a3-grid-2-auto
+                a3-cursor-pointer                
                 core-background-color-theme-main
-                core-border-radius-theme-main
+                a3-border-radius-theme-main
                 core-padding-theme-main"
          [@eleveTileAnimations]="(selectedState$ | async) ? 'selected' : 'notSelected'"
          (click)="onTileClick()">
      <img src="https://previews.123rf.com/images/jemastock/jemastock1705/jemastock170508361/78184821-t%C3%AAte-de-dessin-visage-souriant-illustration-de-vecteur-de-caract%C3%A8re-enfant.jpg"
-          class="core-width-10rem
-               core-height-10rem
-               core-grid-row-1
-               core-border-radius-50"
+          class="a3-width-10rem
+               a3-height-10rem
+               a3-grid-row-1
+               a3-border-radius-50"
           alt="Photo de l'élève"
           aria-label="Photo de l'élève">
      <button *ngIf="selectedState$ | async"
              class="negative
-                    core-grid-column-2"
+                    a3-grid-column-2"
              (click)="onCloseButtonClick($event)">
           <span i18n>
                Fermer
           </span>
      </button>
-     <div class="core-grid-1"
-          [class]="(selectedState$ | async) ? 'core-grid-column-1' : 'core-grid-column-2'">
+     <div class="a3-grid-1"
+          [class]="(selectedState$ | async) ? 'a3-grid-column-1' : 'a3-grid-column-2'">
           <h3 aria-label="Prénom de l'élève">{{eleve?.nom}}</h3>
           <h3 aria-lalel="Nom de l'élève">{{eleve?.prenom}}</h3>
      </div>

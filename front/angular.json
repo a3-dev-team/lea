@@ -33,7 +33,7 @@
             ],
             "styles": [
               "apps/cycle1-app/src/styles.scss",
-              "libs/core-lib/src/styles.scss"
+              "libs/shared-lib/src/styles.scss"
             ],
             "scripts": [],
             "serviceWorker": true,
@@ -105,7 +105,7 @@
             ],
             "styles": [
               "apps/cycle1-app/src/styles.scss",
-              "libs/core-lib/src/styles.scss"
+              "libs/shared-lib/src/styles.scss"
             ],
             "scripts": []
           }

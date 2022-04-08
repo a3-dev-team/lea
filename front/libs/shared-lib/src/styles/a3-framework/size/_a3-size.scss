@@ -1,0 +1,54 @@
+@use "../responsive/a3-responsive" as responsive;
+
+@each $size in width, height {
+  //************************
+  // .a3-width-*
+  // .a3-height-*
+  //************************
+  $i: 0;
+  @while $i <= 1 {
+    .a3-#{$size}-#{$i*100} {
+      #{$size}: percentage($i);
+    }
+    .a3-#{$size}-#{$i*100}-sup {
+      @include responsive.a3-screen-sup() {
+        #{$size}: percentage($i);
+      }
+    }
+    .a3-#{$size}-#{$i*100}-mup {
+      @include responsive.a3-screen-mup() {
+        #{$size}: percentage($i);
+      }
+    }
+    .a3-#{$size}-#{$i*100}-l {
+      @include responsive.a3-screen-l() {
+        #{$size}: percentage($i);
+      }
+    }
+    $i: $i + 0.1;
+  }
+  //************************
+  // .a3-width-*rem
+  // .a3-height-*rem
+  //************************
+  @for $i from 1 through 25 {
+    .a3-#{$size}-#{$i}rem {
+      #{$size}: #{$i}rem;
+    }
+    .a3-#{$size}-#{$i}rem-sup {
+      @include responsive.a3-screen-sup() {
+        #{$size}: #{$i}rem;
+      }
+    }
+    .a3-#{$size}-#{$i}rem-mup {
+      @include responsive.a3-screen-mup() {
+        #{$size}: #{$i}rem;
+      }
+    }
+    .a3-#{$size}-#{$i}rem-l {
+      @include responsive.a3-screen-l() {
+        #{$size}: #{$i}rem;
+      }
+    }
+  }
+}

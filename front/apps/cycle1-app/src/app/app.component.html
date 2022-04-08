@@ -8,9 +8,12 @@
         </button>
     </ng-container>
 </header>
-<section [@routeAnimations]="prepareRoute(routerOutlet)">
-    <router-outlet #routerOutlet="outlet">
-    </router-outlet>
+<section>
+    <div [@routeAnimations]="prepareRoute(routerOutlet)"
+         class="a3-width-100 a3-height-100">
+        <router-outlet #routerOutlet="outlet">
+        </router-outlet>
+    </div>
 </section>
 
 <footer>

@@ -1,0 +1,8 @@
+@each $overflow in auto, hidden {
+    //************************
+    // .a3-overflow-*
+    //************************
+      .a3-overflow-#{$overflow} {
+        overflow: #{$overflow};
+    }
+}

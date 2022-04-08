@@ -1,0 +1,5 @@
+@use "../a3-theme-variables" as variables;
+
+.core-border-radius-theme-main {
+    border-radius: variables.$core-theme-main-border-radius;
+}

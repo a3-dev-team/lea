@@ -1,0 +1,82 @@
+@use "../responsive/a3-responsive" as responsive;
+
+@mixin a3-grid($nb-columns, $column-template) {
+  display: grid;
+  row-gap: 0.5rem;
+  column-gap: 0.5rem;
+  grid-template-columns: repeat($nb-columns, $column-template);
+}
+
+@for $i from 1 through 12 {
+  //************************
+  // .a3-grid-*
+  //************************
+  @each $column-template in auto, 1fr {
+    .a3-grid-#{$i}-#{$column-template} {
+      @include a3-grid(#{$i}, #{$column-template});
+    }
+    .a3-grid-#{$i}-#{$column-template}-sup {
+      @include responsive.a3-screen-sup() {
+        @include a3-grid(#{$i}, #{$column-template});
+      }
+    }
+    .a3-grid-#{$i}-#{$column-template}-mup {
+      @include responsive.a3-screen-mup() {
+        @include a3-grid(#{$i}, #{$column-template});
+      }
+    }
+    .a3-grid-#{$i}-#{$column-template}-l {
+      @include responsive.a3-screen-l() {
+        @include a3-grid(#{$i}, #{$column-template});
+      }
+    }
+  }
+  //************************
+  // .a3-grid-row-*
+  // .a3-grid-column-*
+  //************************
+  @each $direction in row, column {
+    .a3-grid-#{$direction}-#{$i} {
+      grid-#{$direction}: #{$i} / #{$i};
+    }
+    .a3-grid-#{$direction}-#{$i}-sup {
+      @include responsive.a3-screen-sup() {
+        grid-#{$direction}: #{$i} / #{$i};
+      }
+    }
+    .a3-grid-#{$direction}-#{$i}-mup {
+      @include responsive.a3-screen-mup() {
+        grid-#{$direction}: #{$i} / #{$i};
+      }
+    }
+    .a3-grid-#{$direction}-#{$i}-l {
+      @include responsive.a3-screen-l() {
+        grid-#{$direction}: #{$i} / #{$i};
+      }
+    }
+    //************************
+    // .a3-grid-row-*-span-*
+    // .a3-grid-column-*-span-*
+    //************************
+    @for $j from 1 through 12 {
+      .a3-grid-#{$direction}-#{$i}-span-#{$j} {
+        grid-row: #{$i} / span #{$j};
+      }
+      .a3-grid-#{$direction}-#{$i}-span-#{$j}-sup {
+        @include responsive.a3-screen-sup() {
+          grid-#{$direction}: #{$i} / span #{$j};
+        }
+      }
+      .a3-grid-#{$direction}-#{$i}-span-#{$j}-mup {
+        @include responsive.a3-screen-mup() {
+          grid-#{$direction}: #{$i} / span #{$j};
+        }
+      }
+      .a3-grid-#{$direction}-#{$i}-span-#{$j}-l {
+        @include responsive.a3-screen-l() {
+          grid-#{$direction}: #{$i} / span #{$j};
+        }
+      }
+    }
+  }
+}

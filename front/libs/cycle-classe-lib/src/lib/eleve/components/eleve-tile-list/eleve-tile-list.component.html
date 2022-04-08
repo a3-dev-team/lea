@@ -1,10 +1,10 @@
-<section class="core-grid-1-1fr
-                core-grid-2-1fr-sup
-                core-grid-3-1fr-mup
-                core-grid-4-1fr-l">
+<section class="a3-grid-1-1fr
+                a3-grid-2-1fr-sup
+                a3-grid-3-1fr-mup
+                a3-grid-4-1fr-l">
     <classe-eleve-tile *ngFor="let eleve of (eleves$ | async)"
                        [eleve]="eleve"
                        (selected)="onEleveSelected(eleve)"
-                       class="core-width-100">
+                       class="a3-width-100">
     </classe-eleve-tile>
 </section>

@@ -1,0 +1,43 @@
+.a3-flex-column-center-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.a3-flex-row-start-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.a3-flex-row-start-start {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.a3-flex-column-start-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.a3-flex-row-space-between-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.a3-flex-gap {
+  row-gap: 0.5rem;
+  column-gap: 0.5rem;
+}
+
+.a3-flex-1 {
+  flex: 1;
+}
+
+.a3-flex-wrap {
+  flex-wrap: wrap;
+}

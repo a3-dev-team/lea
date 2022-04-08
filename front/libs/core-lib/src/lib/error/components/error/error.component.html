@@ -1,6 +1,6 @@
 <ng-container *ngIf="errorThrowed$ | async as errorThrowed">
     <section *ngIf="isErrorDisplayedState$ | async"
-             class="core-flex-column-center-center">
+             class="a3-flex-column-center-center">
         <p>{{errorThrowed}}</p>
         <button class="negative"
                 (click)="onCloseClick()">
