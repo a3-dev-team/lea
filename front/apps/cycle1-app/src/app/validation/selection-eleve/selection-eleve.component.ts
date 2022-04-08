@@ -4,7 +4,7 @@ import { Classe, Eleve, EleveService } from '@cycle-classe-lib';
 import { FullSizeBaseComponent } from '@shared-lib';
 import { first, mergeMap, of } from 'rxjs';
 import { ApplicationStore } from '../../core/application-store/application-store';
-import { ValidationStore } from '../validation.store';
+import { ValidationStore } from '../store/validation.store';
 
 
 @Component({
@@ -30,15 +30,15 @@ export class SelectionEleveComponent extends FullSizeBaseComponent {
 
   constructor(
     private readonly router: Router,
-    private readonly applicationStore: ApplicationStore,
+    public readonly applicationStore: ApplicationStore,
     private readonly validationStore: ValidationStore,
     public readonly eleveService: EleveService) {
     super();
-    this.validationStore.MettreAJourEleve(null);
+    this.validationStore.mettreAJourEleve(null);
   }
 
   public onEleveSelected(eleve: Eleve) {
-    this.validationStore.MettreAJourEleve(eleve);
+    this.validationStore.mettreAJourEleve(eleve);
     this.router.navigateByUrl(`/validation/eleves/${eleve.id}/objectifs`);
   }
 

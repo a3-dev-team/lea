@@ -4,9 +4,15 @@
     </header>
     <section class="a3-flex-column-start-center">
         <div class="a3-grid-1-auto">
+            <button [routerLink]="'/validation'"
+                    (click)="onValidationEleveButtonClick()">
+                <span>
+                    Validation des compétences (Mode Elève)
+                </span>
+            </button>
             <button [routerLink]="'/validation'">
                 <span>
-                    Validation des compétences (Accès élèves)
+                    Validation des compétences (Mode Professeur)
                 </span>
             </button>
             <button>

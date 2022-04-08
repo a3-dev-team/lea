@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { MatIconModule } from '@angular/material/icon';
 import { AccueilComponent } from './accueil.component';
 
 
@@ -10,7 +9,6 @@ describe('AccueilComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        MatIconModule
       ],
       declarations: [AccueilComponent]
     })

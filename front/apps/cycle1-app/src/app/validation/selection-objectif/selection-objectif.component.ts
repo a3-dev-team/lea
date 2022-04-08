@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ObjectifStore } from '@cycle1-objectif-lib';
 import { FullSizeBaseComponent } from '@shared-lib';
-import { ValidationStore } from '../validation.store';
+import { ValidationStore } from '../store/validation.store';
+
 
 @Component({
   selector: 'app-selection-objectif',
@@ -22,7 +23,7 @@ export class SelectionObjectifComponent extends FullSizeBaseComponent implements
     this.acticatedRoute.paramMap
       .subscribe((params) => {
         const eleveId = Number(params.get('eleveId'));
-        this.validationStore.MettreAJourEleveParId(eleveId);
+        this.validationStore.mettreAJourEleveParId(eleveId);
       });
   }
 

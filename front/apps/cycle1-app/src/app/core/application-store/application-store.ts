@@ -10,6 +10,12 @@ import { BehaviorSubject } from 'rxjs';
 
 export class ApplicationStore {
 
+
+  // Indique si l'application est en mode "pour les élèves"
+  // Dans ce cas, il n'est pas possible de sortir de la validation
+  private estModeEleveSubject = new BehaviorSubject<boolean>(false);
+  public estModeEleveState$ = this.estModeEleveSubject.asObservable();
+
   private professeurSubject = new BehaviorSubject<Professeur | null>(null);
   public professeurState$ = this.professeurSubject.asObservable();
 
@@ -18,12 +24,16 @@ export class ApplicationStore {
 
   constructor() { }
 
-  public MettreAJourProfesseur(professeur: Professeur | null) {
+  public mettreAJourProfesseur(professeur: Professeur | null) {
     this.professeurSubject.next(professeur);
   }
 
-  public MettreAJourClasse(classe: Classe | null) {
+  public mettreAJourClasse(classe: Classe | null) {
     this.classeSubject.next(classe);
+  }
+
+  public mettreAJourEstModeEleve(estModeEleve: boolean) {
+    this.estModeEleveSubject.next(estModeEleve);
   }
 
 }

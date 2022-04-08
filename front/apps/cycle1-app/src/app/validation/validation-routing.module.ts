@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthenticationGuard } from '@core-lib';
+import { ValidationGuard } from './guard/validation.guard';
 import { SelectionEleveComponent } from './selection-eleve/selection-eleve.component';
 import { SelectionObjectifComponent } from './selection-objectif/selection-objectif.component';
 import { ValidationObjectifComponent } from './validation-objectif/validation-objectif.component';
@@ -11,6 +12,7 @@ const routes: Routes = [
     path: '',
     component: ValidationComponent,
     canActivateChild: [AuthenticationGuard],
+    canDeactivate: [ValidationGuard],
     children: [
 
       { path: '', redirectTo: 'eleves', pathMatch: 'full' },

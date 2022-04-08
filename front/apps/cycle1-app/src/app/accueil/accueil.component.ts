@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApplicationStore } from '../core/application-store/application-store';
 
 @Component({
   selector: 'app-accueil',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccueilComponent implements OnInit {
 
-  constructor() { }
+  constructor(private readonly applicationStore: ApplicationStore) {
+    this.desactiverModeEleve();
+  }
 
   ngOnInit(): void {
+  }
+
+  public onValidationEleveButtonClick(): void {
+    this.activerModeEleve();
+  }
+
+  private activerModeEleve(): void {
+    this.applicationStore.mettreAJourEstModeEleve(true);
+  }
+
+  private desactiverModeEleve(): void {
+    this.applicationStore.mettreAJourEstModeEleve(false);
   }
 
 }

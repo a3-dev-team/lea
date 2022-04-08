@@ -25,7 +25,7 @@ export class AppComponent extends BaseComponent implements OnInit {
 
   constructor(
     public readonly authenticationManager: AuthenticationManager,
-    private readonly applicationStore: ApplicationStore,
+    public readonly applicationStore: ApplicationStore,
     private professeurService: ProfesseurService,
     private classeService: ClasseService) {
     super();
@@ -46,7 +46,7 @@ export class AppComponent extends BaseComponent implements OnInit {
               .pipe(
                 tap((professeur: Professeur) => {
                   // Mise à jour du cache applicatif avec le professeur (utilisateur authentifié)
-                  this.applicationStore.MettreAJourProfesseur(professeur);
+                  this.applicationStore.mettreAJourProfesseur(professeur);
                 }),
                 mergeMap((professeur: Professeur) => {
                   // Chargement de la classe du professeur
@@ -54,7 +54,7 @@ export class AppComponent extends BaseComponent implements OnInit {
                     .pipe(
                       tap((classe: Classe) => {
                         // Mise à jour du cache applicatif avec la classe du professeur
-                        this.applicationStore.MettreAJourClasse(classe);
+                        this.applicationStore.mettreAJourClasse(classe);
                       })
                     )
                 })

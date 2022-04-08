@@ -1,7 +1,6 @@
 <article>
     <header>
-        <h2>Sélectionner l'élève</h2>
-
+        <h2 i18n>SELECTIONNER ELEVE</h2>
     </header>
     <section class="a3-flex-1">
         <classe-eleve-tile-list [eleves$]="listeEleveClasse$"
@@ -10,6 +9,10 @@
         </classe-eleve-tile-list>
     </section>
     <footer>
-        <button [routerLink]="['/accueil']">Retour accueil</button>
+        <button *ngIf="!(applicationStore.estModeEleveState$ | async)"
+                [routerLink]="['/accueil']"
+                i18n>
+            Retour accueil
+        </button>
     </footer>
 </article>

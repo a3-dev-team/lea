@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Cycle1ObjectifLibModule, ObjectifStore } from '@cycle1-objectif-lib';
 import { of } from 'rxjs';
-import { ValidationStore } from '../validation.store';
+import { ValidationStore } from '../store/validation.store';
 import { SelectionObjectifComponent } from './selection-objectif.component';
 
 

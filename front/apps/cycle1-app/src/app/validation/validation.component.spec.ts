@@ -4,8 +4,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Eleve } from '@cycle-classe-lib';
 import { of } from 'rxjs';
+import { ValidationStore } from './store/validation.store';
 import { ValidationComponent } from './validation.component';
-import { ValidationStore } from './validation.store';
 
 
 describe('ValidationComponent', () => {

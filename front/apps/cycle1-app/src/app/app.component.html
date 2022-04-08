@@ -1,4 +1,4 @@
-<header>
+<header *ngIf="!(applicationStore.estModeEleveState$ | async)">
     <h1>Cycle 1</h1>
     <ng-container *ngIf="(authenticationManager.authenticatedUserState$ | async) as authenticatedUser">
         <span>{{authenticatedUser.firstName}} {{authenticatedUser.lastName}}</span>
@@ -16,7 +16,7 @@
     </div>
 </section>
 
-<footer>
+<footer *ngIf="!(applicationStore.estModeEleveState$ | async)">
     <h6> Lea - Cycle1 - {{version}} - a3-dev-team - 2022 @copyright</h6>
 </footer>
 

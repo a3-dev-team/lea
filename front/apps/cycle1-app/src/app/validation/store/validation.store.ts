@@ -16,15 +16,15 @@ export class ValidationStore {
 
   constructor(private readonly eleveService: EleveService) { }
 
-  public MettreAJourEleve(eleve: Eleve | null) {
+  public mettreAJourEleve(eleve: Eleve | null) {
     this.eleveSubject.next(eleve);
   }
 
-  public MettreAJourObjectif(objectif: Objectif | null) {
+  public mettreAJourObjectif(objectif: Objectif | null) {
     this.objectifSubject.next(objectif);
   }
 
-  public MettreAJourEleveParId(eleveId: number | null) {
+  public mettreAJourEleveParId(eleveId: number | null) {
     if (eleveId) {
       this.eleveState$
         .pipe(
@@ -39,11 +39,11 @@ export class ValidationStore {
           })
         )
         .subscribe((eleve: Eleve | null) => {
-          this.MettreAJourEleve(eleve);
+          this.mettreAJourEleve(eleve);
         })
     }
     else {
-      this.MettreAJourEleve(null);
+      this.mettreAJourEleve(null);
     }
   }
 
