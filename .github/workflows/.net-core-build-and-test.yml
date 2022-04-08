@@ -2,7 +2,7 @@ name: .Net Core - Build & Test
 
 on:
   workflow_dispatch:
-  push:
+  # push:
 
 jobs:
   build_test:
