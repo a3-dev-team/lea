@@ -1,9 +1,9 @@
+import { ENVIRONMENT, IEnvironment } from '@a3/shared-lib';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatCardModule } from '@angular/material/card';
 import { RouterTestingModule } from '@angular/router/testing';
 import { CycleClasseLibModule, EleveStore } from '@cycle-classe-lib';
-import { ENVIRONMENT, IEnvironment } from '@shared-lib';
 import { of } from 'rxjs';
 import { ApplicationStore } from './../../core/application-store/application-store';
 import { SelectionEleveComponent } from './selection-eleve.component';

@@ -16,14 +16,14 @@ export function fadeIn() {
         ], optional),
         query(':enter', [
             style({ opacity: 0 })
-        ]),
+        ], optional),
         query(':leave', animateChild(), optional),
         query(':leave', [
             animate('300ms ease-out', style({ opacity: 0 }))
         ], optional),
         query(':enter', [
             animate('300ms ease-out', style({ opacity: 1 }))
-        ]),
+        ], optional),
         query(':enter', animateChild()),
     ];
 }
@@ -42,7 +42,7 @@ export function slideTo(direction: string) {
         ], optional),
         query(':enter', [
             style({ [direction]: '-100%' })
-        ]),
+        ], optional),
         query(':leave', animateChild(), optional),
         group([
             query(':leave', [
@@ -50,8 +50,8 @@ export function slideTo(direction: string) {
             ], optional),
             query(':enter', [
                 animate('600ms ease', style({ [direction]: '0%' }))
-            ])
+            ], optional)
         ]),
-        query(':enter', animateChild()),
+        query(':enter', animateChild(), optional),
     ];
 }

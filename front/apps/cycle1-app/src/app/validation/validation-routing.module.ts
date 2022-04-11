@@ -1,6 +1,6 @@
+import { AuthenticationGuard } from '@a3/core-lib';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthenticationGuard } from '@core-lib';
 import { ValidationGuard } from './guard/validation.guard';
 import { SelectionEleveComponent } from './selection-eleve/selection-eleve.component';
 import { SelectionObjectifComponent } from './selection-objectif/selection-objectif.component';

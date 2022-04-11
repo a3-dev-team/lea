@@ -1,0 +1,19 @@
+<section class="a3-section 
+                a3-width-100 
+                a3-height-100
+                a3-flex-column-start-center
+                a3-flex-gap">
+    <zxing-scanner class="a3-width-100 a3-height-100"
+                   [(device)]="currentCamera"
+                   (camerasFound)="onCamerasFound($event)"
+                   (scanSuccess)="onScanSuccess($event)">
+    </zxing-scanner>
+    <button *ngIf="cameraList && cameraList.length > 1"
+            (click)="onChangeCameraClick()"
+            i18n>
+        Changer de camera
+    </button>
+    <span *ngIf="resultScan">
+        {{resultScan}}
+    </span>
+</section>

@@ -1,6 +1,6 @@
+import { SharedLibModule } from '@a3/shared-lib';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { SharedLibModule } from '@shared-lib';
 import { EleveDetailComponent } from './components/eleve-detail/eleve-detail.component';
 import { EleveListComponent } from './components/eleve-list/eleve-list.component';
 import { EleveTileListComponent } from './components/eleve-tile-list/eleve-tile-list.component';

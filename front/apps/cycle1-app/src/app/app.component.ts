@@ -1,8 +1,8 @@
+import { AuthenticationManager, IAuthenticatedUser } from '@a3/core-lib';
+import { BaseComponent } from '@a3/shared-lib';
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { AuthenticationManager, IAuthenticatedUser } from '@core-lib';
 import { Classe, ClasseService, Professeur, ProfesseurService } from '@cycle-classe-lib';
-import { BaseComponent } from '@shared-lib';
 import { mergeMap, of, takeUntil, tap } from 'rxjs';
 import * as packageInfo from '../../../../package.json';
 import { routeAnimations } from './app.animation';

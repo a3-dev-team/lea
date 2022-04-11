@@ -1,6 +1,6 @@
+import { ENVIRONMENT, IApiProperties, IEnvironment, UrlHelper } from '@a3/shared-lib';
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
-import { ENVIRONMENT, IApiProperties, IEnvironment, UrlHelper } from '@shared-lib';
 import { catchError, Observable, throwError } from 'rxjs';
 import { ApiProperties } from '../../api-properties.model';
 import { Eleve } from '../models/eleve.model';

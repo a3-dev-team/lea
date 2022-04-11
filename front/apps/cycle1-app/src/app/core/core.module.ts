@@ -1,5 +1,5 @@
+import { CoreLibModule } from '@a3/core-lib';
 import { NgModule } from '@angular/core';
-import { CoreLibModule } from '@core-lib';
 
 
 

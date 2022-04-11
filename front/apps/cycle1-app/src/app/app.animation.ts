@@ -1,5 +1,5 @@
+import { fadeIn, slideTo } from '@a3/shared-lib';
 import { transition, trigger } from '@angular/animations';
-import { fadeIn, slideTo } from '@shared-lib';
 
 
 

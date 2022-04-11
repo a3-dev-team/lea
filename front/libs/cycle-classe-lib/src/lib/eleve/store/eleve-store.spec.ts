@@ -1,6 +1,6 @@
+import { ENVIRONMENT, IEnvironment } from '@a3/shared-lib';
 import { HttpClient, HttpHandler } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
-import { ENVIRONMENT, IEnvironment } from '@shared-lib';
 import { EleveService } from './../services/eleve.service';
 import { EleveStore } from './eleve-store';
 

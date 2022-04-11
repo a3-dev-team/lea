@@ -1,6 +1,6 @@
+import { ENVIRONMENT, IApiProperties, IEnvironment, UrlHelper } from '@a3/shared-lib';
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
-import { ENVIRONMENT, IApiProperties, IEnvironment, UrlHelper } from '@shared-lib';
 import { Observable } from 'rxjs';
 import { ApiProperties } from '../../api-properties.model';
 import { Professeur } from '../models/professeur.model';

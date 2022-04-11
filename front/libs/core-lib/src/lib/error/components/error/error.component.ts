@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { BaseComponent } from '@a3/shared-lib';
+import { Component } from '@angular/core';
 import { BehaviorSubject, tap } from 'rxjs';
 import { ErrorManager } from '../../services/error-manager.service';
 
@@ -7,7 +8,7 @@ import { ErrorManager } from '../../services/error-manager.service';
   templateUrl: './error.component.html',
   styleUrls: ['./error.component.scss']
 })
-export class ErrorComponent implements OnInit {
+export class ErrorComponent extends BaseComponent {
 
 
   /**
@@ -21,9 +22,8 @@ export class ErrorComponent implements OnInit {
   public isErrorDisplayedState$ = this.isErrorDisplayedSubject.asObservable();
 
 
-  constructor(private readonly errorManager: ErrorManager) { }
-
-  ngOnInit(): void {
+  constructor(private readonly errorManager: ErrorManager) {
+    super()
   }
 
   public errorThrowed$ = this.errorManager.errorThrowedAction$

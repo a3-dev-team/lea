@@ -1,7 +1,7 @@
+import { ENVIRONMENT, IApiProperties, IEnvironment, UrlHelper } from '@a3/shared-lib';
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { ENVIRONMENT, IApiProperties, IEnvironment, UrlHelper } from '@shared-lib';
 import { BehaviorSubject } from 'rxjs';
 import { ApiProperties } from '../../api-properties.model';
 import { IAuthenticatedUser } from '../models/authenticated-user.model';

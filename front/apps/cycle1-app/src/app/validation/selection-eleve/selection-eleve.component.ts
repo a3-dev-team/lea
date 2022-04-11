@@ -1,7 +1,7 @@
+import { FullSizeBaseComponent } from '@a3/shared-lib';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Classe, Eleve, EleveService } from '@cycle-classe-lib';
-import { FullSizeBaseComponent } from '@shared-lib';
 import { first, mergeMap, of } from 'rxjs';
 import { ApplicationStore } from '../../core/application-store/application-store';
 import { ValidationStore } from '../store/validation.store';
@@ -39,7 +39,7 @@ export class SelectionEleveComponent extends FullSizeBaseComponent {
 
   public onEleveSelected(eleve: Eleve) {
     this.validationStore.mettreAJourEleve(eleve);
-    this.router.navigateByUrl(`/validation/eleves/${eleve.id}/objectifs`);
+    this.router.navigateByUrl(`/validation/eleves/${eleve.id}/objectifs`, { replaceUrl: true });
   }
 
 }

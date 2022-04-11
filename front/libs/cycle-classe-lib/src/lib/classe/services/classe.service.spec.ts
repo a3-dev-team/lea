@@ -1,6 +1,6 @@
+import { ENVIRONMENT, IEnvironment } from '@a3/shared-lib';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
-import { ENVIRONMENT, IEnvironment } from '@shared-lib';
 import { Classe } from '../models/classe.model';
 import { ClasseService } from './classe.service';
 

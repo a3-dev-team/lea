@@ -7,19 +7,9 @@
     "declarationMap": true,
     "inlineSources": true,
     "types": []
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 4877b9a... fix: test .net core actions
   },
   "exclude": [
     "src/test.ts",
     "**/*.spec.ts"
   ]
-<<<<<<< HEAD
-=======
-  }
->>>>>>> 906dbcb... fix: test
-=======
->>>>>>> 4877b9a... fix: test .net core actions
 }

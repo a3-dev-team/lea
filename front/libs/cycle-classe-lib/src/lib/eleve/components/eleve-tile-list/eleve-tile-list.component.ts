@@ -1,5 +1,5 @@
+import { FullSizeBaseComponent } from '@a3/shared-lib';
 import { Component, EventEmitter, HostBinding, Input, Output } from '@angular/core';
-import { FullSizeBaseComponent } from '@shared-lib';
 import { Observable } from 'rxjs';
 import { Eleve } from '../../models/eleve.model';
 

@@ -1,5 +1,5 @@
+import { SharedLibModule } from '@a3/shared-lib';
 import { NgModule } from '@angular/core';
-import { SharedLibModule } from '@shared-lib';
 
 
 

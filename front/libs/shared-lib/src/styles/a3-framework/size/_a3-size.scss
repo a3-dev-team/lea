@@ -1,9 +1,11 @@
 @use "../responsive/a3-responsive" as responsive;
 
-@each $size in width, height {
+@each $size in width, height, max-width, max-height {
   //************************
   // .a3-width-*
   // .a3-height-*
+  // .a3-max-width-*
+  // .a3-max-height-*
   //************************
   $i: 0;
   @while $i <= 1 {
@@ -30,8 +32,10 @@
   //************************
   // .a3-width-*rem
   // .a3-height-*rem
+  // .a3-max-width-*rem
+  // .a3-max-height-*rem
   //************************
-  @for $i from 1 through 25 {
+  @for $i from 1 through 40 {
     .a3-#{$size}-#{$i}rem {
       #{$size}: #{$i}rem;
     }
