@@ -20,6 +20,10 @@
       "@a3/core-lib": [
         "libs/core-lib/src/public-api.ts",
         "libs/core-lib/src"
+      ],
+      "@a3/camera": [
+        "libs/camera/src/public-api.ts",
+        "libs/camera/src"
       ]
     },
     "outDir": "./dist/out-tsc",

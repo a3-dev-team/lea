@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
-import { QrcodeModule } from './qrcode/qrcode.module';
+import { SquareDirective } from './directives/square.directive';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    SquareDirective
+  ],
   imports: [
-    QrcodeModule
     // MatIconModule,
     // MatButtonModule,
     // MatToolbarModule,
@@ -14,7 +15,7 @@ import { QrcodeModule } from './qrcode/qrcode.module';
     // MatCardModule,
   ],
   exports: [
-    QrcodeModule
+    SquareDirective
     // MatIconModule,
     // MatButtonModule,
     // MatToolbarModule,

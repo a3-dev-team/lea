@@ -1,10 +1,11 @@
 <div class="a3-width-100
                 a3-height-100
-                a3-cursor-pointer                
+                              
                 core-background-color-theme-main
                 a3-border-radius-theme-main
                 core-padding-theme-main
                 a3-flex-column-stretch-stretch"
+     [class.a3-cursor-pointer]="isSelectable"
      (click)="onTileClick()">
      <header class="a3-flex-row-start-center
                     a3-flex-gap">

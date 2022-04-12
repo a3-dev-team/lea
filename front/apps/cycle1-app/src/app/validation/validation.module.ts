@@ -1,3 +1,4 @@
+import { CameraModule } from '@a3/camera';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { CycleClasseLibModule } from '@cycle-classe-lib';
@@ -25,6 +26,7 @@ import { ValidationComponent } from './validation.component';
     ValidationRoutingModule,
     CycleClasseLibModule,
     Cycle1ObjectifLibModule,
+    CameraModule,
     WebcamModule,
   ]
 })

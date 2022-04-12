@@ -3,7 +3,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 @Component({
   selector: 'a3-qrcode-reader',
   templateUrl: './qrcode-reader.component.html',
-  styleUrls: ['./qrcode-reader.component.css']
+  styleUrls: ['./qrcode-reader.component.scss']
 })
 export class QrcodeReaderComponent {
 

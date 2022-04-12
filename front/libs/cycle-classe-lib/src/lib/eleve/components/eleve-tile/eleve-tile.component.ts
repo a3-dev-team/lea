@@ -17,6 +17,7 @@ export class EleveTileComponent implements OnInit {
   public selectedState$ = this.selectedSubject.asObservable();
 
   @Input() public eleve!: Eleve | null;
+  @Input() public isSelectable: boolean = true;
   @Output() public selected: EventEmitter<Eleve | null> = new EventEmitter<Eleve | null>();
 
 
@@ -35,23 +36,27 @@ export class EleveTileComponent implements OnInit {
   }
 
   private selectEleve() {
-    this.selectedState$
-      .pipe(take(1))
-      .subscribe((selected: boolean) => {
-        if (!selected) {
-          this.selected.emit(this.eleve);
-          this.selectedSubject.next(true)
-        }
-      });
+    if (this.isSelectable) {
+      this.selectedState$
+        .pipe(take(1))
+        .subscribe((selected: boolean) => {
+          if (!selected) {
+            this.selected.emit(this.eleve);
+            this.selectedSubject.next(true)
+          }
+        });
+    }
   }
 
   private unSelectEleve() {
-    this.selectedState$
-      .pipe(take(1))
-      .subscribe((selected: boolean) => {
-        if (selected) {
-          this.selectedSubject.next(false)
-        }
-      });
+    if (this.isSelectable) {
+      this.selectedState$
+        .pipe(take(1))
+        .subscribe((selected: boolean) => {
+          if (selected) {
+            this.selectedSubject.next(false)
+          }
+        });
+    }
   }
 }
