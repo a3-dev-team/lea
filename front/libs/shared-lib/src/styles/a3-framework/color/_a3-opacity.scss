@@ -1,0 +1,10 @@
+  //************************
+  // .a3-opacity-*
+  //************************
+  $i-opacity: 0;
+  @while $i-opacity <= 1 {
+    .a3-opacity-#{$i-opacity*100} {
+        opacity: percentage($i-opacity);
+    }
+    $i-opacity: $i-opacity + 0.01;
+  }

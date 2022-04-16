@@ -4,14 +4,10 @@
     <classe-eleve-tile class="a3-width-100 a3-height-100"
                        [eleve]="(validationStore.eleveState$ | async)"
                        [isSelectable]="false">
-      <header class="a3-header
-                      a3-background-color-transparent">
-        <h2 i18n>SCANNER QRCODE OBJECTIF</h2>
-      </header>
       <section class="a3-section
                       a3-background-color-transparent
                       a3-flex-1
-                      a3-flex-column-start-center">
+                      a3-flex-column-center-center">
         <a3-qrcode-reader class="a3-width-100
                                 a3-max-width-30rem">
         </a3-qrcode-reader>

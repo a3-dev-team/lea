@@ -2,19 +2,19 @@
 //************************
 // .a3-border-radius-*
 //************************
-$i: 0;
-@while $i <= 0.5 {
-    .a3-border-radius-#{$i*100} {
-        border-radius: percentage($i);
+$i-border: 0;
+@while $i-border <= 0.5 {
+    .a3-border-radius-#{$i-border*100} {
+        border-radius: percentage($i-border);
     }
-    $i: $i + 0.1;
+    $i-border: $i-border + 0.1;
 }
 
 //************************
 // .a3-border-radius-*rem
 //************************
-@for $i from 1 through 10 {
-    .a3-border-radius-#{$i}rem {
-        border-radius: #{$i}rem;
+@for $i-border from 1 through 10 {
+    .a3-border-radius-#{$i-border}rem {
+        border-radius: #{$i-border}rem;
     }
 }

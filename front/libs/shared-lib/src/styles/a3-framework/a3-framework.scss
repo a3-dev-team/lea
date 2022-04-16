@@ -9,6 +9,7 @@
 @use "./overflow/a3-overflow";
 @use "./text/a3-text";
 @use "./color/a3-background-color";
+@use "./color/a3-opacity";
 
 @forward "./grid/a3-grid";
 @forward "./display/a3-flex";
@@ -20,3 +21,4 @@
 @forward "./overflow/a3-overflow";
 @forward "./text/a3-text";
 @forward "./color/a3-background-color";
+@forward "./color/a3-opacity";
