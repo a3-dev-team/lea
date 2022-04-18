@@ -1,6 +1,7 @@
 using A3.Lea.Cycle1.WebApi.Core.Classes.Modeles;
 using A3.Lea.Cycle1.WebApi.Core.Ecoles.Modeles;
 using A3.Lea.Cycle1.WebApi.Core.Eleves.Modeles;
+using A3.Lea.Cycle1.WebApi.Core.Objectifs.Modeles;
 using A3.Lea.Cycle1.WebApi.Core.Professeurs.Modeles;
 using Microsoft.EntityFrameworkCore;
 
@@ -39,7 +40,7 @@ namespace A3.Lea.Cycle1.WebApi.Dal
             {
                 Id = 1,
                 Nom = "TOURNESOL",
-                EcoleId = 1,
+                EcoleId = ecole.Id,
                 ClasseId = 1,
                 Prenom = "Professeur",
                 Email = "lea@a3.fr",
@@ -52,14 +53,14 @@ namespace A3.Lea.Cycle1.WebApi.Dal
             {
                 Id = 1,
                 Nom = "Moyenne Section A",
-                EcoleId = 1
+                EcoleId = ecole.Id,
             };
             this.Set<Classe>().Add(classe);
 
             Eleve bertrand = new Eleve()
             {
                 Id = 1,
-                ClasseId = 1,
+                ClasseId = classe.Id,
                 Niveau = Core.Commun.Niveau.MoyenneSection
             };
             bertrand.Nom = "DOLET";
@@ -72,7 +73,7 @@ namespace A3.Lea.Cycle1.WebApi.Dal
             Eleve jonathan = new Eleve()
             {
                 Id = 2,
-                ClasseId = 1,
+                ClasseId = classe.Id,
                 Niveau = Core.Commun.Niveau.GrandeSection
             };
             jonathan.Nom = "GALLAIS";
@@ -81,6 +82,59 @@ namespace A3.Lea.Cycle1.WebApi.Dal
             jonathan.DateNaissance = new DateTime(1979, 07, 27);
 
             this.Set<Eleve>().Add(jonathan);
+
+            // ************ Objectifs
+
+            Objectif objectif1 = new Objectif()
+            {
+                Id = 1,
+                Libelle = "Objectif1",
+                Description = "C'est l'objectif 1"
+            };
+            this.Set<Objectif>().Add(objectif1);
+
+            Objectif objectif2 = new Objectif()
+            {
+                Id = 2,
+                Libelle = "Objectif2",
+                Description = "C'est l'objectif 2"
+            };
+            this.Set<Objectif>().Add(objectif2);
+
+            // ************ ObjectifsEleve
+
+            ObjectifEleve objectif1EleveJonathan = new ObjectifEleve()
+            {
+                EleveId = jonathan.Id,
+                ObjectifId = objectif1.Id,
+                DateValidation = DateTime.Now
+            };
+            this.Set<ObjectifEleve>().Add(objectif1EleveJonathan);
+
+            // ObjectifEleve objectif2EleveJonathan = new ObjectifEleve()
+            // {
+            //     EleveId = jonathan.Id,
+            //     ObjectifId = objectif2.Id,
+            //     DateValidation = DateTime.Now
+            // };
+            // this.Set<ObjectifEleve>().Add(objectif2EleveJonathan);
+
+            ObjectifEleve objectif1EleveBertrand = new ObjectifEleve()
+            {
+                EleveId = bertrand.Id,
+                ObjectifId = objectif1.Id,
+                DateValidation = DateTime.Now
+            };
+            this.Set<ObjectifEleve>().Add(objectif1EleveBertrand);
+
+            ObjectifEleve objectif2EleveBertrand = new ObjectifEleve()
+            {
+                EleveId = bertrand.Id,
+                ObjectifId = objectif2.Id,
+                DateValidation = DateTime.Now
+            };
+            this.Set<ObjectifEleve>().Add(objectif2EleveBertrand);
+
 
             this.SaveChanges();
 

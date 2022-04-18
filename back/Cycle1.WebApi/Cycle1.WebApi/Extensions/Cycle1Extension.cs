@@ -1,8 +1,12 @@
 ﻿using A3.Lea.Cycle1.WebApi.Core.Classes;
 using A3.Lea.Cycle1.WebApi.Core.Eleves;
+using A3.Lea.Cycle1.WebApi.Core.ObjectifEleves;
+using A3.Lea.Cycle1.WebApi.Core.Objectifs;
 using A3.Lea.Cycle1.WebApi.Core.Professeurs;
 using A3.Lea.Cycle1.WebApi.Dal.Classes;
 using A3.Lea.Cycle1.WebApi.Dal.Eleves;
+using A3.Lea.Cycle1.WebApi.Dal.ObjectifEleves;
+using A3.Lea.Cycle1.WebApi.Dal.Objectifs;
 using A3.Lea.Cycle1.WebApi.Dal.Professeurs;
 
 namespace A3.Lea.Cycle1.WebApi.Extensions
@@ -53,6 +57,26 @@ namespace A3.Lea.Cycle1.WebApi.Extensions
         }
 
         /// <summary>
+        /// Ajoute les services pour le contexte "objectifs" du domaine "cycle 1"
+        /// </summary>
+        /// <param name="services"></param>
+        private static void AddObjectifsServices(IServiceCollection services)
+        {
+            ServicesExtensionHelper.AddServices<IObjectifService, ObjectifService, IObjectifDal, ObjectifDal, ObjectifProblemDetailsResolver>
+                (services, (serviceProvider) => new ObjectifProblemDetailsResolver());
+        }
+
+        /// <summary>
+        /// Ajoute les services pour le contexte "objectifs eleves" du domaine "cycle 1"
+        /// </summary>
+        /// <param name="services"></param>
+        private static void AddObjectifsElevesServices(IServiceCollection services)
+        {
+            ServicesExtensionHelper.AddServices<IObjectifEleveService, ObjectifEleveService, IObjectifEleveDal, ObjectifEleveDal, ObjectifEleveProblemDetailsResolver>
+                (services, (serviceProvider) => new ObjectifEleveProblemDetailsResolver());
+        }
+
+        /// <summary>
         /// Ajoute les services pour le domaine "cycle 1"
         /// </summary>
         /// <param name="services">Collection de service</param>
@@ -61,6 +85,8 @@ namespace A3.Lea.Cycle1.WebApi.Extensions
             // AddEcolesServices(services);
             AddProfesseursServices(services);
             AddElevesServices(services);
+            AddObjectifsServices(services);
+            AddObjectifsElevesServices(services);
             AddClassesServices(services);
             return services;
         }
