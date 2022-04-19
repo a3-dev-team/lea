@@ -11,7 +11,5 @@ namespace A3.Lea.Cycle1.WebApi.Core.Objectifs.Modeles
 
         public string? Description { get; set; }
 
-        public List<ObjectifEleve>? ListeObjectifEleve { get; set; } = new List<ObjectifEleve>();
-
     }
 }
