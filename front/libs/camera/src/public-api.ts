@@ -2,8 +2,9 @@
  * Public API Surface of camera
  */
 
-export * from './lib/camera.module';
-export * from './lib/components/camera/camera.component';
-export * from './lib/components/qrcode-generator/qrcode-generator.component';
-export * from './lib/components/qrcode-reader/qrcode-reader.component';
+export * from './lib/camera/camera.module';
+export * from './lib/camera/components/camera.component';
+export * from './lib/qrcode-generator/qrcode-generator.module';
+export * from './lib/qrcode-reader/components/qrcode-reader.component';
+export * from './lib/qrcode-reader/qrcode-reader.module';
 

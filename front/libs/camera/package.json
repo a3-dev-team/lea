@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^13.1.0",
-    "@angular/core": "^13.1.0"
+    "@angular/core": "^13.1.0",
+    "@zxing/ngx-scanner": "^3.5.0",
+    "angularx-qrcode": "^13.0.14"
   },
   "dependencies": {
     "tslib": "^2.3.0"

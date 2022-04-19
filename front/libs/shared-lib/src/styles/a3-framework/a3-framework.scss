@@ -1,5 +1,6 @@
 
 @use "./grid/a3-grid";
+@use "./display/a3-display";
 @use "./display/a3-flex";
 @use "./responsive/a3-responsive";
 @use "./size/a3-size";
@@ -12,6 +13,7 @@
 @use "./color/a3-opacity";
 
 @forward "./grid/a3-grid";
+@forward "./display/a3-display";
 @forward "./display/a3-flex";
 @forward "./responsive/a3-responsive";
 @forward "./size/a3-size";

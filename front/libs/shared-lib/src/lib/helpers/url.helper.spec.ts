@@ -1,6 +1,6 @@
 import { IEnvironment } from '../environment/environment.interface'
 import { IApiProperties } from './api-properties.interface'
-import { UrlHelper } from './url-helper'
+import { UrlHelper } from './url.helper'
 
 describe('UrlHelper', () => {
 

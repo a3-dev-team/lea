@@ -3,5 +3,4 @@ export class Objectif {
   public libelle!: string;
   public pictogramme!: string;
   public description!: string;
-  public estValide!: boolean;
 }

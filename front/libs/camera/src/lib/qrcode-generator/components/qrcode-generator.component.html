@@ -1,0 +1,15 @@
+<qrcode #qrcodeComponent
+        class="a3-display-none"
+        [qrdata]="stringToQrcode"
+        [elementType]="'canvas'"
+        [imageSrc]="'./assets/icons/icon-512x512.png'"
+        [imageWidth]="100"
+        [imageHeight]="100"
+        [width]="500"
+        [errorCorrectionLevel]="'M'">
+</qrcode>
+<button class="a3-button-negative"
+        (click)="onGenererQrcodeClick(qrcodeComponent)"
+        i18n>
+    Générer qrcode
+</button>
