@@ -1,5 +1,5 @@
+import { Classe, Professeur } from '@a3/cycle-classe-lib';
 import { Injectable } from '@angular/core';
-import { Classe, Professeur } from '@cycle-classe-lib';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({

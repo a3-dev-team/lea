@@ -1,13 +1,11 @@
 import { QrcodeGeneratorModule, QrcodeReaderModule } from '@a3/camera';
-import { CommonModule } from '@angular/common';
+import { CycleClasseLibModule } from '@a3/cycle-classe-lib';
 import { NgModule } from '@angular/core';
-import { CycleClasseLibModule } from '@cycle-classe-lib';
-import { Cycle1ObjectifLibModule } from '@cycle1-objectif-lib';
 import { WebcamModule } from 'ngx-webcam';
 import { SharedModule } from '../shared/shared.module';
-import { SelectionEleveComponent } from './selection-eleve/selection-eleve.component';
-import { SelectionObjectifComponent } from './selection-objectif/selection-objectif.component';
-import { ValidationObjectifComponent } from './validation-objectif/validation-objectif.component';
+import { SelectionEleveComponent } from './pages/selection-eleve/selection-eleve.component';
+import { SelectionObjectifComponent } from './pages/selection-objectif/selection-objectif.component';
+import { ValidationObjectifComponent } from './pages/validation-objectif/validation-objectif.component';
 import { ValidationRoutingModule } from './validation-routing.module';
 import { ValidationComponent } from './validation.component';
 
@@ -21,11 +19,9 @@ import { ValidationComponent } from './validation.component';
     ValidationObjectifComponent,
   ],
   imports: [
-    CommonModule,
     SharedModule,
     ValidationRoutingModule,
     CycleClasseLibModule,
-    Cycle1ObjectifLibModule,
     QrcodeReaderModule,
     QrcodeGeneratorModule,
     WebcamModule,

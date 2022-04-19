@@ -1,8 +1,8 @@
+import { ObjectifStore } from '@a3/cycle1-objectif-lib';
 import { FullSizeBaseComponent } from '@a3/shared-lib';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ObjectifStore } from '@cycle1-objectif-lib';
-import { ValidationStore } from '../store/validation.store';
+import { ValidationStore } from '../../store/validation.store';
 
 
 @Component({

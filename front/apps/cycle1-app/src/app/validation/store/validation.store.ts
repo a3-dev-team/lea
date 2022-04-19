@@ -1,6 +1,6 @@
+import { Eleve, EleveService } from '@a3/cycle-classe-lib';
+import { Objectif } from '@a3/cycle1-objectif-lib';
 import { Injectable } from '@angular/core';
-import { Eleve, EleveService } from '@cycle-classe-lib';
-import { Objectif } from '@cycle1-objectif-lib';
 import { BehaviorSubject, first, of, switchMap } from 'rxjs';
 
 @Injectable({

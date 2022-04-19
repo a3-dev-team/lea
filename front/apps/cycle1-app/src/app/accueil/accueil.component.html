@@ -6,24 +6,16 @@
         <div class="a3-grid-1-auto">
             <button [routerLink]="'/validation'"
                     (click)="onValidationEleveButtonClick()">
-                <span>
-                    Validation des compétences (Mode Elève)
-                </span>
+                Validation des compétences (Mode Elève)
             </button>
             <button [routerLink]="'/validation'">
-                <span>
-                    Validation des compétences (Mode Professeur)
-                </span>
+                Validation des compétences (Mode Professeur)
             </button>
             <button>
-                <span>
-                    Appréciation des compétences (Accès instituteurs)
-                </span>
+                Appréciation des compétences (Accès instituteurs)
             </button>
-            <button>
-                <span>
-                    Paramétrages des cycle-classes
-                </span>
+            <button [routerLink]="'/parametrage/liste-objectif'">
+                Paramétrages des objectifs
             </button>
             <label>
                 label
@@ -37,10 +29,10 @@
     </section>
     <footer>
         <button>
-            <span>Action 1</span>
+            Action 1
         </button>
         <button>
-            <span>Action 2</span>
+            Action 2
         </button>
     </footer>
 </article>

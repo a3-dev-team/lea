@@ -1,6 +1,8 @@
 ﻿using A3.Lea.Cycle1.WebApi.Core.Objectifs;
 using A3.Lea.Cycle1.WebApi.Core.Objectifs.Modeles;
 using A3.Library.Mvc;
+using A3.Library.Results;
+using Microsoft.EntityFrameworkCore;
 
 namespace A3.Lea.Cycle1.WebApi.Dal.Objectifs
 {
@@ -19,13 +21,13 @@ namespace A3.Lea.Cycle1.WebApi.Dal.Objectifs
         //     };
         // }
 
-        // public async Task<Result<List<Objectif>>> ChargerListeObjectifClasse(int classeId)
-        // {
-        //     return new Result<List<Objectif>>()
-        //     {
-        //         Value = await this.FindByCondition(eleve => eleve.ClasseId.Equals(classeId)).ToListAsync()
-        //     };
-        // }
+        public async Task<Result<List<Objectif>>> ChargerListeObjectif()
+        {
+            return new Result<List<Objectif>>()
+            {
+                Value = await this.FindAll().ToListAsync()
+            };
+        }
 
     }
 }

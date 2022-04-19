@@ -10,11 +10,11 @@ namespace A3.Lea.Cycle1.WebApi.Core.Objectifs
     /// </summary>
     public class ObjectifService : ServiceBase<ObjectifService>, IObjectifService
     {
-        private readonly IObjectifDal _elevesDal;
+        private readonly IObjectifDal _objectifDal;
 
-        public ObjectifService(ILogger<ObjectifService> logger, IObjectifDal elevesDal) : base(logger)
+        public ObjectifService(ILogger<ObjectifService> logger, IObjectifDal objectifDal) : base(logger)
         {
-            this._elevesDal = elevesDal;
+            this._objectifDal = objectifDal;
         }
 
         // public async Task<Result<Objectif>> ChargerObjectif(int objectifId)
@@ -22,9 +22,9 @@ namespace A3.Lea.Cycle1.WebApi.Core.Objectifs
         //     return await this._elevesDal.ChargerObjectif(objectifId);
         // }
 
-        // public async Task<Result<List<Objectif>>> ChargerListeObjectifClasse(int classeId)
-        // {
-        //     return await this._elevesDal.ChargerListeObjectifClasse(classeId);
-        // }
+        public async Task<Result<List<Objectif>>> ChargerListeObjectif()
+        {
+            return await this._objectifDal.ChargerListeObjectif();
+        }
     }
 }

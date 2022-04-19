@@ -1,5 +1,13 @@
-<section>
-  <div *ngFor="let objectif of (objectifs$ | async)">
-    <lib-objectif-detail [objectif]="objectif"></lib-objectif-detail>
-  </div>
-</section>
+<div class="a3-grid-3-auto">
+  <ng-container *ngFor="let objectif of (objectifs$ | async)">
+    <span>
+      {{objectif.libelle}}
+    </span>
+    <span>
+      {{objectif.description}}
+    </span>
+    <a3-qrcode-generator [stringToQrcode]="QrcodeObjectifHelper.obtenirQrcode(objectif)"
+                         [qrcodeFileName]="objectif.libelle">
+    </a3-qrcode-generator>
+  </ng-container>
+</div>

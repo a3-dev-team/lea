@@ -5,7 +5,7 @@
     "resolveJsonModule": true,
     "baseUrl": "./",
     "paths": {
-      "@cycle-classe-lib": [
+      "@a3/cycle-classe-lib": [
         "libs/cycle-classe-lib/src/public-api.ts",
         "libs/cycle-classe-lib/src/"
       ],
@@ -13,7 +13,7 @@
         "libs/shared-lib/src/public-api.ts",
         "libs/shared-lib/src/"
       ],
-      "@cycle1-objectif-lib": [
+      "@a3/cycle1-objectif-lib": [
         "libs/cycle1-objectif-lib/src/public-api.ts",
         "libs/cycle1-objectif-lib/src"
       ],

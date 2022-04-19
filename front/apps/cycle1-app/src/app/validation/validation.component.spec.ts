@@ -1,8 +1,8 @@
+import { Eleve } from '@a3/cycle-classe-lib';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
-import { Eleve } from '@cycle-classe-lib';
 import { of } from 'rxjs';
 import { ValidationStore } from './store/validation.store';
 import { ValidationComponent } from './validation.component';

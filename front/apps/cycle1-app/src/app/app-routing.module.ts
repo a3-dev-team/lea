@@ -23,6 +23,11 @@ const routes: Routes = [
     path: 'appreciation', loadChildren: () => import('./appreciation/appreciation.module').then((module) => module.AppreciationModule),
     data: { animationState: 'Appreciation' },
     canActivate: [AuthenticationGuard]
+  },
+  {
+    path: 'parametrage', loadChildren: () => import('./parametrage/parametrage.module').then((module) => module.ParametrageModule),
+    data: { animationState: 'Parametrage' },
+    canActivate: [AuthenticationGuard]
   }
 ];
 

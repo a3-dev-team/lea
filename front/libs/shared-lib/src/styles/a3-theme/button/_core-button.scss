@@ -9,6 +9,7 @@ button{
     color: variables.$core-theme-button-color;
     border-radius: variables.$core-theme-button-border-radius ;
     padding: 0 0.5rem;
+    font-size: small;
     cursor: pointer;
     font-weight: bold;
     &:disabled{

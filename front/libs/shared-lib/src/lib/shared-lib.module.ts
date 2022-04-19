@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { SquareDirective } from './directives/square.directive';
 
@@ -7,6 +8,7 @@ import { SquareDirective } from './directives/square.directive';
     SquareDirective
   ],
   imports: [
+    CommonModule,
     // MatIconModule,
     // MatButtonModule,
     // MatToolbarModule,
@@ -15,6 +17,7 @@ import { SquareDirective } from './directives/square.directive';
     // MatCardModule,
   ],
   exports: [
+    CommonModule,
     SquareDirective
     // MatIconModule,
     // MatButtonModule,
