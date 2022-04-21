@@ -1,4 +1,4 @@
-import { Cycle1ObjectifLibModule, ObjectifStore } from '@a3/cycle1-objectif-lib';
+import { ObjectifStore } from '@a3/cycle1-objectif-lib';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -26,8 +26,7 @@ describe('SelectionObjectifComponent', () => {
     await TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
-        HttpClientTestingModule,
-        Cycle1ObjectifLibModule
+        HttpClientTestingModule
       ],
       declarations: [SelectionObjectifComponent],
       providers: [
@@ -46,7 +45,6 @@ describe('SelectionObjectifComponent', () => {
   });
 
   it('should create', () => {
-    objectifStore.objectifs$ = of();
     expect(component).toBeTruthy();
   });
 });
