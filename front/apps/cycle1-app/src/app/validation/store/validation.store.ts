@@ -1,5 +1,5 @@
 import { Eleve, EleveService } from '@a3/cycle-classe-lib';
-import { Objectif } from '@a3/cycle1-objectif-lib';
+import { ObjectifEleve, ObjectifEleveService } from '@a3/cycle1-objectif-lib';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, first, of, switchMap } from 'rxjs';
 
@@ -11,17 +11,16 @@ export class ValidationStore {
   private eleveSubject = new BehaviorSubject<Eleve | null>(null);
   public eleveState$ = this.eleveSubject.asObservable();
 
-  private objectifSubject = new BehaviorSubject<Objectif | null>(null);
-  public objectifState$ = this.objectifSubject.asObservable();
+  private objectifEleveSubject = new BehaviorSubject<ObjectifEleve | null>(null);
+  public objectifEleveState$ = this.objectifEleveSubject.asObservable();
 
-  constructor(private readonly eleveService: EleveService) { }
+  constructor(
+    private readonly eleveService: EleveService,
+    private readonly objectifEleveService: ObjectifEleveService
+  ) { }
 
   public mettreAJourEleve(eleve: Eleve | null) {
     this.eleveSubject.next(eleve);
-  }
-
-  public mettreAJourObjectif(objectif: Objectif | null) {
-    this.objectifSubject.next(objectif);
   }
 
   public mettreAJourEleveParId(eleveId: number | null) {
@@ -44,6 +43,33 @@ export class ValidationStore {
     }
     else {
       this.mettreAJourEleve(null);
+    }
+  }
+
+  public mettreAJourObjectifEleve(objectifEleve: ObjectifEleve | null) {
+    this.objectifEleveSubject.next(objectifEleve);
+  }
+
+  public mettreAJourObjectifEleveParId(eleveId: number | null, objectifId: number | null) {
+    if (eleveId && objectifId) {
+      this.objectifEleveState$
+        .pipe(
+          first(),
+          switchMap((objectifEleve: ObjectifEleve | null) => {
+            if (!objectifEleve || objectifEleve.eleveId !== eleveId || objectifEleve.objectifId !== objectifId) {
+              return this.objectifEleveService.chargerObjectifEleve(eleveId, objectifId);
+            }
+            else {
+              return of(objectifEleve);
+            }
+          })
+        )
+        .subscribe((objectifEleve: ObjectifEleve | null) => {
+          this.mettreAJourObjectifEleve(objectifEleve);
+        })
+    }
+    else {
+      this.mettreAJourObjectifEleve(null);
     }
   }
 

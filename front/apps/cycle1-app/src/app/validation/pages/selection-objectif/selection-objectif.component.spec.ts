@@ -1,41 +1,40 @@
-import { ObjectifStore } from '@a3/cycle1-objectif-lib';
+import { QrcodeReaderModule } from '@a3/camera';
+import { ENVIRONMENT, IEnvironment } from '@a3/shared-lib';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { of } from 'rxjs';
-import { ValidationStore } from '../../store/validation.store';
 import { SelectionObjectifComponent } from './selection-objectif.component';
 
 
 describe('SelectionObjectifComponent', () => {
   let component: SelectionObjectifComponent;
   let fixture: ComponentFixture<SelectionObjectifComponent>;
-  let objectifStore: ObjectifStore;
 
   beforeEach(async () => {
-    let validationStoreStub: Partial<ValidationStore>;
-    validationStoreStub = {
-      eleveState$: of(),
-      objectifState$: of()
-    };
-    let objectifStoreStub: Partial<ObjectifStore>;
-    objectifStoreStub = {
-      objectifs$: of()
+    // class validationStoreMock extends ValidationStore {
+    //   override mettreAJourEleveParId(eleveId: number | null) { };
+    //   override mettreAJourObjectifEleve(objectifEleve: ObjectifEleve | null) { };
+    // };
+    let environmentStub: Partial<IEnvironment>;
+    environmentStub = {
+      production: false,
+      tokenName: 'tokenName',
+      backUrl: 'https://localhost:7057'
     };
 
     await TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
-        HttpClientTestingModule
+        HttpClientTestingModule,
+        QrcodeReaderModule
       ],
       declarations: [SelectionObjectifComponent],
       providers: [
-        { provide: ObjectifStore, useValue: objectifStoreStub },
-        { provide: ValidationStore, useValue: validationStoreStub }
+        // { provide: ValidationStore, useValue: validationStoreMock },
+        { provide: ENVIRONMENT, useValue: environmentStub }
       ]
     })
       .compileComponents();
-    objectifStore = TestBed.inject(ObjectifStore);
   });
 
   beforeEach(() => {

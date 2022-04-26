@@ -4,7 +4,7 @@ import { BehaviorSubject, tap } from 'rxjs';
 import { ErrorManager } from '../../services/error-manager.service';
 
 @Component({
-  selector: 'lib-error',
+  selector: 'a3-error',
   templateUrl: './error.component.html',
   styleUrls: ['./error.component.scss']
 })

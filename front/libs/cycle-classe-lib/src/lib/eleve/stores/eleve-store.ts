@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { merge, scan, shareReplay, Subject } from 'rxjs';
 import { Eleve } from '../models/eleve.model';
-import { EleveService } from './../services/eleve.service';
+import { EleveService } from '../services/eleve.service';
 
 @Injectable({
   providedIn: 'root'

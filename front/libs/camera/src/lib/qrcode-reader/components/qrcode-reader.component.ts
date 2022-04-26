@@ -25,11 +25,11 @@ export class QrcodeReaderComponent {
 
   public onScanSuccess(stringScanned: string): void {
     this.stringScanned.next(stringScanned);
-    this.resultScan = stringScanned;
+    console.log("qrcode scanned : " + stringScanned)
   }
 
   private changeCurrentCamera() {
-    if (this.cameraList && this.currentCamera) {
+    if (this.cameraList) {
       let currentCameraIndex = this.cameraList.findIndex(c => c === this.currentCamera);
       let nextCurrentCameraIndex = currentCameraIndex + 1;
       if (nextCurrentCameraIndex > this.cameraList.length - 1) {

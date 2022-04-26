@@ -1,11 +1,10 @@
 import { ENVIRONMENT, IEnvironment } from '@a3/shared-lib';
-import { HttpClient, HttpHandler } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
-import { EleveService } from './../services/eleve.service';
-import { EleveStore } from './eleve-store';
+import { ObjectifService } from './objectif.service';
 
 
-describe('EleveStore', () => {
+describe('ObjectifService', () => {
   let environmentStub: Partial<IEnvironment>;
   environmentStub = {
     production: false,
@@ -13,17 +12,16 @@ describe('EleveStore', () => {
     backUrl: 'https://localhost:7057/'
   };
 
-  let service: EleveStore;
+  let service: ObjectifService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
       providers: [
-        EleveService,
-        HttpClient,
-        HttpHandler,
-        { provide: ENVIRONMENT, useValue: environmentStub }]
+        { provide: ENVIRONMENT, useValue: environmentStub }
+      ]
     });
-    service = TestBed.inject(EleveStore);
+    service = TestBed.inject(ObjectifService);
   });
 
   it('should be created', () => {

@@ -9,7 +9,8 @@
                       a3-flex-1
                       a3-flex-column-center-center">
         <a3-qrcode-reader class="a3-width-100
-                                a3-max-width-30rem">
+                                a3-max-width-30rem"
+                          (stringScanned)="onQrcodeReaderStringScanned($event)">
         </a3-qrcode-reader>
       </section>
       <footer class="a3-footer

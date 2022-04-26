@@ -1,4 +1,4 @@
-import { CycleClasseLibModule, EleveStore } from '@a3/cycle-classe-lib';
+import { EleveStore } from '@a3/cycle-classe-lib';
 import { ENVIRONMENT, IEnvironment } from '@a3/shared-lib';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
@@ -31,8 +31,7 @@ describe('SelectionEleveComponent', () => {
       imports: [
         HttpClientTestingModule,
         RouterTestingModule,
-        MatCardModule,
-        CycleClasseLibModule],
+        MatCardModule],
       declarations: [SelectionEleveComponent],
       providers: [
         ApplicationStore,

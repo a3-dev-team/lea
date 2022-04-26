@@ -4,12 +4,18 @@ export class QrcodeObjectifHelper {
 
     private static qrcodePrefix: string = 'LEA-CYCLE1-OBJECTIF-'
 
-    public static obtenirQrcode(objectif: Objectif): string {
+    public static obtenirQrcodeObjectif(objectif: Objectif): string {
         return this.qrcodePrefix + objectif.id;
     }
 
-    public static obtenirIdentifiant(qrcode: string): number {
-        const prefixLength = this.qrcodePrefix.length;
-        return +qrcode.substring(prefixLength);
+    public static obtenirObjectifIdDepuisQrcode(qrcode: string): number | null {
+        let objectifId: number | null = null;
+
+        if (qrcode.startsWith(this.qrcodePrefix)) {
+            const prefixLength = this.qrcodePrefix.length;
+            objectifId = +qrcode.substring(prefixLength);
+        }
+
+        return objectifId;
     }
 }

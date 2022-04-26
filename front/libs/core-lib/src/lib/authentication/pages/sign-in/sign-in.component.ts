@@ -5,7 +5,7 @@ import { UserSignIn } from '../../models/user-sign-in.model';
 import { AuthenticationManager } from '../../services/authentication-manager.service';
 
 @Component({
-  selector: 'lib-sign-in',
+  selector: 'a3-sign-in',
   templateUrl: './sign-in.component.html',
   styleUrls: ['./sign-in.component.scss']
 })

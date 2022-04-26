@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoaderManager } from '../../services/loader-manager.service';
 
 @Component({
-  selector: 'lib-loader',
+  selector: 'a3-loader',
   templateUrl: './loader.component.html'
 })
 export class LoaderComponent implements OnInit {

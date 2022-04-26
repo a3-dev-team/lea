@@ -1,5 +1,6 @@
 import { QrcodeGeneratorModule, QrcodeReaderModule } from '@a3/camera';
-import { CycleClasseLibModule } from '@a3/cycle-classe-lib';
+import { EleveModule } from '@a3/cycle-classe-lib';
+import { ObjectifEleveModule } from '@a3/cycle1-objectif-lib';
 import { NgModule } from '@angular/core';
 import { WebcamModule } from 'ngx-webcam';
 import { SharedModule } from '../shared/shared.module';
@@ -21,7 +22,8 @@ import { ValidationComponent } from './validation.component';
   imports: [
     SharedModule,
     ValidationRoutingModule,
-    CycleClasseLibModule,
+    ObjectifEleveModule,
+    EleveModule,
     QrcodeReaderModule,
     QrcodeGeneratorModule,
     WebcamModule,

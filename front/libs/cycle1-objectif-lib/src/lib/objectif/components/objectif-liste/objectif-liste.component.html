@@ -6,7 +6,7 @@
     <span>
       {{objectif.description}}
     </span>
-    <a3-qrcode-generator [stringToQrcode]="QrcodeObjectifHelper.obtenirQrcode(objectif)"
+    <a3-qrcode-generator [stringToQrcode]="QrcodeObjectifHelper.obtenirQrcodeObjectif(objectif)"
                          [qrcodeFileName]="objectif.libelle">
     </a3-qrcode-generator>
   </ng-container>

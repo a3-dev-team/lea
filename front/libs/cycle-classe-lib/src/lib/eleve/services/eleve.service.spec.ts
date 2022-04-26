@@ -27,8 +27,6 @@ describe('EleveService', () => {
       ]
     });
 
-    // Inject the http service and test controller for each test
-    TestBed.inject(HttpClient);
     httpTestingController = TestBed.inject(HttpTestingController);
     service = TestBed.inject(EleveService);
   });

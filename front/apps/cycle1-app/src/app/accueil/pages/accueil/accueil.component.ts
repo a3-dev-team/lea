@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApplicationStore } from '../core/application-store/application-store';
+import { ApplicationStore } from '../../../core/application-store/application-store';
 
 @Component({
   selector: 'app-accueil',

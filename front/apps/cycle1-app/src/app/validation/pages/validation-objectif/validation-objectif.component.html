@@ -1,2 +1,10 @@
-<p>validation-objectif works!</p>
-<webcam></webcam>
+<article>
+    <header>
+        <ng-container *ngIf="this.validationStore.objectifEleveState$ | async as objectifEleve">
+            <h2 i18n>{{objectifEleve.objectif.libelle}}</h2>
+            <h3 i18n>{{objectifEleve.dateValidation}}</h3>
+        </ng-container>
+    </header>
+    <section class="a3-flex-1">
+        <webcam></webcam>
+    </section>

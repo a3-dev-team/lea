@@ -1,7 +1,7 @@
-import { ObjectifStore } from '@a3/cycle1-objectif-lib';
 import { FullSizeBaseComponent } from '@a3/shared-lib';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { QrcodeObjectifHelper } from 'libs/cycle1-objectif-lib/src/lib/objectif/helpers/qrcode-objectif.helper';
 import { ValidationStore } from '../../store/validation.store';
 
 
@@ -12,10 +12,11 @@ import { ValidationStore } from '../../store/validation.store';
 })
 export class SelectionObjectifComponent extends FullSizeBaseComponent implements OnInit {
   constructor(
+    private readonly router: Router,
     private readonly acticatedRoute: ActivatedRoute,
-    public readonly validationStore: ValidationStore,
-    public readonly objectifStore: ObjectifStore) {
+    public readonly validationStore: ValidationStore) {
     super();
+    this.validationStore.mettreAJourObjectifEleve(null);
   }
 
   public override ngOnInit(): void {
@@ -25,6 +26,17 @@ export class SelectionObjectifComponent extends FullSizeBaseComponent implements
         const eleveId = Number(params.get('eleveId'));
         this.validationStore.mettreAJourEleveParId(eleveId);
       });
+  }
+
+  onQrcodeReaderStringScanned(stringScanned: string) {
+    const objectifEleveId: number | null = QrcodeObjectifHelper.obtenirObjectifIdDepuisQrcode(stringScanned)
+    if (objectifEleveId) {
+      this.acticatedRoute.paramMap
+        .subscribe((params) => {
+          const eleveId = Number(params.get('eleveId'));
+          this.router.navigateByUrl(`/validation/eleves/${eleveId}/objectifs/${objectifEleveId}`, { replaceUrl: true });
+        });
+    }
   }
 
 }

@@ -29,7 +29,12 @@
             "assets": [
               "apps/cycle1-app/src/favicon.ico",
               "apps/cycle1-app/src/assets",
-              "apps/cycle1-app/src/manifest.webmanifest"
+              "apps/cycle1-app/src/manifest.webmanifest",
+              {
+                "glob": "**/*",
+                "input": "./dist/camera/assets",
+                "output": "/assets/"
+              }
             ],
             "styles": [
               "apps/cycle1-app/src/styles.scss",
@@ -147,7 +152,7 @@
       "projectType": "library",
       "root": "libs/shared-lib",
       "sourceRoot": "libs/shared-lib/src",
-      "prefix": "shared",
+      "prefix": "a3",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
@@ -209,7 +214,7 @@
       "projectType": "library",
       "root": "libs/core-lib",
       "sourceRoot": "libs/core-lib/src",
-      "prefix": "core",
+      "prefix": "a3",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
@@ -240,7 +245,7 @@
       "projectType": "library",
       "root": "libs/camera",
       "sourceRoot": "libs/camera/src",
-      "prefix": "lib",
+      "prefix": "a3",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",

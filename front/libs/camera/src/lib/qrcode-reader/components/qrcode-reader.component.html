@@ -1,37 +1,28 @@
-<section class="a3-section 
-                a3-width-100 
-                a3-height-100">
-    <div class="a3-width-100 
+<div class="a3-width-100 
                 a3-height-100
                 a3-position-relative">
-        <zxing-scanner class="a3-width-100"
-                       [(device)]="currentCamera"
-                       (camerasFound)="onCamerasFound($event)"
-                       (scanSuccess)="onScanSuccess($event)"
-                       square>
-        </zxing-scanner>
-        <div class="a3-position-absolute
+    <zxing-scanner class="a3-width-100"
+                   [device]="currentCamera"
+                   (camerasFound)="onCamerasFound($event)"
+                   (scanSuccess)="onScanSuccess($event)"
+                   square>
+    </zxing-scanner>
+
+    <img src="assets/qrcode.png"
+         class="a3-position-absolute
                     a3-height-100
                     a3-width-100
                     a3-top-0
-                    a3-flex-column-center-center">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Qrcode_wikipedia_fr_v2clean.png"
-                 class="a3-height-80
-                        a3-width-80
-                        a3-opacity-5"
-                 alt="Qrcode Lea"
-                 aria-label="Qrcode Lea">
-        </div>
-        <button *ngIf="cameraList && cameraList.length > 1"
-                class="a3-position-absolute
+                    a3-flex-column-center-center
+                    a3-opacity-15"
+         alt="Qrcode Lea"
+         aria-label="Qrcode Lea">
+    <button *ngIf="cameraList && cameraList.length > 1"
+            class="a3-position-absolute
                     a3-bottom-0
                     a3-right-0"
-                (click)="onChangeCameraClick()"
-                i18n>
-            Changer de camera
-        </button>
-    </div>
-    <span *ngIf="resultScan">
-        {{resultScan}}
-    </span>
-</section>
+            (click)="onChangeCameraClick()"
+            i18n>
+        Changer de camera
+    </button>
+</div>
