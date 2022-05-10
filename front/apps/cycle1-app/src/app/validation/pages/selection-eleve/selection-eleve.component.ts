@@ -1,4 +1,4 @@
-import { Classe, Eleve, EleveService } from '@a3/cycle-classe-lib';
+import { Classe, Eleve, EleveCache } from '@a3/cycle-classe-lib';
 import { FullSizeBaseComponent } from '@a3/shared-lib';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
@@ -20,7 +20,7 @@ export class SelectionEleveComponent extends FullSizeBaseComponent {
         first(classe => !!classe),
         mergeMap((classe: Classe | null) => {
           if (classe) {
-            return this.eleveService.chargerListeEleveClasse(classe.id)
+            return this.eleveCache.chargerListeEleveClasse(classe.id)
           }
           else {
             return of([])
@@ -32,14 +32,18 @@ export class SelectionEleveComponent extends FullSizeBaseComponent {
     private readonly router: Router,
     public readonly applicationStore: ApplicationStore,
     private readonly validationStore: ValidationStore,
-    public readonly eleveService: EleveService) {
+    public readonly eleveCache: EleveCache) {
     super();
     this.validationStore.mettreAJourEleve(null);
   }
 
-  public onEleveSelected(eleve: Eleve) {
+  public onEleveSelected(eleve: Eleve): void {
     this.validationStore.mettreAJourEleve(eleve);
     this.router.navigateByUrl(`/validation/eleves/${eleve.id}/objectifs`, { replaceUrl: true });
+  }
+
+  public onUpdateCacheButtonClick(): void {
+    this.eleveCache.updateCache();
   }
 
 }

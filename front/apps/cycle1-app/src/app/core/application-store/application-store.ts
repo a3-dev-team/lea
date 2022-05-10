@@ -22,6 +22,10 @@ export class ApplicationStore {
   private classeSubject = new BehaviorSubject<Classe | null>(null);
   public classeState$ = this.classeSubject.asObservable();
 
+  private titreSubject = new BehaviorSubject<string | null>(null);
+  public titreState$ = this.titreSubject.asObservable();
+
+
   constructor() { }
 
   public mettreAJourProfesseur(professeur: Professeur | null) {
@@ -34,6 +38,10 @@ export class ApplicationStore {
 
   public mettreAJourEstModeEleve(estModeEleve: boolean) {
     this.estModeEleveSubject.next(estModeEleve);
+  }
+
+  public mettreAJourTitre(titre: string | null) {
+    this.titreSubject.next(titre);
   }
 
 }

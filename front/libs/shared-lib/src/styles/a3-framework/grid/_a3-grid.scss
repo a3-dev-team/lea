@@ -60,7 +60,7 @@
     //************************
     @for $j from 1 through 12 {
       .a3-grid-#{$direction}-#{$i}-span-#{$j} {
-        grid-row: #{$i} / span #{$j};
+        grid-#{$direction}: #{$i} / span #{$j};
       }
       .a3-grid-#{$direction}-#{$i}-span-#{$j}-sup {
         @include responsive.a3-screen-sup() {
@@ -78,5 +78,14 @@
         }
       }
     }
+  }
+}
+
+@each $justify-self in self-start, center, self-end {
+  //************************
+  // .a3-justify-self-*
+  //************************
+  .a3-justify-self-#{$justify-self} {
+    justify-self: #{$justify-self};
   }
 }

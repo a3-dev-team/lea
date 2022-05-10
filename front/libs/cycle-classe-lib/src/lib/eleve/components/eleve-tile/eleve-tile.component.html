@@ -1,21 +1,16 @@
-<div class="a3-width-100
-                a3-height-100
-                              
-                core-background-color-theme-main
-                a3-border-radius-theme-main
-                core-padding-theme-main
-                a3-flex-column-stretch-stretch"
+<div class="a3-panel"
      [class.a3-cursor-pointer]="isSelectable"
      (click)="onTileClick()">
-     <header class="a3-flex-row-start-center
+     <header class="a3-flex-column-start-center
                     a3-flex-gap">
           <!-- [@eleveTileAnimations]="(selectedState$ | async) ? 'selected' : 'notSelected'" -->
           <img src="https://previews.123rf.com/images/jemastock/jemastock1705/jemastock170508361/78184821-t%C3%AAte-de-dessin-visage-souriant-illustration-de-vecteur-de-caract%C3%A8re-enfant.jpg"
-               class="a3-width-10rem
-               a3-height-10rem
+               class="a3-width-100
+               a3-height-100
                a3-border-radius-50"
                alt="Photo de l'élève"
-               aria-label="Photo de l'élève">
+               aria-label="Photo de l'élève"
+               square>
           <!-- <button *ngIf="selectedState$ | async"
              class="a3-button-negative
                     a3-grid-column-2"

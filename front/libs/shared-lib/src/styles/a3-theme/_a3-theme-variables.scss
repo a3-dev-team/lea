@@ -1,75 +1,105 @@
 :root {
-    --core-theme-background-color: #322e2f;
-    --core-theme-color: #efefef;
-    --core-theme-main-background-color: #998017;
-    --core-theme-main-disabled-background-color: #5a4e1c;
-    --core-theme-main-active-background-color: #4c4028;
-    --core-theme-main-color: #322e2f;
-    --core-theme-fonctionnality-background-color: #322e2f;
-    --core-theme-fonctionnality-color: #efefef;
-    --core-theme-main-padding: 0.5rem;
-    --core-theme-main-border-radius: 0rem;
+    --a3-theme-background-color: #ffffff;
+    --a3-theme-color: #c3cfd9;
+    --a3-theme-padding: 0.5rem 1rem;
+    --a3-theme-border-radius: 0.2rem;
+    --a3-theme-main-background-color: #dfe6ed;
+    --a3-theme-main-disabled-background-color: #5a4e1c;
+    --a3-theme-main-active-background-color: #4c4028;
+    --a3-theme-main-color: #293845;
+    --a3-theme-fonctionnality-background-color: #ffffff;
+    --a3-theme-fonctionnality-color: #c3cfd9;
+
+    // button
+    --a3-theme-button-background-color: #6558f5;
+    --a3-theme-button-disabled-background-color: #8076f0;
+    --a3-theme-button-color: #ffffff;
+
+    // input
+    --a3-theme-input-background-color: #ffffff;
+    --a3-theme-input-color: #c3cfd9;
+    --a3-theme-input-border-color: #c5ced6;
+    --a3-theme-input-disabled-background-color: #8076f0;
+    --a3-theme-input-active-background-color: #ffffff;
+    --a3-theme-input-active-border-color: #6558f5;
+
+    // group-box
+    --a3-theme-group-box-border-color: #ffffff;
+    --a3-theme-group-box-header-background-color: #ffffff;
+    --a3-theme-group-box-header-color: #909da9;
+    --a3-theme-group-box-shadow-color: #c5ced6;
+
+    // panel
+    --a3-theme-panel-background-color: #dfe6ed;
 
     .clair {
-        --core-theme-background-color: #e7e7e7;
-        --core-theme-main-active-background-color: #dbd3c2;
-        --core-theme-color: #322e2f;
-        --core-theme-main-color: #e7e7e7;
-        --core-theme-fonctionnality-background-color: #e7e7e7;
-        --core-theme-fonctionnality-color: #322e2f;
+        --a3-theme-background-color: #e7e7e7;
+        --a3-theme-main-active-background-color: #dbd3c2;
+        --a3-theme-color: #322e2f;
+        --a3-theme-main-color: #e7e7e7;
+        --a3-theme-fonctionnality-background-color: #e7e7e7;
+        --a3-theme-fonctionnality-color: #322e2f;
+        --a3-theme-main-border-radius: 0.5rem;
     }
     .garcon {
-        --core-theme-main-background-color: #174b99;
-        --core-theme-main-disabled-background-color: #1c355a;
-        --core-theme-main-active-background-color: #283b4c;
+        --a3-theme-main-background-color: #174b99;
+        --a3-theme-main-disabled-background-color: #1c355a;
+        --a3-theme-main-active-background-color: #283b4c;
         &.clair {
-            --core-theme-main-active-background-color: #c2cedb;
+            --a3-theme-main-active-background-color: #c2cedb;
         }
     }
     .fille {
-        --core-theme-main-background-color: #991767;
-        --core-theme-main-disabled-background-color: #5a1c40;
-        --core-theme-main-active-background-color: #4c283d;
+        --a3-theme-main-background-color: #991767;
+        --a3-theme-main-disabled-background-color: #5a1c40;
+        --a3-theme-main-active-background-color: #4c283d;
         &.clair {
-            --core-theme-main-active-background-color: #c2cedb;
+            --a3-theme-main-active-background-color: #c2cedb;
         }
     }
 }
 
-
-
-$core-theme-background-color: var(--core-theme-background-color);
-$core-theme-color: var(--core-theme-color);
-$core-theme-main-background-color: var(--core-theme-main-background-color);
-$core-theme-main-color: var(--core-theme-main-color);
-$core-theme-fonctionnality-background-color: var(--core-theme-fonctionnality-background-color);
-$core-theme-fonctionnality-color: var(--core-theme-fonctionnality-color);
-$core-theme-border-radius: 0;
+$a3-theme-background-color: var(--a3-theme-background-color);
+$a3-theme-color: var(--a3-theme-color);
+$a3-theme-main-background-color: var(--a3-theme-main-background-color);
+$a3-theme-main-color: var(--a3-theme-main-color);
+$a3-theme-fonctionnality-background-color: var(--a3-theme-fonctionnality-background-color);
+$a3-theme-fonctionnality-color: var(--a3-theme-fonctionnality-color);
+$a3-theme-border-radius: var(--a3-theme-border-radius);
 
 // BUTTON
 
-$core-theme-button-background-color: var(--core-theme-main-background-color);
-$core-theme-button-disabled-background-color: var(--core-theme-main-disabled-background-color);
-$core-theme-button-color: var(--core-theme-fonctionnality-background-color);
-$core-theme-button-border-color: var(--core-theme-fonctionnality-background-color);
+$a3-theme-button-background-color: var(--a3-theme-button-background-color);
+$a3-theme-button-disabled-background-color: var(--a3-theme-button-disabled-background-color);
+$a3-theme-button-color: var(--a3-theme-button-color);
+$a3-theme-button-border-color: var(--a3-theme-button-color);
 
-$core-theme-button-border-radius: 0;
-$core-theme-button-height: 2rem;
+$a3-theme-button-border-radius: var(--a3-theme-border-radius);
+$a3-theme-button-height: 2rem;
 
 // INPUT
 
-$core-theme-input-background-color: var(--core-theme-fonctionnality-background-color);
-$core-theme-input-color: var(--core-theme-fonctionnality-color);
-$core-theme-input-border-color: var(--core-theme-main-background-color);
-$core-theme-input-height: 2rem;
-$core-theme-input-active-background-color: var(--core-theme-main-active-background-color);
-$core-theme-input-active-border-color: var(--core-theme-main-background-color);
-$core-theme-input-disabled-border-color: var(--core-theme-main-disabled-background-color);
+$a3-theme-input-background-color: var(--a3-theme-input-background-color);
+$a3-theme-input-color: var(--a3-theme-input-color);
+$a3-theme-input-border-color: var(--a3-theme-input-border-color);
+$a3-theme-input-height: 2rem;
+$a3-theme-input-active-background-color: var(--a3-theme-input-active-background-color);
+$a3-theme-input-active-border-color: var(--a3-theme-input-active-border-color);
+$a3-theme-input-disabled-background-color: var(--a3-theme-main-active-background-color);
+$a3-theme-input-disabled-border-color: var(--a3-theme-main-disabled-background-color);
+$a3-theme-input-border-radius: var(--a3-theme-border-radius);
 
 // PADDING
 
-$core-theme-main-padding: var(--core-theme-main-padding);
+$a3-theme-main-padding: var(--a3-theme-main-padding);
 
 // BORDER
 
-$core-theme-main-border-radius: var(--core-theme-main-border-radius);
+$a3-theme-main-border-radius: var(--a3-theme-main-border-radius);
+
+// GROUP-BOX
+$a3-theme-group-box-shadow-color: var(--a3-theme-group-box-shadow-color);
+$a3-theme-group-box-header-color: var(--a3-theme-group-box-header-color);
+
+//PANEL
+$a3-theme-panel-background-color: var(--a3-theme-panel-background-color);

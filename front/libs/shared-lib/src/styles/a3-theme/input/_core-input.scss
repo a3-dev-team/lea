@@ -1,21 +1,28 @@
-@use '../a3-theme-variables' as variables;
+@use "../a3-theme-variables" as variables;
 
-input{
+input {
     margin: 0;
-        background-color: variables.$core-theme-input-background-color;
-        color: variables.$core-theme-input-color;
-        border: 0.125rem solid variables.$core-theme-input-border-color;
-        border-radius: variables.$core-theme-input-border-radius ;
-        height: variables.$core-theme-input-height;
+    background-color: variables.$a3-theme-input-background-color;
+    color: variables.$a3-theme-input-color;
+    border: 0.125rem solid variables.$a3-theme-input-border-color;
+    border-radius: variables.$a3-theme-input-border-radius;
+    height: variables.$a3-theme-input-height;
+    outline: none;
+    padding: 0 0.25rem;
+    &:focus {
+        background-color: variables.$a3-theme-input-active-background-color;
+        border: 0.125rem solid variables.$a3-theme-input-active-border-color;
         outline: none;
-        padding: 0 0.25rem;
-        &:focus{
-            background-color: variables.$core-theme-input-active-background-color;
-            border: 0.125rem solid variables.$core-theme-input-active-border-color;
-            outline: none;
-        }
-        &:disabled{
-            border-color: variables.$core-theme-input-disabled-border-color;
-        }
-   
+    }
+    &:disabled {
+        border-color: variables.$a3-theme-input-disabled-border-color;
+    }
+}
+
+/* Change the white to any color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px variables.$a3-theme-input-background-color inset !important;
 }

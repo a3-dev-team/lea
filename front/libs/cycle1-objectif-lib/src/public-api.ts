@@ -1,6 +1,7 @@
 /*
  * Public API Surface of cycle1-objectif-lib
  */
+export * from './lib/objectif-eleve/caches/objectif-eleve.cache';
 export * from './lib/objectif-eleve/models/objectif-eleve.model';
 export * from './lib/objectif-eleve/objectif-eleve.module';
 export * from './lib/objectif-eleve/services/objectif-eleve.service';

@@ -1,24 +1,24 @@
-$core-break-small: 48rem;
-$core-break-medium: 62rem;
-$core-break-large: 75rem;
+$a3-break-small: 48rem;
+$a3-break-medium: 62rem;
+$a3-break-large: 75rem;
 
 // Medium devices (tablets, 768px and up)
 @mixin a3-screen-sup() {
-  @media only screen and (min-width: $core-break-small) {
+  @media only screen and (min-width: $a3-break-small) {
     @content;
   }
 }
 
 // Large devices (desktops, 992px and up)
 @mixin a3-screen-mup() {
-  @media only screen and (min-width: $core-break-medium) {
+  @media only screen and (min-width: $a3-break-medium) {
     @content;
   }
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @mixin a3-screen-l() {
-  @media only screen and (min-width: $core-break-large) {
+  @media only screen and (min-width: $a3-break-large) {
     @content;
   }
 }

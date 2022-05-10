@@ -10,6 +10,7 @@ export class AccueilComponent implements OnInit {
 
   constructor(private readonly applicationStore: ApplicationStore) {
     this.desactiverModeEleve();
+    this.applicationStore.mettreAJourTitre("Accueil");
   }
 
   ngOnInit(): void {

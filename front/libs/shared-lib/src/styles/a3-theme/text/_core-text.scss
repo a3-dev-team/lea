@@ -2,37 +2,43 @@
 
 h1 {
     margin: 0;
-    font-size: large;
+    font-size: xx-large;
     font-weight: 500;
-    color: variables.$core-theme-main-color;
+    color: variables.$a3-theme-main-color;
 }
 h2 {
     margin: 0;
-    font-size: medium;
+    font-size: x-large;
     font-weight: normal;
-    color: variables.$core-theme-fonctionnality-color;
+    color: variables.$a3-theme-main-color;
 }
 h3 {
     margin: 0;
+    font-size: large;
+    font-weight: normal;
+    color: variables.$a3-theme-main-color;
+}
+h4 {
+    margin: 0;
     font-size: medium;
     font-weight: normal;
-    color: variables.$core-theme-fonctionnality-color;
+    color: variables.$a3-theme-main-color;
 }
 h6 {
     margin: 0;
     font-weight: normal;
-    color: variables.$core-theme-main-color;
+    color: variables.$a3-theme-main-color;
 }
 
 label {
     margin: 0;
     font-size: small;
-    color: variables.$core-theme-fonctionnality-color;
+    color: variables.$a3-theme-fonctionnality-color;
 }
 
 span {
     margin: 0;
     font-size: small;
     align-self: center;
-    color: variables.$core-theme-fonctionnality-color;
+    color: variables.$a3-theme-main-color;
 }

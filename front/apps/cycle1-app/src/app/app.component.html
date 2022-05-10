@@ -1,13 +1,33 @@
-<header *ngIf="!(applicationStore.estModeEleveState$ | async)">
-    <h1>Cycle 1</h1>
-    <ng-container *ngIf="(authenticationManager.authenticatedUserState$ | async) as authenticatedUser">
+<header *ngIf="!(applicationStore.estModeEleveState$ | async)"
+        class="a3-grid-3-1fr">
+    <h2 class="a3-display-none 
+                a3-display-inline-sup">Cycle 1</h2>
+    <div class="a3-justify-self-start 
+                a3-flex-column-start-start
+                a3-flex-column-start-center-sup
+                a3-grid-column-1-span-2
+                a3-grid-column-2-span-1-sup">
+        <h3>{{applicationStore.titreState$ | async}}</h3>
+        <h4 *ngIf="(applicationStore.classeState$ | async) as classe"
+            i18n>Classe : {{classe.nom}}</h4>
+    </div>
+    <div *ngIf="(authenticationManager.authenticatedUserState$ | async) as authenticatedUser"
+         class="a3-justify-self-self-end">
         <span>{{authenticatedUser.firstName}} {{authenticatedUser.lastName}}</span>
-        <button class="a3-button-negative"
+        <button class="a3-border-radius-50
+                    a3-width-3rem
+                    a3-padding-0
+                    a3-overflow-hidden"
                 (click)="authenticationManager.signOut()"
-                i18n>
-            Se déconnecter
+                i18n
+                square>
+            <img src="https://previews.123rf.com/images/jemastock/jemastock1705/jemastock170508361/78184821-t%C3%AAte-de-dessin-visage-souriant-illustration-de-vecteur-de-caract%C3%A8re-enfant.jpg"
+                 class="a3-width-100
+                        a3-height-100"
+                 alt="Photo de l'utilisateur authentifié"
+                 aria-label="Photo de l'utilisateur authentifié">
         </button>
-    </ng-container>
+    </div>
 </header>
 <section>
     <div [@routeAnimations]="prepareRoute(routerOutlet)"

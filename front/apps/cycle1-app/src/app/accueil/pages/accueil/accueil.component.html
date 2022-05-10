@@ -1,38 +1,64 @@
 <article>
-    <header>
-        <h2>Titre de la fonctionalité</h2>
-    </header>
-    <section class="a3-flex-column-start-center">
-        <div class="a3-grid-1-auto">
-            <button [routerLink]="'/validation'"
+    <section class="a3-section
+                    a3-flex-1">
+        <div class="a3-width-100
+                    a3-grid-1-1fr">
+            <section class="a3-container
+                            a3-flex-row-space-around-center">
+                <!-- <button [routerLink]="'/validation'"
                     (click)="onValidationEleveButtonClick()">
                 Validation des compétences (Mode Elève)
-            </button>
-            <button [routerLink]="'/validation'">
-                Validation des compétences (Mode Professeur)
-            </button>
-            <button>
-                Appréciation des compétences (Accès instituteurs)
-            </button>
-            <button [routerLink]="'/parametrage/liste-objectif'">
-                Paramétrages des objectifs
-            </button>
-            <label>
-                label
-            </label>
-            <input placeholder="Entrez du texte" />
-            <label>
-                label
-            </label>
-            <input placeholder="Entrez du texte" />
+            </button> -->
+                <button [routerLink]="'/validation'">
+                    Validation
+                </button>
+                <button>
+                    Appréciation
+                </button>
+                <button [routerLink]="'/parametrage/liste-objectif'">
+                    Gestion
+                </button>
+            </section>
+            <section class="a3-group-box">
+                <header class="a3-group-box-header">
+                    <span>Récapitulatif de la classe</span>
+                </header>
+                <section class="a3-group-box-content">
+                    <span>28 élèves</span>
+                </section>
+
+            </section>
+            <section class="a3-group-box">
+                <header class="a3-group-box-header">
+                    <span>Statistiques de la classe</span>
+                </header>
+                <section class="a3-group-box-content
+                                a3-grid-3-1fr">
+                    <div class="a3-panel">
+                        <span>
+                            Statistique 1
+                        </span>
+                    </div>
+                    <div class="a3-panel">
+                        <span>
+                            Statistique 1
+                        </span>
+                    </div>
+
+                    <div class="a3-panel">
+                        <span>
+                            Statistique 1
+                        </span>
+                    </div>
+
+                    <div class="a3-panel">
+                        <span>
+                            Statistique 1
+                        </span>
+                    </div>
+
+                </section>
+            </section>
         </div>
     </section>
-    <footer>
-        <button>
-            Action 1
-        </button>
-        <button>
-            Action 2
-        </button>
-    </footer>
 </article>

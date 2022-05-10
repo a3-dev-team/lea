@@ -28,6 +28,12 @@
   justify-content: space-between;
   align-items: center;
 }
+.a3-flex-row-space-around-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
 .a3-flex-column-stretch-stretch {
   display: flex;
   flex-direction: column;

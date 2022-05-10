@@ -6,24 +6,24 @@
     "baseUrl": "./",
     "paths": {
       "@a3/cycle-classe-lib": [
-        "dist/cycle-classe-lib/",
         "libs/cycle-classe-lib/src/public-api.ts",
+        "dist/cycle-classe-lib/"
       ],
       "@a3/shared-lib": [
-        "dist/shared-lib/",
-        "libs/shared-lib/src/public-api.ts"
+        "libs/shared-lib/src/public-api.ts",
+        "dist/shared-lib/"
       ],
       "@a3/cycle1-objectif-lib": [
-        "dist/cycle1-objectif-lib/",
-        "libs/cycle1-objectif-lib/src/public-api.ts"
+        "libs/cycle1-objectif-lib/src/public-api.ts",
+        "dist/cycle1-objectif-lib/"
       ],
       "@a3/core-lib": [
-        "dist/core-lib/",
-        "libs/core-lib/src/public-api.ts"
+        "libs/core-lib/src/public-api.ts",
+        "dist/core-lib/"
       ],
       "@a3/camera": [
-        "dist/camera/",
-        "libs/camera/src/public-api.ts"
+        "libs/camera/src/public-api.ts",
+        "dist/camera/"
       ]
     },
     "outDir": "./dist/out-tsc",

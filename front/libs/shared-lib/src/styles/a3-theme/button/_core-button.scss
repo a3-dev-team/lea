@@ -1,21 +1,19 @@
-@use '../a3-theme-variables' as variables;
+@use "../a3-theme-variables" as variables;
 
-
-
-button{
-    height: variables.$core-theme-button-height ;
-    background-color: variables.$core-theme-button-background-color;
+button {
+    height: variables.$a3-theme-button-height;
+    background-color: variables.$a3-theme-button-background-color;
     border: 0;
-    color: variables.$core-theme-button-color;
-    border-radius: variables.$core-theme-button-border-radius ;
+    color: variables.$a3-theme-button-color;
+    border-radius: variables.$a3-theme-button-border-radius;
     padding: 0 0.5rem;
     font-size: small;
     cursor: pointer;
     font-weight: bold;
-    &:disabled{
-        background-color: variables.$core-theme-button-disabled-background-color;
+    &:disabled {
+        background-color: variables.$a3-theme-button-disabled-background-color;
     }
-    &.a3-button-negative{
-        border: 0.0625rem solid variables.$core-theme-button-border-color;
+    &.a3-button-negative {
+        border: 0.0625rem solid variables.$a3-theme-button-border-color;
     }
 }

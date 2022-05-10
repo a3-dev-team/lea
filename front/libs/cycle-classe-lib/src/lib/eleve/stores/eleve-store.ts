@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { merge, scan, shareReplay, Subject } from 'rxjs';
+import { BehaviorSubject, merge, scan, shareReplay, Subject, switchMap } from 'rxjs';
 import { Eleve } from '../models/eleve.model';
 import { EleveService } from '../services/eleve.service';
 
@@ -11,10 +11,15 @@ export class EleveStore {
   private eleveAjouteSubject = new Subject<Eleve>();
   public eleveAjouteAction$ = this.eleveAjouteSubject.asObservable();
 
-  public eleves$ = this.eleveService.eleves$
+  private updateCache$: BehaviorSubject<void> = new BehaviorSubject<void>(undefined);
+
+  public eleves$ = this.updateCache$
     .pipe(
+      // On attend pas que la valeur précédente émise par updateCache$ soit retournée pour déclenchée la suivante, 
+      // et on écoute pas le retour de la précédente
+      switchMap(() => { return this.eleveService.eleves$ }),
       shareReplay(1)
-    )
+    );
 
   public elevesAvecAjouts = merge(
     this.eleves$,
@@ -30,6 +35,10 @@ export class EleveStore {
       .subscribe((eleveRetourne: Eleve) => {
         this.eleveAjouteSubject.next(eleveRetourne);
       });
+  }
+
+  public updateCache() {
+    this.updateCache$.next();
   }
 
 }

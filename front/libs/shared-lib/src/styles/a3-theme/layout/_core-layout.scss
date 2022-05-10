@@ -21,24 +21,24 @@ app-root {
   height: 100%;
   display: flex;
   flex-direction: column;
-  background-color: variables.$core-theme-background-color;
+  background-color: variables.$a3-theme-background-color;
 
   > header {
-    border-radius: variables.$core-theme-border-radius variables.$core-theme-border-radius 0 0;
+    border-radius: variables.$a3-theme-border-radius variables.$a3-theme-border-radius 0 0;
     padding: 0.5rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: variables.$core-theme-main-background-color;
-    height: 3rem;
+    background-color: variables.$a3-theme-main-background-color;
+    height: 4.5rem;
   }
   > section {
     flex: 1;
   }
   > footer {
-    border-radius: 0 0 variables.$core-theme-border-radius variables.$core-theme-border-radius;
-    background-color: variables.$core-theme-main-background-color;
+    border-radius: 0 0 variables.$a3-theme-border-radius variables.$a3-theme-border-radius;
+    background-color: variables.$a3-theme-main-background-color;
     padding: 0.25rem 0.5rem;
     display: flex;
     flex-direction: row;
@@ -63,8 +63,8 @@ article {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    border-radius: variables.$core-theme-border-radius variables.$core-theme-border-radius 0 0;
-    background-color: variables.$core-theme-fonctionnality-background-color;
+    border-radius: variables.$a3-theme-border-radius variables.$a3-theme-border-radius 0 0;
+    background-color: variables.$a3-theme-fonctionnality-background-color;
   }
   > section {
     padding: 0.5rem;
@@ -73,7 +73,7 @@ article {
     justify-content: stretch;
     align-items: stretch;
     overflow-y: auto;
-    background-color: variables.$core-theme-fonctionnality-background-color;
+    background-color: variables.$a3-theme-fonctionnality-background-color;
   }
   > footer {
     padding: 0.5rem;
@@ -81,8 +81,8 @@ article {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    border-radius: 0 0 variables.$core-theme-border-radius variables.$core-theme-border-radius;
-    background-color: variables.$core-theme-fonctionnality-background-color;
+    border-radius: 0 0 variables.$a3-theme-border-radius variables.$a3-theme-border-radius;
+    background-color: variables.$a3-theme-fonctionnality-background-color;
     column-gap: 0.25rem;
   }
 
@@ -94,33 +94,63 @@ article {
 }
 
 .a3-header {
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  border-radius: variables.$core-theme-border-radius variables.$core-theme-border-radius 0 0;
-  background-color: variables.$core-theme-fonctionnality-background-color;
+  border-radius: variables.$a3-theme-border-radius variables.$a3-theme-border-radius 0 0;
+  background-color: variables.$a3-theme-fonctionnality-background-color;
 }
 
 .a3-section {
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   overflow-y: auto;
-  background-color: variables.$core-theme-fonctionnality-background-color;
+  background-color: variables.$a3-theme-fonctionnality-background-color;
 }
 
-.a3-footer{
-  padding: 0.5rem;
+.a3-footer {
+  padding: 0.5rem 1rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  border-radius: 0 0 variables.$core-theme-border-radius variables.$core-theme-border-radius;
-  background-color: variables.$core-theme-fonctionnality-background-color;
+  border-radius: 0 0 variables.$a3-theme-border-radius variables.$a3-theme-border-radius;
+  background-color: variables.$a3-theme-fonctionnality-background-color;
   column-gap: 0.25rem;
+}
 
+.a3-panel {
+  padding: 0.5rem 1rem;
+  border-radius: variables.$a3-theme-border-radius;
+  background-color: variables.$a3-theme-panel-background-color;
+}
+
+.a3-group-box {
+  padding: 0.5rem 1rem;
+  box-shadow: 0.1rem 0.1rem 0.2rem variables.$a3-theme-group-box-shadow-color;
+  border-radius: variables.$a3-theme-border-radius;
+}
+
+.a3-group-box-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  > span:first-child {
+    color: variables.$a3-theme-group-box-header-color;
+    font-size: medium;
+  }
+}
+
+.a3-group-box-content {
+  padding: 0.5rem 1rem;
+}
+
+.a3-container {
+  padding: 0.5rem 1rem;
 }

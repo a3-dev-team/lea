@@ -1,3 +1,10 @@
-.a3-display-none{
+@use "../responsive/a3-responsive" as responsive;
+
+.a3-display-none {
     display: none;
+}
+.a3-display-inline-sup {
+    @include responsive.a3-screen-sup() {
+        display: inline;
+    }
 }

@@ -3,6 +3,7 @@
  */
 export * from './lib/classe/models/classe.model';
 export * from './lib/classe/services/classe.service';
+export * from './lib/eleve/caches/eleve.cache';
 export * from './lib/eleve/components/eleve-detail/eleve-detail.component';
 export * from './lib/eleve/components/eleve-list/eleve-list.component';
 export * from './lib/eleve/components/eleve-tile-list/eleve-tile-list.component';
