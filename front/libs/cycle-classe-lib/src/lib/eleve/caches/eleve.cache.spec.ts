@@ -1,13 +1,18 @@
 import { TestBed } from '@angular/core/testing';
+import { EleveService } from '../services/eleve.service';
+import { EleveCache } from './eleve.cache';
 
-import { ObjectifEleveService } from './objectif-eleve.service';
 
-describe('ObjectifEleveService', () => {
-  let service: ObjectifEleveService;
-
+describe('EleveCache', () => {
+  let service: EleveCache;
+  let eleveServiceStub: Partial<EleveService>;
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(ObjectifEleveService);
+    TestBed.configureTestingModule({
+      providers: [
+        { provide: EleveService, useValue: eleveServiceStub }
+      ]
+    });
+    service = TestBed.inject(EleveCache);
   });
 
   it('should be created', () => {
