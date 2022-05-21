@@ -17,9 +17,9 @@
         "libs/cycle1-objectif-lib/src/public-api.ts",
         "dist/cycle1-objectif-lib/"
       ],
-      "@a3/core-lib": [
-        "libs/core-lib/src/public-api.ts",
-        "dist/core-lib/"
+      "@a3/common": [
+        "libs/common/src/public-api.ts",
+        "dist/common/"
       ],
       "@a3/camera": [
         "libs/camera/src/public-api.ts",

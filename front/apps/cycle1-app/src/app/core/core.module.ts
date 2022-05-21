@@ -1,4 +1,4 @@
-import { CoreLibModule } from '@a3/core-lib';
+import { AuthenticationModule, ErrorModule, LoaderModule } from '@a3/common';
 import { NgModule } from '@angular/core';
 
 
@@ -6,10 +6,14 @@ import { NgModule } from '@angular/core';
 @NgModule({
   declarations: [],
   imports: [
-    CoreLibModule,
+    AuthenticationModule,
+    ErrorModule,
+    LoaderModule
   ],
   exports: [
-    CoreLibModule
+    AuthenticationModule,
+    ErrorModule,
+    LoaderModule
   ]
 })
 export class CoreModule { }

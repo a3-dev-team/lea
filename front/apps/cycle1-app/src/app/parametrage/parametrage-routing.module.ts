@@ -1,4 +1,4 @@
-import { AuthenticationGuard } from '@a3/core-lib';
+import { AuthenticationGuard } from '@a3/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ParametrageListeObjectifComponent } from './pages/parametrage-liste-objectif/parametrage-liste-objectif.component';

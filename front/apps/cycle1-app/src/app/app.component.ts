@@ -1,4 +1,4 @@
-import { AuthenticationManager, IAuthenticatedUser } from '@a3/core-lib';
+import { AuthenticationManager, IAuthenticatedUser } from '@a3/common';
 import { Classe, ClasseService, Professeur, ProfesseurService } from '@a3/cycle-classe-lib';
 import { BaseComponent } from '@a3/shared-lib';
 import { Component, OnInit } from '@angular/core';
