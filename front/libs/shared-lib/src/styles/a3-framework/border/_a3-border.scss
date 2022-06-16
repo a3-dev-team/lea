@@ -1,4 +1,3 @@
-
 //************************
 // .a3-border-radius-*
 //************************
@@ -16,5 +15,14 @@ $i-border: 0;
 @for $i-border from 1 through 10 {
     .a3-border-radius-#{$i-border}rem {
         border-radius: #{$i-border}rem;
+    }
+}
+
+//************************
+// .a3-border-solid-*px
+//************************
+@for $i-border from 1 through 8 {
+    .a3-border-solid-#{$i-border}px {
+        border: solid #{$i-border}px;
     }
 }

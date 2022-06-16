@@ -1,16 +1,39 @@
-<article>
-    <!-- <header class="a3-flex-row-stretch-stretch"
-            *ngIf="(validationStore.eleveState$ | async) as eleve">
-        <classe-eleve-tile *ngIf="eleve"
-                           [eleve]="eleve">
-        </classe-eleve-tile>
-    </header> -->
-    <section class="a3-flex-1
-                    a3-overflow-hidden">
+<div class="a3-height-100
+            a3-flex-column-start-stretch
+            a3-flex-row-stretch-stretch-sup">
+    <article class="a3-page
+                a3-width-12rem-sup
+                a3-width-100
+                a3-height-auto">
+        <section class="a3-page-section
+                        a3-flex-1">
+            <section class="a3-panel
+                            a3-flex-row-stretch-start
+                            a3-flex-column-space-between-center-sup
+                            a3-flex-gap-1rem"
+                     [@validationAnimations]="(validationStore.eleveState$ | async) ? 'visible' : 'notVisible'">
+                <classe-eleve-tile *ngIf="(validationStore.eleveState$ | async) as eleve"
+                                   class="a3-flex-1"
+                                   [eleve]="eleve"
+                                   [isSelectable]="false"
+                                   [class]="'a3-box-shadow-theme-color-chart-color-1  a3-border-theme-color-chart-color-1'">
+                </classe-eleve-tile>
+                <objectif-objectif-eleve-tile *ngIf="(validationStore.objectifEleveState$ | async) as objectifEleve"
+                                              class="a3-flex-1"
+                                              [objectifEleve]="objectifEleve"
+                                              [class]="'a3-box-shadow-theme-color-chart-color-1  a3-border-theme-color-chart-color-1'">
+                </objectif-objectif-eleve-tile>
+
+            </section>
+        </section>
+    </article>
+    <div class="a3-flex-1
+        a3-overflow-hidden">
         <div [@routeAnimations]="prepareRoute(routerOutlet)"
              class="a3-width-100 a3-height-100">
             <router-outlet #routerOutlet="outlet">
             </router-outlet>
         </div>
-    </section>
-</article>
+    </div>
+
+</div>

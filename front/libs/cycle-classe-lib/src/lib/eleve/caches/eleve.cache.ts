@@ -9,12 +9,12 @@ import { EleveService } from '../services/eleve.service';
 export class EleveCache {
 
   private updateCache$: BehaviorSubject<void> = new BehaviorSubject<void>(undefined);
-  private cacheListeEleveClasse: Map<number, Observable<Eleve[]>> = new Map<number, Observable<Eleve[]>>();
+  private cache: Map<number, Observable<Eleve[]>> = new Map<number, Observable<Eleve[]>>();
 
   constructor(private readonly eleveService: EleveService) { }
 
   public chargerListeEleveClasse(classeId: number): Observable<Eleve[]> {
-    let cache$ = this.cacheListeEleveClasse.get(classeId);
+    let cache$ = this.cache.get(classeId);
     if (!cache$) {
       cache$ = this.updateCache$
         .pipe(
@@ -23,7 +23,7 @@ export class EleveCache {
           switchMap(() => { return this.eleveService.chargerListeEleveClasse(classeId) }),
           shareReplay(1)
         );
-      this.cacheListeEleveClasse.set(classeId, cache$);
+      this.cache.set(classeId, cache$);
     }
     return cache$;
   }

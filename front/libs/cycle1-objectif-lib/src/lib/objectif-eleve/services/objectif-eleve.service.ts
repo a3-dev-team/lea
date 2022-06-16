@@ -17,6 +17,11 @@ export class ObjectifEleveService {
     @Inject(ENVIRONMENT) private environment: IEnvironment
   ) { }
 
+  public chargerListeObjectifEleve(eleveId: number): Observable<ObjectifEleve[]> {
+    return this.http.get<ObjectifEleve[]>(`${UrlHelper.GetBackApiUrl(this.environment, this.apiProperties)}eleves/${eleveId}/objectifs`);
+  }
+
+
   public chargerObjectifEleve(eleveId: number, objectifId: number): Observable<ObjectifEleve> {
     return this.http.get<ObjectifEleve>(`${UrlHelper.GetBackApiUrl(this.environment, this.apiProperties)}eleves/${eleveId}/objectifs/${objectifId}`);
   }

@@ -2,7 +2,6 @@ import { EleveStore } from '@a3/cycle-classe-lib';
 import { ENVIRONMENT, IEnvironment } from '@a3/shared-lib';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { MatCardModule } from '@angular/material/card';
 import { RouterTestingModule } from '@angular/router/testing';
 import { of } from 'rxjs';
 import { ApplicationStore } from '../../../core/application-store/application-store';
@@ -30,8 +29,7 @@ describe('SelectionEleveComponent', () => {
     await TestBed.configureTestingModule({
       imports: [
         HttpClientTestingModule,
-        RouterTestingModule,
-        MatCardModule],
+        RouterTestingModule],
       declarations: [SelectionEleveComponent],
       providers: [
         ApplicationStore,

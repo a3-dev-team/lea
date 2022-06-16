@@ -3,6 +3,7 @@ import { SharedLibModule } from '@a3/shared-lib';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
+import { ModalModule } from 'libs/common/src/lib/modal/modal.module';
 import { QrcodeReaderComponent } from './components/qrcode-reader.component';
 
 
@@ -15,7 +16,8 @@ import { QrcodeReaderComponent } from './components/qrcode-reader.component';
   imports: [
     CommonModule,
     ZXingScannerModule,
-    SharedLibModule
+    SharedLibModule,
+    ModalModule
   ],
   exports: [
     QrcodeReaderComponent

@@ -1,14 +1,15 @@
-<article>
+<article class="a3-page">
     <!-- <header>
         <h2 i18n>SELECTIONNER ELEVE</h2>
     </header> -->
-    <section class="a3-flex-1">
+    <section class="a3-page-section
+                    a3-flex-1">
         <classe-eleve-tile-list [eleves$]="listeEleveClasse$"
                                 (selected)="onEleveSelected($event)">
 
         </classe-eleve-tile-list>
     </section>
-    <footer>
+    <footer class="a3-page-footer">
         <button *ngIf="!(applicationStore.estModeEleveState$ | async)"
                 [routerLink]="['/accueil']"
                 i18n>

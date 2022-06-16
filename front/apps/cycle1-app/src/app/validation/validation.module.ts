@@ -17,7 +17,7 @@ import { ValidationComponent } from './validation.component';
     SelectionEleveComponent,
     SelectionObjectifComponent,
     SelectionObjectifComponent,
-    ValidationObjectifComponent,
+    ValidationObjectifComponent
   ],
   imports: [
     SharedModule,
@@ -26,7 +26,7 @@ import { ValidationComponent } from './validation.component';
     EleveModule,
     QrcodeReaderModule,
     QrcodeGeneratorModule,
-    WebcamModule,
+    WebcamModule
   ]
 })
 export class ValidationModule { }

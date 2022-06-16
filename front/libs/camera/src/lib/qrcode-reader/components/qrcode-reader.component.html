@@ -1,28 +1,59 @@
-<div class="a3-width-100 
-                a3-height-100
-                a3-position-relative">
-    <zxing-scanner class="a3-width-100"
+<button #visibilityButton
+        class="a3-position-fixed
+                a3-border-radius-50
+                a3-width-4rem
+                a3-flex-column-center-center
+                a3-z-index-1"
+        [ngClass]="[buttonBottomRem  ? 'a3-bottom-' + buttonBottomRem + 'rem' : 'a3-bottom-0',
+                      buttonRightRem  ? 'a3-right-' + buttonRightRem + 'rem' : 'a3-right-0']"
+        square
+        [disabled]="qrcodeReaderModal.isVisibleState$ | async"
+        (click)="onQrcodeButtonClick()">
+  <img src="assets/qrcode.png"
+       class="a3-position-absolute
+              a3-height-60
+              a3-width-60"
+       alt="Qrcode Lea"
+       aria-label="Qrcode Lea">
+</button>
+
+<a3-modal #qrcodeReaderModal
+          [widthInRem]="38"
+          [heightInRem]="40">
+  <div class="a3-position-relative
+                        a3-width-100
+                        a3-height-100">
+    <zxing-scanner class="a3-width-100
+                                a3-height-100"
                    [device]="currentCamera"
+                   [enable]="(qrcodeReaderModal.isVisibleState$ | async) || false"
                    (camerasFound)="onCamerasFound($event)"
-                   (scanSuccess)="onScanSuccess($event)"
-                   square>
+                   (scanSuccess)="onScanSuccess($event)">
     </zxing-scanner>
 
     <img src="assets/qrcode.png"
          class="a3-position-absolute
-                    a3-height-100
-                    a3-width-100
-                    a3-top-0
-                    a3-flex-column-center-center
-                    a3-opacity-15"
+                        a3-height-100
+                        a3-width-100
+                        a3-top-0
+                        a3-flex-column-center-center
+                        a3-opacity-15"
          alt="Qrcode Lea"
          aria-label="Qrcode Lea">
     <button *ngIf="cameraList && cameraList.length > 1"
             class="a3-position-absolute
-                    a3-bottom-0
-                    a3-right-0"
+                        a3-bottom-1rem
+                        a3-right-1rem"
             (click)="onChangeCameraClick()"
             i18n>
-        Changer de camera
+      Changer de camera
     </button>
-</div>
+  </div>
+
+  <ng-container footer>
+    <button (click)="onCloseQrcodeReaderModalButtonClick()"
+            i18n>
+      Fermer
+    </button>
+  </ng-container>
+</a3-modal>

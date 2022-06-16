@@ -3,6 +3,7 @@
     --a3-theme-color: #c3cfd9;
     --a3-theme-padding: 0.5rem 1rem;
     --a3-theme-border-radius: 0.2rem;
+    --a3-theme-box-shadow: 0 0 1rem;
     --a3-theme-main-background-color: #dfe6ed;
     --a3-theme-main-disabled-background-color: #5a4e1c;
     --a3-theme-main-active-background-color: #4c4028;
@@ -31,6 +32,10 @@
 
     // panel
     --a3-theme-panel-background-color: #dfe6ed;
+
+    // chart color
+    --a3-theme-color-chart-color-1: #ffbe4b;
+    --a3-theme-color-chart-color-2: #23ff40;
 
     .clair {
         --a3-theme-background-color: #e7e7e7;
@@ -66,6 +71,7 @@ $a3-theme-main-color: var(--a3-theme-main-color);
 $a3-theme-fonctionnality-background-color: var(--a3-theme-fonctionnality-background-color);
 $a3-theme-fonctionnality-color: var(--a3-theme-fonctionnality-color);
 $a3-theme-border-radius: var(--a3-theme-border-radius);
+$a3-theme-box-shadow: var(--a3-theme-box-shadow);
 
 // BUTTON
 
@@ -103,3 +109,7 @@ $a3-theme-group-box-header-color: var(--a3-theme-group-box-header-color);
 
 //PANEL
 $a3-theme-panel-background-color: var(--a3-theme-panel-background-color);
+
+// chart color
+$a3-theme-color-chart-color-1: var(--a3-theme-color-chart-color-1);
+$a3-theme-color-chart-color-2: var(--a3-theme-color-chart-color-2);

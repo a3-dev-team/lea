@@ -1,0 +1,21 @@
+<div class="a3-panel
+               a3-height-100
+               a3-flex-column-start-center
+                    a3-flex-gap"
+     [ngClass]="class ? class : ''">
+    <img src="https://thumbs.dreamstime.com/b/cible-d%C3%A9fi-ic%C3%B4ne-objective-131034872.jpg"
+         class="a3-width-100
+                    a3-height-100
+                    a3-border-radius-theme-main"
+         alt="Pictogramme de l'objectif"
+         aria-label="Pictogramme de l'objectif">
+    <div class="a3-flex-column-start-start">
+        <h3 class="a3-text-transform-uppercase"
+            aria-label="Libellé de l'objectif">
+            {{objectifEleve?.objectif?.libelle}}
+        </h3>
+        <h4 aria-lalel="Date de validation de l'objectif">
+            {{objectifEleve?.dateValidation | date}}
+        </h4>
+    </div>
+</div>

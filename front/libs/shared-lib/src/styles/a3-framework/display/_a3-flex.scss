@@ -1,3 +1,5 @@
+@use "../responsive/a3-responsive" as responsive;
+
 .a3-flex-column-center-center {
   display: flex;
   flex-direction: column;
@@ -22,6 +24,12 @@
   justify-content: flex-start;
   align-items: center;
 }
+.a3-flex-column-start-stretch {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
 .a3-flex-row-space-between-center {
   display: flex;
   flex-direction: row;
@@ -40,9 +48,48 @@
   justify-content: stretch;
   align-items: stretch;
 }
-.a3-flex-gap {
+.a3-flex-row-stretch-stretch {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: stretch;
+}
+.a3-flex-row-stretch-start {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: start;
+}
+.a3-flex-column-space-between-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.a3-flex-column-space-between-center-sup {
+  @include responsive.a3-screen-sup() {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.a3-flex-row-stretch-stretch-sup {
+  @include responsive.a3-screen-sup() {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    align-items: stretch;
+  }
+}
+.a3-flex-gap-05rem {
   row-gap: 0.5rem;
   column-gap: 0.5rem;
+}
+
+.a3-flex-gap-1rem {
+  row-gap: 1rem;
+  column-gap: 1rem;
 }
 
 .a3-flex-1 {

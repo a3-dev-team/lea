@@ -13,7 +13,9 @@
         "cwd": "${workspaceFolder}/front"
       },
       "presentation": {
-        "reveal": "always",
+        "reveal": "silent",
+        "revealProblems": "onProblem",
+        "close": true
       },
       "runOptions": {
         "runOn": "folderOpen"

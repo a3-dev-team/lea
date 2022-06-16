@@ -1,0 +1,11 @@
+<section class="a3-grid-2-1fr
+                a3-grid-6-1fr-sup
+                a3-grid-10-1fr-mup
+                a3-grid-12-1fr-l">
+    <objectif-objectif-eleve-tile *ngFor="let objectifEleve of objectifEleveList"
+                                  [objectifEleve]="objectifEleve"
+                                  (click)="onClickObjectifEleveTile(objectifEleve)"
+                                  class="a3-width-100
+                                        a3-cursor-pointer">
+    </objectif-objectif-eleve-tile>
+</section>

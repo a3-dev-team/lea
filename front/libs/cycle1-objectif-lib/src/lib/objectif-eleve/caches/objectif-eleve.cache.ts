@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, shareReplay, switchMap } from 'rxjs';
+import { BehaviorSubject, map, Observable, shareReplay, switchMap } from 'rxjs';
 import { ObjectifEleve } from '../models/objectif-eleve.model';
 import { ObjectifEleveService } from '../services/objectif-eleve.service';
 
@@ -9,7 +9,7 @@ import { ObjectifEleveService } from '../services/objectif-eleve.service';
 export class ObjectifEleveCache {
 
   private updateCache$: BehaviorSubject<void> = new BehaviorSubject<void>(undefined);
-  private cache: Map<string, Observable<ObjectifEleve>> = new Map<string, Observable<ObjectifEleve>>();
+  private cache: Map<number, Observable<ObjectifEleve[]>> = new Map<number, Observable<ObjectifEleve[]>>();
 
   // public ojbectifsEleve$ = this.updateCache$
   //   .pipe(
@@ -21,26 +21,34 @@ export class ObjectifEleveCache {
 
   constructor(private readonly objectifEleveService: ObjectifEleveService) { }
 
-
-  public chargerObjectifEleve(eleveId: number, objectifId: number) {
-    let cache$ = this.cache.get(this.getCacheKey(eleveId, objectifId));
+  public chargerListeObjectifEleve(eleveId: number): Observable<ObjectifEleve[]> {
+    let cache$ = this.cache.get(eleveId);
     if (!cache$) {
       cache$ = this.updateCache$
         .pipe(
           // On attend pas que la valeur précédente émise par updateCache$ soit retournée pour déclenchée la suivante, 
           // et on écoute pas le retour de la précédente
-          switchMap(() => { return this.objectifEleveService.chargerObjectifEleve(eleveId, objectifId) }),
+          switchMap(
+            () => this.objectifEleveService.chargerListeObjectifEleve(eleveId)
+          ),
           shareReplay(1)
         );
+      this.cache.set(eleveId, cache$);
     }
     return cache$;
   }
 
-  public updateCache() {
-    this.updateCache$.next();
+  public chargerObjectifEleve(eleveId: number, objectifId: number): Observable<ObjectifEleve | null> {
+    return this.chargerListeObjectifEleve(eleveId)
+      .pipe(
+        map(
+          (listeObjectifEleve: ObjectifEleve[]) =>
+            listeObjectifEleve.find((objectifEleve: ObjectifEleve) => { objectifEleve.objectifId === objectifId }) || null
+        )
+      );
   }
 
-  private getCacheKey(eleveId: number, objectifId: number) {
-    return `${eleveId}_${objectifId}`
+  public updateCache() {
+    this.updateCache$.next();
   }
 }

@@ -16,4 +16,5 @@ button {
     &.a3-button-negative {
         border: 0.0625rem solid variables.$a3-theme-button-border-color;
     }
+    box-shadow: variables.$a3-theme-box-shadow;
 }

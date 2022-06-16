@@ -1,0 +1,30 @@
+<div class="a3-position-fixed
+            a3-top-0
+            a3-bottom-0
+            a3-left-0
+            a3-right-0
+            a3-modal-background
+            a3-z-index-10"
+     [ngClass]="(isVisibleState$ | async) ? 'a3-flex-column-center-center': 'a3-display-none'"
+     [@modalAnimations]="(isVisibleState$ | async) ? 'visible' : 'notVisible'">
+    <article *ngIf="(isVisibleState$ | async)"
+             class="a3-modal"
+             [ngClass]="[widthInRem ? 'a3-width-'+ widthInRem + 'rem-sup' : '', 
+                            heightInRem ? 'a3-height-' + heightInRem + 'rem-sup' : '',
+                            widthInPourcentage ? 'a3-width-'+ widthInPourcentage : '', 
+                            heightInPourcentage ? 'a3-height-' + heightInPourcentage : '']">
+        <header class="a3-modal-header">
+            {{title}}
+        </header>
+        <section class="a3-modal-section">
+            <ng-content>
+
+            </ng-content>
+        </section>
+        <footer class="a3-modal-footer">
+            <ng-content select="[footer]">
+
+            </ng-content>
+        </footer>
+    </article>
+</div>

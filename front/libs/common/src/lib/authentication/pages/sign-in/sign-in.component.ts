@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { UserSignIn } from '../../models/user-sign-in.model';
 import { AuthenticationManager } from '../../services/authentication-manager.service';
+import { SignInFormGroup } from './sign-in.form-group';
 
 @Component({
   selector: 'a3-sign-in',
@@ -11,10 +11,7 @@ import { AuthenticationManager } from '../../services/authentication-manager.ser
 })
 export class SignInComponent implements OnInit {
 
-  public authenticationFormGroup = new FormGroup({
-    login: new FormControl('', Validators.required),
-    password: new FormControl('', [Validators.required, Validators.minLength(8)]),
-  });
+  public authenticationFormGroup = SignInFormGroup.formGroup;
 
   constructor(
     private readonly activatedRoute: ActivatedRoute,

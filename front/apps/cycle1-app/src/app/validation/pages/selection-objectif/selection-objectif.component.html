@@ -1,29 +1,26 @@
-<article>
+<article class="a3-page">
 
-  <section class="a3-flex-1">
-    <classe-eleve-tile class="a3-width-100 a3-height-100"
-                       [eleve]="(validationStore.eleveState$ | async)"
-                       [isSelectable]="false">
-      <section class="a3-section
-                      a3-background-color-transparent
-                      a3-flex-1
-                      a3-flex-column-center-center">
-        <a3-qrcode-reader class="a3-width-100
-                                a3-max-width-30rem"
-                          (stringScanned)="onQrcodeReaderStringScanned($event)">
-        </a3-qrcode-reader>
-      </section>
-      <footer class="a3-footer
-                    a3-background-color-transparent">
-        <button class="a3-button-negative"
-                [routerLink]="['/validation/eleves']"
-                [replaceUrl]="true"
-                i18n>
-          FERMER
-        </button>
-      </footer>
-    </classe-eleve-tile>
+  <section class=" a3-page-section
+                    a3-flex-1">
+
+    <a3-qrcode-reader class="a3-width-100
+                              a3-max-width-30rem"
+                      (stringScanned)="onQrcodeReaderStringScanned($event)">
+    </a3-qrcode-reader>
+
+    <objectif-objectif-eleve-tile-list [objectifEleveList]="listeObjectifEleve$ | async"
+                                       (selected)="onSelectedObjectifEleve($event)">
+    </objectif-objectif-eleve-tile-list>
+
     <!-- <cycle1-obectif-liste [objectifs$]="objectifStore.objectifs$">
     </cycle1-obectif-liste> -->
   </section>
+  <footer class="a3-page-footer">
+    <button class="a3-button-negative"
+            [routerLink]="['/validation/eleves']"
+            [replaceUrl]="true"
+            i18n>
+      Fermer
+    </button>
+  </footer>
 </article>

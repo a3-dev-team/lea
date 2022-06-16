@@ -1,10 +1,14 @@
-<article>
-    <header>
-        <ng-container *ngIf="this.validationStore.objectifEleveState$ | async as objectifEleve">
-            <h2 i18n>{{objectifEleve.objectif.libelle}}</h2>
-            <h3 i18n>{{objectifEleve.dateValidation}}</h3>
-        </ng-container>
-    </header>
-    <section class="a3-flex-1">
+<article class="a3-page">
+
+    <section class="a3-page-content">
         <webcam></webcam>
     </section>
+    <footer class="a3-page-footer">
+        <button class="a3-button-negative"
+                [routerLink]="['/validation/eleves']"
+                [replaceUrl]="true"
+                i18n>
+            Fermer
+        </button>
+    </footer>
+</article>

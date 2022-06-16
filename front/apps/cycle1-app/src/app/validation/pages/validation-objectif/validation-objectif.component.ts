@@ -16,6 +16,25 @@ export class ValidationObjectifComponent extends FullSizeBaseComponent implement
     public readonly validationStore: ValidationStore
   ) {
     super()
+    this.mettreAJourValidationStore();
+  }
+
+
+  private mettreAJourEleveValidationStore() {
+    this.acticatedRoute.paramMap
+      .subscribe((params) => {
+        const eleveId = Number(params.get('eleveId'));
+        this.validationStore.mettreAJourEleveParId(eleveId);
+      });
+  }
+
+  private mettreAJourValidationStore() {
+    this.acticatedRoute.paramMap
+      .subscribe((params) => {
+        const eleveId = Number(params.get('eleveId'));
+        const objectifId = Number(params.get('objectifId'));
+        this.validationStore.mettreAJourObjectifEleveParId(eleveId, objectifId);
+      });
   }
 
   override ngOnInit(): void {

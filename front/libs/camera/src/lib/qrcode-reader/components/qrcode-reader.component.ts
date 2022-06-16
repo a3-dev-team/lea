@@ -1,4 +1,6 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { ModalComponent } from 'libs/common/src/lib/modal/components/modal/modal.component';
+import { BehaviorSubject, first } from 'rxjs';
 
 @Component({
   selector: 'a3-qrcode-reader',
@@ -7,7 +9,17 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class QrcodeReaderComponent {
 
+  @Input() public buttonRightRem: Number = 2;
+  @Input() public buttonBottomRem: Number = 3;
+  @Input() public enable: boolean = true;
   @Output() stringScanned: EventEmitter<string> = new EventEmitter<string>()
+
+  @ViewChild('qrcodeReaderModal') qrcodeReaderModal!: ModalComponent;
+
+  private isVisibleSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  public isVisibleState$ = this.isVisibleSubject.asObservable();
+
+
 
   constructor() { }
 
@@ -37,5 +49,25 @@ export class QrcodeReaderComponent {
       }
       this.currentCamera = this.cameraList[nextCurrentCameraIndex];
     }
+  }
+
+  public onQrcodeButtonClick() {
+    // this.updateIsVisible();
+    this.qrcodeReaderModal.show();
+  }
+
+  private updateIsVisible(): void {
+    this.isVisibleState$
+      .pipe(
+        first()
+      )
+      .subscribe((isVisible: Boolean) => {
+        this.isVisibleSubject.next(!isVisible)
+      });
+  }
+
+
+  public onCloseQrcodeReaderModalButtonClick() {
+    this.qrcodeReaderModal.hide();
   }
 }

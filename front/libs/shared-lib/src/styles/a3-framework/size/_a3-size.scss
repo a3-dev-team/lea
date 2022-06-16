@@ -55,4 +55,25 @@
       }
     }
   }
+
+  @each $value in auto {
+    .a3-#{$size}-#{$value} {
+      #{$size}: #{$value};
+    }
+    .a3-#{$size}-#{$value}-sup {
+      @include responsive.a3-screen-sup() {
+        #{$size}: #{$value};
+      }
+    }
+    .a3-#{$size}-#{$value}-mup {
+      @include responsive.a3-screen-mup() {
+        #{$size}: #{$value};
+      }
+    }
+    .a3-#{$size}-#{$value}-l {
+      @include responsive.a3-screen-l() {
+        #{$size}: #{$value};
+      }
+    }
+  }
 }

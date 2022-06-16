@@ -2,14 +2,15 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ValidationStore } from './store/validation.store';
-import { routeAnimations } from './validation.animation';
+import { routeAnimations, validationAnimations } from './validation.animation';
 
 @Component({
   selector: 'app-validation',
   templateUrl: './validation.component.html',
   styleUrls: ['./validation.component.scss'],
   animations: [
-    routeAnimations
+    routeAnimations,
+    validationAnimations
   ]
 })
 export class ValidationComponent implements OnInit, OnDestroy {

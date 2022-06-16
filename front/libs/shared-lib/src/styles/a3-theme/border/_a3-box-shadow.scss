@@ -1,0 +1,9 @@
+@use "../a3-theme-variables" as variables;
+
+.a3-box-shadow-theme-main {
+    box-shadow: variables.$a3-theme-main-color variables.$a3-theme-box-shadow;
+}
+
+.a3-box-shadow-theme-color-chart-color-1 {
+    box-shadow: variables.$a3-theme-color-chart-color-1 variables.$a3-theme-box-shadow;
+}

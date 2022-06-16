@@ -1,6 +1,6 @@
-
-@use "./border/core-border";
-@use "./layout/core-layout";
+@use "./border/a3-border";
+@use "./border/a3-box-shadow";
+@use "./layout/a3-layout";
 @use "./color/core-background-color";
 @use "./loader/core-loader";
 @use "./button/core-button";
@@ -8,8 +8,9 @@
 @use "./padding/core-padding";
 @use "./text/core-text";
 
-@forward "./border/core-border";
-@forward "./layout/core-layout";
+@forward "./border/a3-border";
+@forward "./border/a3-box-shadow";
+@forward "./layout/a3-layout";
 @forward "./color/core-background-color";
 @forward "./loader/core-loader";
 @forward "./button/core-button";

@@ -6,7 +6,6 @@ import { eleveTileAnimations } from './eleve-tile.animation';
 @Component({
   selector: 'classe-eleve-tile',
   templateUrl: './eleve-tile.component.html',
-  styleUrls: ['./eleve-tile.component.css'],
   animations: [eleveTileAnimations],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
@@ -17,8 +16,10 @@ export class EleveTileComponent implements OnInit {
   public selectedState$ = this.selectedSubject.asObservable();
 
   @Input() public eleve!: Eleve | null;
+  @Input() public class!: string | null;
   @Input() public isSelectable: boolean = true;
   @Output() public selected: EventEmitter<Eleve | null> = new EventEmitter<Eleve | null>();
+
 
 
   constructor() { }

@@ -35,6 +35,7 @@ export class SelectionEleveComponent extends FullSizeBaseComponent {
     public readonly eleveCache: EleveCache) {
     super();
     this.validationStore.mettreAJourEleve(null);
+    this.validationStore.mettreAJourObjectifEleve(null);
   }
 
   public onEleveSelected(eleve: Eleve): void {
